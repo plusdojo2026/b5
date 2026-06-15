@@ -11,7 +11,10 @@ public class Stamps implements Serializable{
 	private String updated_at;
 	public int getId() {
 		return id;
-}
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getStamp_name() {
 		return stamp_name;
 	}
@@ -36,9 +39,7 @@ public class Stamps implements Serializable{
 	public void setUpdated_at(String updated_at) {
 		this.updated_at = updated_at;
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 	public Stamps(int id, String stamp_name, String stamp_url, String created_at, String updated_at) {
 		super();
 		this.id = id;

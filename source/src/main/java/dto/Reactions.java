@@ -48,4 +48,12 @@ public class Reactions implements Serializable{
 		this.created_at = "";
 		this.updated_at = "";
 	}
+	public Reactions(int id, String reaction_name, String reaction_url, String created_at, String updated_at) {
+		super();
+		this.id = id;
+		this.reaction_name = reaction_name;
+		this.reaction_url = reaction_url;
+		this.created_at = created_at;
+		this.updated_at = updated_at;
+	}
 }
