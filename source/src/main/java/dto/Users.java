@@ -10,6 +10,9 @@ public class Users implements Serializable{
 	private String created_at;
 	private String updated_at;
 	
+	//須藤が編集しちゃったよ～～～～～～ん
+	
+	
 	//ゲッタセッタ
 	public int getId() {
 		return id;
