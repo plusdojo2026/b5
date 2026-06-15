@@ -2,10 +2,15 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
+<title>リスト作成</title>
+<link rel="stylesheet"
+href="<%= request.getContextPath() %>/css/NewFile.css?v=2">
 <title>Insert title here</title>
 </head>
+
 <body>
 
 </body>

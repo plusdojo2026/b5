@@ -1,10 +1,68 @@
 package dto;
 //岩本//
-public class ItemLists {
 
-	public static void main(String[] args) {
-		// TODO 自動生成されたメソッド・スタブ
+import java.io.Serializable;
 
+public class ItemLists  implements Serializable {
+
+	private int id;
+	private String date;
+	private int grade ;
+	private int class_number;
+	private int item_id;
+	private String created_at;
+	private String updated_at;
+	public int getId() {
+		return id;
 	}
-
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	public int getGrade() {
+		return grade;
+	}
+	public void setGrade(int grade) {
+		this.grade = grade;
+	}
+	public int getClass_number() {
+		return class_number;
+	}
+	public void setClass_number(int class_number) {
+		this.class_number = class_number;
+	}
+	public int getItem_id() {
+		return item_id;
+	}
+	public void setItem_id(int item_id) {
+		this.item_id = item_id;
+	}
+	public String getCreated_at() {
+		return created_at;
+	}
+	public void setCreated_at(String created_at) {
+		this.created_at = created_at;
+	}
+	public String getUpdated_at() {
+		return updated_at;
+	}
+	public void setUpdated_at(String updated_at) {
+		this.updated_at = updated_at;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public ItemLists(int id, String date, int grade, int class_number, int item_id, String created_at,
+			String updated_at) {
+		super();
+		this.id = id;
+		this.date = date;
+		this.grade = grade;
+		this.class_number = class_number;
+		this.item_id = item_id;
+		this.created_at = created_at;
+		this.updated_at = updated_at;
+	}
 }
