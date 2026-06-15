@@ -1,5 +1,5 @@
 package dao;
-
+//岩本//
 public class ItemListsDao {
 
 	public static void main(String[] args) {
