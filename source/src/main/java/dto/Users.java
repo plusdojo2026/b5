@@ -66,5 +66,7 @@ public class Users implements Serializable{
 		this.type = 0;
 		this.created_at = "";
 		this.updated_at = "";
+		
+		//aaaaaa
 	}
 }
