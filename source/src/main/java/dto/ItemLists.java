@@ -65,4 +65,14 @@ public class ItemLists  implements Serializable {
 		this.created_at = created_at;
 		this.updated_at = updated_at;
 	}
+	public ItemLists() {
+		super();
+		this.id = 0;
+		this.date = "";
+		this.grade = 0;
+		this.class_number = 0;
+		this.item_id = 0;
+		this.created_at = "";
+		this.updated_at = "";
+}
 }

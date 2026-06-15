@@ -46,6 +46,15 @@ public class Stamps implements Serializable{
 		this.stamp_url = stamp_url;
 		this.created_at = created_at;
 		this.updated_at = updated_at;
+		
+		
 	}
-	
+	public Stamps() {
+		super();
+		this.id = 0;
+		this.stamp_name = "";
+		this.stamp_url = "";
+		this.created_at = "";
+		this.updated_at = "";
+}
 }
