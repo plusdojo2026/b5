@@ -9,11 +9,10 @@ import java.sql.SQLException;
 import dto.Users;
 
 public class UsersDao {
-	// 引数で指定されたidpwでログイン成功ならtrueを返す
-	public boolean isLoginOK(Users user) {
+	// 引数で指定されたloginId,loginPassでログインOKならid,ｔｙpeを入れたUsersオブジェクトを返す
+	public Users login(String loginId,String loginPass) {
 		Connection conn = null;
-		boolean loginResult = false;
-
+		Users user = null;
 		try {
 			// JDBCドライバを読み込む
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -24,25 +23,23 @@ public class UsersDao {
 					"root", "password");
 
 			// SELECT文を準備する
-			String sql = "SELECT count(*) FROM USERS WHERE login_id=? AND login_pass=?";
+			String sql = "SELECT id, type FROM USERS WHERE login_id=? AND login_pass=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setString(1, user.getLogin_id());
-			pStmt.setString(2, user.getLogin_pass());
+			//引数のloginID,loginPassを上記のSELECT文の?に代入
+			pStmt.setString(1, loginId);
+			pStmt.setString(2, loginPass);
 
 			// SELECT文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
-			// ユーザーIDとパスワードが一致するユーザーがいれば結果をtrueにする
-			rs.next();
-			if (rs.getInt("count(*)") == 1) {
-				loginResult = true;
+			// ユーザーIDとパスワードが一致するユーザーがいればidとtypeをオブジェクトに詰める（rs.next() == true → 一致するものがあったということ）
+			if(rs.next()) {
+				user = new Users();
+				user.setId(rs.getInt("id"));
+				user.setType(rs.getInt("type"));
 			}
-		} catch (SQLException e) {
+		}catch (Exception e) {
 			e.printStackTrace();
-			loginResult = false;
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-			loginResult = false;
 		} finally {
 			// データベースを切断
 			if (conn != null) {
@@ -50,12 +47,11 @@ public class UsersDao {
 					conn.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
-					loginResult = false;
 				}
 			}
 		}
 
-		// 結果を返す
-		return loginResult;
+		// userを返す
+		return user;
 	}
 }
