@@ -1,1 +1,14 @@
-@charset "UTF-8";
+/* すべてのページに適用される設定 */
+html {
+    font-size: 18px;
+    font-family:  'BIZ UDPGothic', sans-serif;
+    margin: 0 0 0 0;	/* マージンなし（後で個別に設定） */
+    padding: 0 0 0 0;	/* パディングなし（後で個別に設定） */
+    color: black;
+    background-color: #FDFBF6;
+}
+
+.header {
+	color: #D9805F;
+    background-color: #FEF8E8;
+}

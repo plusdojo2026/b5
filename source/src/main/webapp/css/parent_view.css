@@ -1,1 +1,28 @@
-@charset "UTF-8";
+html {
+    background-color: #F8FAFE;
+}
+
+.lists {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	list-style: none;
+	gap: 20px;
+}
+
+
+/* モバイル対応 */
+@media(max-width: 767px){
+.lists {
+	display: grid;
+	grid-template-columns: 1fr;
+	list-style: none;
+	gap: 20px;
+}
+    .nav ul {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    main {
+        padding: 0 4%;
+    }
+}

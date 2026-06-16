@@ -8,6 +8,7 @@
 		
 		<title>保護者のリスト確認|できたねスタンプ</title>
 		
+		<link rel="stylesheet" href="/webapp/css/common.css">
 		<link rel="stylesheet" href="/webapp/css/parent_view.css">
 	</head>
 	
@@ -15,22 +16,40 @@
 		<!-- ヘッダー -->
 		<header class="header">
 			山田太郎くん
-			</nav>
 		</header>
 		
 		<!-- メイン -->
 		<main>
-			日付表示c
+			日付表示
 			
-			もちもの<br>
+		<section>
+		<%---------------------------もちもの ----------------------------%>
+		<div class = "lists">
+			<div class = "list">
+				<h3>もちもの</h3>
+				<ul>
+					<li>きゅうしょくセット</li>
+					<li>えのぐセット</li>
+					<li>すいとう（氷いっぱい）</li>
+				</ul>
+			</div>
+	
+		<%----------------------しゅくだい -----------------------------%>
+			<div class = "list">
+				<h3>しゅくだい</h3>
+				<ul>
+					<li>かんじドリル</li>
+					<li>けいさんドリル</li>
+				</ul>
+			</div>
+		</div>	
 			
-			
-			しゅくだい
+		</section>
 		</main>
 	
 		<footer>
 			<div class = "footer-icon">
-				<ul classs = "footer-nav">
+				<ul class = "footer-nav">
 					<li><a href="/java/ParentNoticeServlet">べるまーく</a></li>
 					<li><a href="/java/ParentViewServlet">めいぼまーく</a></li>
 				</ul>
