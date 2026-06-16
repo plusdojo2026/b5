@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Students implements Serializable{
 	
 	private int id;
-	private String user_id;
+	private int user_id;
 	private String name;
 	private int grade;
 	private int class_number;
@@ -20,10 +20,10 @@ public class Students implements Serializable{
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getUser_id() {
+	public int getUser_id() {
 		return user_id;
 	}
-	public void setUser_id(String user_id) {
+	public void setUser_id(int user_id) {
 		this.user_id = user_id;
 	}
 	public String getName() {
@@ -58,7 +58,7 @@ public class Students implements Serializable{
 	}
 	
 	//コンストラクタ
-	public Students(int id, String user_id, String name, int grade, int class_number, String created_at,
+	public Students(int id, int user_id, String name, int grade, int class_number, String created_at,
 			String updated_at) {
 		super();
 		this.id = id;
@@ -73,7 +73,7 @@ public class Students implements Serializable{
 	public Students() {
 		super();
 		this.id = 0;
-		this.user_id = "";
+		this.user_id = 0;
 		this.name = "";
 		this.grade = 0;
 		this.class_number = 0;
