@@ -1,2 +1,90 @@
 @charset "UTF-8";
-/＊岩本＊/
+/*岩本*/
+
+/*****************もちものリスト******************/
+.item-list {
+
+    position: fixed;
+
+    top: 180px;
+
+    left: 180px;
+
+    width: 450px;
+
+    background: white;
+
+    padding: 30px;
+
+    min-height: 480px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/*****************しゅくだいリスト******************/
+.hw-list {
+
+    position: fixed;
+
+    top: 20px;
+
+    left: 720px;
+
+    width: 450px;
+
+    background: white;
+
+    padding: 30px;
+
+    min-height: 480px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+
+/*****************リスト更新******************************/
+.update-list{
+
+position: fixed;
+
+    top: 720px;
+
+    left: 180px;
+
+    width: 990px;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+				
+				
+				
+				
+  
+
+
+
+
+
+
+
+
+
+/*****************共通******************************/
+
+body{
+    background-color:#FDFBF6;
+}
+.todo-box h2 {
+
+    margin-top: 0;
+}
