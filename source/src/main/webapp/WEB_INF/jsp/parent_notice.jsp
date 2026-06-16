@@ -2,11 +2,39 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>保護者の通知|できたねスタンプ</title>
+	</head>
+	
+	<body>
+		<!-- ヘッダー -->
+		<header class="header">
+			山田太郎くん
+		</header>
+		
+		<!-- メイン -->
+		<main>
+			日付表示
+			
+			スタンプの内容1
+			リアクションボタン
+			
+			スタンプの内容2
+			リアクションボタン
 
-</body>
+			持ち物リストが更新されました！
+		</main>
+	
+		<footer>
+			<div class = "footer-icon">
+				<ul classs = "footer-nav">
+					<li><a href="/java/ParentNoticeServlet">べるまーく</a></li>
+					<li><a href="/java/ParentViewServlet">めいぼまーく</a></li>
+				</ul>
+			</div>
+		</footer>
+	</body>
 </html>
