@@ -1,10 +1,16 @@
 package servlet;
 
+import dao.UsersDao;
+
 public class LoginServlet {
 
 	public static void main(String[] args) {
-		// TODO 自動生成されたメソッド・スタブ
-
+		UsersDao dao = new UsersDao();
+		dao.login(null, null);
+		
+		
+		
+		
+		
 	}
-
 }

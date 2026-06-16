@@ -48,7 +48,7 @@
 				<img src="" alt="パスワードアイコン">
 			</div>
 			<div class="input_text">
-				<label for="login_pass">ログインID</label>
+				<label for="login_pass">パスワード</label>
 				<input type="text" id="login_pass" name="login_pass" placeholder="パスワードを入力してください。">
 			</div>
 		</div>
