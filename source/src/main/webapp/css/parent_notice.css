@@ -1,1 +1,16 @@
 @charset "UTF-8";
+
+html {
+    background-color: #F8FAFE;
+}
+
+
+/* モバイル対応 */
+@media(max-width: 767px){
+    .nav ul {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    main {
+        padding: 0 4%;
+    }
