@@ -8,8 +8,8 @@
 		
 		<title>保護者のリスト確認|できたねスタンプ</title>
 		
-		<link rel="stylesheet" href="/webapp/css/common.css">
-		<link rel="stylesheet" href="/webapp/css/parent_view.css">
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css">
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/css/parent_view.css">
 	</head>
 	
 	<body>
@@ -20,10 +20,9 @@
 		
 		<!-- メイン -->
 		<main>
-			日付表示
+			<p>日付表示</p>
 			
-		<section>
-		<%---------------------------もちもの ----------------------------%>
+		<%-- もちもの --%>
 		<div class = "lists">
 			<div class = "list">
 				<h3>もちもの</h3>
@@ -34,7 +33,7 @@
 				</ul>
 			</div>
 	
-		<%----------------------しゅくだい -----------------------------%>
+		<%-- しゅくだい --%>
 			<div class = "list">
 				<h3>しゅくだい</h3>
 				<ul>
@@ -44,7 +43,6 @@
 			</div>
 		</div>	
 			
-		</section>
 		</main>
 	
 		<footer>
