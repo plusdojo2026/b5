@@ -8,7 +8,7 @@ public class StampLog implements Serializable{
 	private int stamp_id;
 	private String text;
 	private int reaction_id;
-	private boolean read;
+	private boolean is_read;
 	private String created_at;
 	private String updated_at;
 	
@@ -43,11 +43,11 @@ public class StampLog implements Serializable{
 	public void setReaction_id(int reaction_id) {
 		this.reaction_id = reaction_id;
 	}
-	public boolean isRead() {
-		return read;
+	public boolean getIsRead() {
+		return is_read;
 	}
-	public void setRead(boolean read) {
-		this.read = read;
+	public void setIsRead(boolean is_read) {
+		this.is_read = is_read;
 	}
 	public String getCreated_at() {
 		return created_at;
@@ -63,7 +63,7 @@ public class StampLog implements Serializable{
 	}
 	
 	//コンストラクタ
-	public StampLog(int id, int student_id, int stamp_id, String text, int reaction_id, boolean read, String created_at,
+	public StampLog(int id, int student_id, int stamp_id, String text, int reaction_id, boolean is_read, String created_at,
 			String updated_at) {
 		super();
 		this.id = id;
@@ -71,7 +71,7 @@ public class StampLog implements Serializable{
 		this.stamp_id = stamp_id;
 		this.text = text;
 		this.reaction_id = reaction_id;
-		this.read = read;
+		this.is_read = is_read;
 		this.created_at = created_at;
 		this.updated_at = updated_at;
 	}
@@ -82,7 +82,7 @@ public class StampLog implements Serializable{
 		this.stamp_id = 0;
 		this.text = "";
 		this.reaction_id = 0;
-		this.read = false;
+		this.is_read = false;
 		this.created_at = "";
 		this.updated_at = "";
 	}

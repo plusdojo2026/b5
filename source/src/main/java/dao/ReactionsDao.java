@@ -13,6 +13,7 @@ public class ReactionsDao {
 	public Reactions getReactionByID(int id) {
 		Connection conn = null;
 		Reactions reaction = null;
+		
 		try {
 			// JDBCドライバを読み込む
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -25,11 +26,13 @@ public class ReactionsDao {
 			// SELECT文を準備する
 			String sql = "SELECT * FROM REACTIONS WHERE id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
+			
 			//引数のidを上記のSELECT文の?に代入
 			pStmt.setString(1, String.valueOf(id));
 
 			// SELECT文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
+			
 			// IDが一致するリアクションの名前と画像URLをオブジェクトに詰める（rs.next() == true → 一致するものがあったということ）
 			if(rs.next()) {
 				reaction = new Reactions();
@@ -50,7 +53,7 @@ public class ReactionsDao {
 				}
 			}
 		}
-			// reactionを返す
+		// reactionを返す
 		return reaction;
 	}
 }

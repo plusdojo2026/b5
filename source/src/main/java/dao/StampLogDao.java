@@ -5,38 +5,48 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
-import dto.Teachers;
+import dto.StampLog;
 
 public class StampLogDao {
-	// 引数で指定されたuserIDに対応するTeacherオブジェクトを返す
-	public Teachers getTeacherByUserID(String userId) {
+	// 引数で指定されたstudentIDに対応するStampLogオブジェクトのリストを返す
+	public List<StampLog> getStampLogByStudentID(int student_id) {
 		Connection conn = null;
-		Teachers teacher = null;
+		List<StampLog> stamplog = new ArrayList<StampLog>();
 		try {
 			// JDBCドライバを読み込む
 			Class.forName("com.mysql.cj.jdbc.Driver");
+			
 			// データベースに接続する
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/B5?"
 					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
 					"root", "password");
+			
 			// SELECT文を準備する
-			String sql = "SELECT * FROM TEACHERS WHERE user_id=?";
+			String sql = "SELECT * FROM STAMP_LOG WHERE student_id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			//引数のuserIDを上記のSELECT文の?に代入
-			pStmt.setString(1, userId);
+			
+			//引数のIDを上記のSELECT文の?に代入
+			pStmt.setString(1, String.valueOf(student_id));
 
 			// SELECT文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
-			// IDが一致するユーザーがいればオブジェクトに詰める（rs.next() == true → 一致するものがあったということ）
-			if(rs.next()) {
-				teacher = new Teachers();
-				teacher.setId(rs.getInt("id"));
-				teacher.setUser_id(rs.getInt("user_id"));
-				teacher.setName(rs.getString("name"));
-				teacher.setGrade(rs.getInt("grade"));
-				teacher.setClass_number(rs.getInt("class_number"));
+			
+			// 児童IDが一致するスタンプの種類、その他テキスト、リアクションID、既読チェックをオブジェクトに詰める
+			while(rs.next()) {
+				StampLog log = new StampLog();
+				log.setId(rs.getInt("id"));
+				log.setStudent_id(rs.getInt("student_id"));
+				log.setStamp_id(rs.getInt("stamp_id"));
+				log.setText(rs.getString("text"));
+				log.setReaction_id(rs.getInt("reaction_id"));
+				log.setIsRead(rs.getBoolean("is_read"));
+				
+				stamplog.add(log);
 			}
+			
 		}catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -49,7 +59,7 @@ public class StampLogDao {
 				}
 			}
 		}
-			// teacherを返す
-		return teacher;
+			// stamplogを返す
+		return stamplog;
 	}
 }
