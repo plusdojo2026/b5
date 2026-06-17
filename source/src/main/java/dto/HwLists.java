@@ -4,7 +4,7 @@ import java.io.Serializable;
 public class HwLists implements Serializable{
 	private int id;
 	private String date;
-	private String range;
+	private String hw_range;
 	private int grade;
 	private int class_number;
 	private int homework_id;
@@ -25,11 +25,11 @@ public class HwLists implements Serializable{
 	public void setDate(String date) {
 		this.date = date;
 	}
-	public String getRange() {
-		return range;
+	public String getHw_range() {
+		return hw_range;
 	}
-	public void setRange(String range) {
-		this.range = range;
+	public void setHw_range(String hw_range) {
+		this.hw_range = hw_range;
 	}
 	public int getGrade() {
 		return grade;
@@ -62,12 +62,12 @@ public class HwLists implements Serializable{
 		this.updated_at = updated_at;
 	}
 	
-	public HwLists(int id, String date, String range, int grade, int class_number, int homework_id, String created_at,
+	public HwLists(int id, String date, String hw_range, int grade, int class_number, int homework_id, String created_at,
 			String updated_at) {
 		super();
 		this.id = id;
 		this.date = date;
-		this.range = range;
+		this.hw_range = hw_range;
 		this.grade = grade;
 		this.class_number = class_number;
 		this.homework_id = homework_id;
@@ -78,7 +78,7 @@ public class HwLists implements Serializable{
 		super();
 		this.id = 0;
 		this.date = "";
-		this.range = "";
+		this.hw_range = "";
 		this.grade = 0;
 		this.class_number = 0;
 		this.homework_id = 0;

@@ -24,7 +24,7 @@ public class ItemListsDao {
 					"root", "password");
 			
 			// SELECT文を準備する
-			String sql = "SELECT * FROM ITEMS WHERE date=? AND grade=? AND class_number=?";
+			String sql = "SELECT * FROM ITEM_LISTS WHERE date=? AND grade=? AND class_number=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			
 			//引数のidを上記のSELECT文の?に代入
@@ -35,7 +35,7 @@ public class ItemListsDao {
 			// SELECT文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 			
-			// IDが一致する持ち物リストをオブジェクトに詰める
+			// 日付、学年、クラスが一致する持ち物リストをオブジェクトに詰める
 			if(rs.next()) {
 				itemlist = new ItemLists();
 				itemlist.setId(rs.getInt("id"));
