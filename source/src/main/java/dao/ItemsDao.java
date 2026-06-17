@@ -33,7 +33,7 @@ public class ItemsDao {
 			// SELECT文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 			
-			// IDが一致するリアクションの名前と画像URLをオブジェクトに詰める
+			// IDが一致する持ち物名をオブジェクトに詰める
 			if(rs.next()) {
 				item = new Items();
 				item.setId(rs.getInt("id"));
