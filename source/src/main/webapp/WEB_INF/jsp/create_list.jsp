@@ -6,14 +6,15 @@
 <head>
 <meta charset="UTF-8">
 <title>教師のリスト作成｜できたねスタンプ</title>
+<link rel="stylesheet"
+href="<%= request.getContextPath() %>/css/create_list.css?v=2">
 
-<link rel="stylesheet" href="../../css/create_list.css">
+
 </head>
 <body>
 
 <main>
- <h1>持ち物リスト作成</h1>
- <h1>宿題リスト作成</h1>
+ 
  
  <section>
  		<h2>月　日（　）</h2>
@@ -23,9 +24,14 @@
 
 <section>
 <%----------------------------------------もちもの ----------------------------%>
-	<div class="item-list">                       
+	<div class="item-list">   
+	   
+		<div class="item-header" >       				<%-----------緑 ---------------------%>
 			<h3>もちものリスト</h3>
 			<button>追加</button>
+		</div>
+		
+		<div class="item-body">							<%-----------白------------------- --%>
 		<ul>
 			<li>
 					きゅうしょくセット
@@ -42,14 +48,19 @@
 					<button>🚮</button>
 			</li>
 		</ul>
+		</div>
 </div>
 
 
 <%--------------------------------しゅくだい -----------------------------%>
-<div class="hw-list">                  
+<div class="hw-list">    
+              
+        <div class="hw-header" >       				<%-----------青---------------------%>
 		<h3>しゅくだいリスト</h3>
 		<button>追加</button>
+		</div>
 		
+		<div class="hw-body">							<%-----------白------------------- --%>
 		<ul>
 				<li>
 						かんじドリル
@@ -62,6 +73,7 @@
 						<button>🚮</button>
 				</li>
 		</ul>
+		</div>
 </div>		
 </section>
 
@@ -76,6 +88,7 @@
 		</p>
 		
 		<button>リスト更新</button>
+		</div>
 </section>
 
    </main>
