@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>ログイン｜できたねスタンプ</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/login.css">
 </head>
 
 <body>
@@ -15,20 +16,20 @@
 <form action="LoginServlet" method="POST" class="login_form">
 	<div class="type_select">
 		<label class="type_option">
-			<input type="radio" name="user_type" value="teacher" checked>
-			<img src="" alt="教師のアイコン" class="type">
+			<input type="radio" name="user_type" value="0" checked>
+			<img src="${pageContext.request.contextPath}/images/teacher.png" alt="教師のアイコン" class="type">
 			<span class="type_text">教師</span>
 		</label>
 
 		<label class="type_option">
-			<input type="radio" name="user_type" value="student">
-			<img src="" alt="児童のアイコン" class="type">
+			<input type="radio" name="user_type" value="1">
+			<img src="${pageContext.request.contextPath}/images/student.png" alt="児童のアイコン" class="type">
 			<span class="type_text">児童</span>
 		</label>
 
 		<label class="type_option">
-			<input type="radio" name="user_type" value="parent">
-			<img src="" alt="保護者のアイコン" class="type">
+			<input type="radio" name="user_type" value="2">
+			<img src="${pageContext.request.contextPath}/images/parents.png" alt="保護者のアイコン" class="type">
 			<span class="type_text">保護者</span>
 		</label>
 	</div>
@@ -36,7 +37,7 @@
 	<div class="input_area">
 		<div class="input_group">
 			<div class="input_icon">
-				<img src="" alt="IDアイコン">
+				<img src="${pageContext.request.contextPath}/images/login_login.png" alt="IDアイコン">
 			</div>
 			<div class="input_text">
 				<label for="login_id">ログインID</label>
@@ -45,7 +46,7 @@
 		</div>
 		<div class="input_group">
 			<div class="input_icon">
-				<img src="" alt="パスワードアイコン">
+				<img src="${pageContext.request.contextPath}/images/password.png" alt="パスワードアイコン">
 			</div>
 			<div class="input_text">
 				<label for="login_pass">パスワード</label>

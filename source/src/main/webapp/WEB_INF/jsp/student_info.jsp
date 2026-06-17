@@ -16,6 +16,7 @@
 
 <!-- ヘッダー -->
  <header class="header">
+   <a href="StampServlet"><img src="${pageContext.request.contextPath}/images/logo(kari).png" width="80" height="80"></a>
    <div class="left">
       <h1>できたねスタンプ</h1>
       <p>児童のがんばりを記録しよう</p>
@@ -37,18 +38,18 @@
 
 
 <!-- 児童のスタンプ獲得数画面開始 -->
- <main>
+<main>
   <!-- 日付の表示 -->
-   <div class="calendar">
-      <img src="${pageContext.request.contextPath}/images/calendar.png" width="50" height="50"><p id="today"></p>
-   </div>
-   <!-- ★↓選択した児童の名前（プルダウン？）↓ -->
+  <div class="calendar">
+     <img src="${pageContext.request.contextPath}/images/calendar.png" width="50" height="50"><p id="today"></p>
+  </div>
+  <!-- ★↓選択した児童の名前（プルダウン？）↓ -->
   <h2>〇〇くんのスタンプ獲得数</h2>
   
   <!-- ★検索した児童のスタンプ保持数表示させる-->
   <div class="stamps"> 
    <div class="stamp1">
-     <img src="" >
+     <img src="${pageContext.request.contextPath}/images/hatugen.png" width="150" height="150" >
         <p>
         <strong>積極的な発言</strong><br>
         <span>仮３個</span> 
@@ -56,7 +57,7 @@
    </div> 
 
    <div class="stamp2">
-     <img src="" >
+     <img src="${pageContext.request.contextPath}/images/challenge.png" width="150" height="150" >
         <p>
         <strong>挑戦</strong><br>
         <span>仮１個</span> 
@@ -64,7 +65,7 @@
    </div> 
 
    <div class="stamp3">
-    <img src="" >
+    <img src="${pageContext.request.contextPath}/images/goal.png" width="150" height="150">
         <p>
         <strong>達成</strong><br>
         <span>仮１個</span> 
@@ -72,7 +73,7 @@
    </div> 
 
    <div class="stamp4">
-     <img src="" >
+     <img src="${pageContext.request.contextPath}/images/kyouryoku.png" width="150" height="150">
         <p>
         <strong>協力</strong><br>
         <span>仮２個</span> 
@@ -80,7 +81,7 @@
    </div> 
 
    <div class="stamp5">
-     <img src="" >
+     <img src="${pageContext.request.contextPath}/images/syusseki.png" width="150" height="150" >
         <p>
         <strong>出席</strong><br>
         <span>仮２１日</span> 
@@ -88,7 +89,7 @@
    </div> 
 
    <div class="stamp6">
-     <img src="" >
+     <img src="${pageContext.request.contextPath}/images/sonota.png" width="150" height="150" >
         <p>
         <strong>その他</strong><br>
         <span>仮０個</span> 
@@ -100,8 +101,16 @@
 
 <!-- 保護者からのリアクション画面開始 -->
  <h2>保護者からのリアクションを確認できます</h2>
- 
- </main>
+	<div class="reactions">
+	   <dive class="reaction1">
+	    <img src="${pageContext.request.contextPath}/images/reaction1.png" width="100" height="100">
+	        <p class="tuuchi">
+	        <strong>（仮）６月１２日の積極的な発言スタンプにリアクションしました</strong><br>
+	        <span class="date"><img src="${pageContext.request.contextPath}/images/clock.png" width="20" height="20">（仮）6月14日14：30</span> 
+	        </p> 
+	   </dive>   
+	</div> 
+</main>
 <!-- 保護者からのリアクション画面終了 -->
 
 

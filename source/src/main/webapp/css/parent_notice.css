@@ -4,6 +4,15 @@ html {
 p {
 	text-align: center;
 }
+/* 日付の表示(CSS) */
+.calendar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 30px;
+    margin-top: 30px;
+}
 .lists {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
