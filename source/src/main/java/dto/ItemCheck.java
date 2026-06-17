@@ -7,6 +7,7 @@ public class ItemCheck implements Serializable{
 	private int student_id;
 	private String date;
 	private int item_id;
+	private String item_name;
 	private boolean is_checked;
 	private String created_at;
 	private String updated_at;
@@ -35,6 +36,12 @@ public class ItemCheck implements Serializable{
 	}
 	public void setItem_id(int item_id) {
 		this.item_id = item_id;
+	}
+	public String getItem_name() {
+		return item_name;
+	}
+	public void setItem_name(String item_name) {
+		this.item_name = item_name;
 	}
 	public boolean isIs_checked() {
 		return is_checked;

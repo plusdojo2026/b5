@@ -84,7 +84,7 @@ INT AUTO_INCREMENT PRIMARY KEY,
 student_id INT,
 date DATE,
 item_id INT,
-is_cheked BOOLEAN,
+is_checked BOOLEAN,
 created_at TIMESTAMP
 DEFAULT CURRENT_TIMESTAMP,
 updated_at TIMESTAMP
