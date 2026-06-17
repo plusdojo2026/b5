@@ -7,6 +7,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<title>保護者の通知|できたねスタンプ</title>
+		
+					<link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css">
+			<link rel="stylesheet" href="${pageContext.request.contextPath}/css/parent_notice.css">
 	</head>
 	
 	<body>
@@ -17,15 +20,22 @@
 		
 		<!-- メイン -->
 		<main>
-			日付表示<br>
+			<p>日付表示</p>
 			
-			スタンプの内容1<br>
-			リアクションボタン<br>
-			
-			スタンプの内容2<br>
-			リアクションボタン<br>
+			<div class = "lists">
+				<div class = "list">
+					スタンプの内容1<br>
+					リアクションボタン<br>
+				</div>
+				
+				<div class = "list">
+					スタンプの内容2<br>
+					リアクションボタン<br>
+				</div>
+			</div>
 
-			持ち物リストが更新されました！
+			<p>持ち物リストが更新されました！</p>
+			
 		</main>
 	
 		<footer>
