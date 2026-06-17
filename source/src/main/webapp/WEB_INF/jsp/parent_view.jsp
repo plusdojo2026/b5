@@ -20,7 +20,10 @@
 		
 		<!-- メイン -->
 		<main>
-			<p>日付表示</p>
+			<!-- 日付の表示 -->
+		  	<div class="calendar">
+		    	<img src="${pageContext.request.contextPath}/images/calendar.png" width="50" height="50"><p id="today"></p>
+		  	</div>
 			
 		<!-- もちもの -->
 		<div class = "lists">
@@ -48,8 +51,8 @@
 		<footer>
 			<div class = "footer-icon">
 				<ul class = "footer-nav">
-					<li><a href="/java/ParentNoticeServlet"><img src= "${pageContext.request.contextPath}/images/p_notice1.png" alt = "通知画面"></a></li>
-					<li><a href="/java/ParentViewServlet"><img src= "${pageContext.request.contextPath}/images/p_list2.png" alt = "リスト画面"></a></li>
+					<li><a href="/java/ParentNoticeServlet"><img src= "${pageContext.request.contextPath}/images/p_notice1.png" width="150" height="150" alt = "通知画面"></a></li>
+					<li><a href="/java/ParentViewServlet"><img src= "${pageContext.request.contextPath}/images/p_list2.png" width="150" height="150" alt = "リスト画面"></a></li>
 				</ul>
 			</div>
 		</footer>

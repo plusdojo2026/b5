@@ -20,7 +20,10 @@
 		
 		<!-- メイン -->
 		<main>
-			<p>日付表示</p>
+			<!-- 日付の表示 -->
+		  	<div class="calendar">
+		    	<img src="${pageContext.request.contextPath}/images/calendar.png" width="50" height="50"><p id="today"></p>
+		  	</div>
 			
 			<div class = "lists">
 				<div class = "list">
