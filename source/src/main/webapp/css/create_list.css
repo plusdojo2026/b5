@@ -14,21 +14,24 @@ main{
     padding-bottom:100px;
 }
 main{
-    min-height:640px;
+    min-height:570px;
 }
-
+.list-area{
+    display:flex;
+    justify-content:center;
+    gap:80px;
+}
 /*****************もちものリスト******************/
 .item-list {
 	overflow:hidden;
 	
 	padding:0;
 	
-    position: absolute;
+    position: static;
 
     top: 260px;
 
-    left: 10%;
-
+    
     width: 550px;
 
     background: white;
@@ -50,17 +53,38 @@ main{
 .item-body{
 	padding:20px;
 }
+.item-input{
+    margin-top:20px;
+    display:flex;
+    gap:10px;
+}
+
+.item-input input{
+    flex:1;
+    padding:10px;
+    border:1px solid #ff00ff;
+    border-radius:10px;
+}
+/**************もちものの追加ボタン*********************/
+.item-input button{
+    padding:10px 20px;
+    background:#66BB6A;
+    color:#00e800;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
 /*****************しゅくだいリスト******************/
 .hw-list {
 	overflow:hidden;
 	
 	padding:0;
 
-    position: absolute;
+    position: static;
 
     top: 260px;
 
-    left: 800px;
+    
 
     width: 550px;
 
@@ -83,6 +107,27 @@ main{
 .hw-body{
 	padding:20px;
 }
+.hw-input{
+    margin-top:20px;
+    display:flex;
+    gap:10px;
+}
+
+.hw-input input{
+    flex:1;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:10px;
+}
+/**************しゅくだいの追加ボタン*********************/
+.hw-input button{
+    padding:10px 20px;
+    background:#66BB6A;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
 /*****************リスト更新******************************/
 .update-list{
 
@@ -90,7 +135,8 @@ position: absolute;
 
     top: 630px;
 
-    left: 15%;
+   left:50%;
+   transform:translateX(-50%);
 
     width: 990px;
 

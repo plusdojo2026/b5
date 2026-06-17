@@ -6,29 +6,22 @@
 <head>
 <meta charset="UTF-8">
 <title>教師のリスト作成｜できたねスタンプ</title>
-<link rel="stylesheet"
-href="<%= request.getContextPath() %>/css/create_list.css?v=2">
-
-
+<link rel="stylesheet"href="<%= request.getContextPath() %>/css/create_list.css?v=2">	
+<script src="../../js/create_list.js"></script>	
 </head>
-<body>
 
+<body>
 <main>
- 
- 
  <section>
  		<h2>月　日（　）</h2>
  		<h3>児童の持ち物と宿題を管理しましょう</h3>
 </section>
-
-
-<section>
+<section class="list-area">
 <%----------------------------------------もちもの ----------------------------%>
 	<div class="item-list">   
 	   
 		<div class="item-header" >       				<%-----------緑 ---------------------%>
 			<h3>もちものリスト</h3>
-			<button>追加</button>
 		</div>
 		
 		<div class="item-body">							<%-----------白------------------- --%>
@@ -48,16 +41,18 @@ href="<%= request.getContextPath() %>/css/create_list.css?v=2">
 					<button>🚮</button>
 			</li>
 		</ul>
+		<div class=item-inpt>
+		<input type="text" placeholder="もちものを入力">
+		<button>追加</button>
+</div>
 		</div>
 </div>
-
 
 <%--------------------------------しゅくだい -----------------------------%>
 <div class="hw-list">    
               
         <div class="hw-header" >       				<%-----------青---------------------%>
 		<h3>しゅくだいリスト</h3>
-		<button>追加</button>
 		</div>
 		
 		<div class="hw-body">							<%-----------白------------------- --%>
@@ -73,10 +68,13 @@ href="<%= request.getContextPath() %>/css/create_list.css?v=2">
 						<button>🚮</button>
 				</li>
 		</ul>
+		<div class=hw-inpt>
+		<input type="text" placeholder="しゅくだいを入力">
+		<button>追加</button>
+		</div>
 		</div>
 </div>		
 </section>
-
 
 <%--------------------------------リスト更新 -----------------------------%>
 <section>
@@ -87,11 +85,11 @@ href="<%= request.getContextPath() %>/css/create_list.css?v=2">
 		「リスト更新ボタンを押すと、児童と保護者の画面に最新の内容が反映されます。」
 		</p>
 		
-		<button>リスト更新</button>
+		<button onclick="updateList()"><%--クリックされたらupdatelist()を実行してね--%>
+		リスト更新
+		</button>
 		</div>
 </section>
-
    </main>
 </body>
 </html>
-
