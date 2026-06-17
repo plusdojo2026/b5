@@ -6,6 +6,7 @@ const now = new Date();
 
 const month = now.getMonth() + 1;
 const day = now.getDate();
+const weekdays = ["日", "月", "火", "水", "木", "金", "土"];
 
 document.getElementById('today').textContent =
-    `${month}月${day}日`;
+    `${month}月${day}日(${weekdays[now.getDay()]})`;
