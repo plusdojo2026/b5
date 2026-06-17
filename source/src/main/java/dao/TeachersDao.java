@@ -10,7 +10,7 @@ import dto.Teachers;
 
 public class TeachersDao {
 	// 引数で指定されたuserIDに対応するTeacherオブジェクトを返す
-	public Teachers getTeacherByUserID(String userId) {
+	public Teachers getTeacherByUserID(int userId) {
 		Connection conn = null;
 		Teachers teacher = null;
 		try {
@@ -24,8 +24,7 @@ public class TeachersDao {
 			String sql = "SELECT * FROM TEACHERS WHERE user_id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			//引数のuserIDを上記のSELECT文の?に代入
-			pStmt.setString(1, userId);
-
+			pStmt.setString(1, String.valueOf(userId));
 			// SELECT文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 			// IDが一致するユーザーがいればオブジェクトに詰める（rs.next() == true → 一致するものがあったということ）

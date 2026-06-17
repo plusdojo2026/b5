@@ -10,7 +10,7 @@ import dto.Students;
 
 public class StudentsDao {
 	// 引数で指定されたuserIDに対応するStudentオブジェクトを返す
-		public Students getStudentsByUserID(String userId) {
+		public Students getStudentByUserID(int userId) {
 			Connection conn = null;
 			Students student = null;
 			try {
@@ -24,7 +24,7 @@ public class StudentsDao {
 				String sql = "SELECT * FROM studentS WHERE user_id=?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 				//引数のuserIDを上記のSELECT文の?に代入
-				pStmt.setString(1, userId);
+				pStmt.setString(1, String.valueOf(userId));
 
 				// SELECT文を実行し、結果表を取得する
 				ResultSet rs = pStmt.executeQuery();
