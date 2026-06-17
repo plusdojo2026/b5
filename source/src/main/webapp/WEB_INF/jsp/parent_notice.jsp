@@ -40,9 +40,9 @@
 	
 		<footer>
 			<div class = "footer-icon">
-				<ul classs = "footer-nav">
-					<li><a href="/java/ParentNoticeServlet">べるまーく</a></li>
-					<li><a href="/java/ParentViewServlet">めいぼまーく</a></li>
+				<ul class = "footer-nav">
+					<li><a href="/java/ParentNoticeServlet"><img src= "${pageContext.request.contextPath}/images/p_notice2.png" alt = "通知画面"></a></li>
+					<li><a href="/java/ParentViewServlet"><img src= "${pageContext.request.contextPath}/images/p_list1.png" alt = "リスト画面"></a></li>
 				</ul>
 			</div>
 		</footer>
