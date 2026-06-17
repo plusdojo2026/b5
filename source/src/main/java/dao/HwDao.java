@@ -33,7 +33,7 @@ public class HwDao {
 			// SELECT文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 			
-			// IDが一致するリアクションの名前と画像URLをオブジェクトに詰める
+			// IDが一致する宿題名をオブジェクトに詰める
 			if(rs.next()) {
 				hw = new Hw();
 				hw.setId(rs.getInt("id"));
