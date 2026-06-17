@@ -27,7 +27,7 @@ public class ItemCheckDao {
 					   + "SELECT ?, ?, item_id, FALSE FROM ITEM_LISTS "
 					   + "WHERE date = ? AND grade = ? AND class_number = ? "
 					   + "AND item_id NOT IN ("
-					   + "	SELECT item_id FROM ITEM_CHECK WHERE student_id = ? AND date = ?"
+					   + "SELECT item_id FROM ITEM_CHECK WHERE student_id = ? AND date = ?"
 					   + ")";
 			
 			PreparedStatement pStmt = conn.prepareStatement(sql);
@@ -55,7 +55,7 @@ public class ItemCheckDao {
 	}
 
 	//指定した日付の持ち物を取得する
-	public List<ItemCheck> getCheckList(int studentId, String targetDate) {
+	public List<ItemCheck> getCheckList(int student_id, String date) {
 		List<ItemCheck> checkList = new ArrayList<>();
 		Connection conn = null;
 
@@ -74,8 +74,8 @@ public class ItemCheckDao {
 					   + "WHERE ic.student_id = ? AND ic.date = ?";
 			
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setInt(1, studentId);
-			pStmt.setString(2, targetDate);
+			pStmt.setInt(1, student_id);
+			pStmt.setString(2, date);
 
 			ResultSet rs = pStmt.executeQuery();
 
@@ -114,7 +114,7 @@ public class ItemCheckDao {
 					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
 					"root", "password");
 			
-			String sql = "UPDATE ITEM_CHECK SET is_cheked = ? WHERE id = ?";
+			String sql = "UPDATE ITEM_CHECK SET is_checked = ? WHERE id = ?";
 			
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setBoolean(1, is_checked);

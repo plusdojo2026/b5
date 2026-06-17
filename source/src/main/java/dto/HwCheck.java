@@ -5,7 +5,9 @@ public class HwCheck implements Serializable{
 	private int id;
 	private String date;
 	private int student_id;
+	private String hw_name;
 	private String range;
+	private boolean is_checked;
 	private String created_at;
 	private String updated_at;
 	
@@ -34,12 +36,28 @@ public class HwCheck implements Serializable{
 		this.student_id = student_id;
 	}
 
+	public String getHw_name() {
+		return hw_name;
+	}
+
+	public void setHw_name(String hw_name) {
+		this.hw_name = hw_name;
+	}
+
 	public String getRange() {
 		return range;
 	}
 
 	public void setRange(String range) {
 		this.range = range;
+	}
+
+	public boolean isIs_checked() {
+		return is_checked;
+	}
+
+	public void setIs_checked(boolean is_checked) {
+		this.is_checked = is_checked;
 	}
 
 	public String getCreated_at() {
