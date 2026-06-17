@@ -16,6 +16,7 @@
 
 <!-- ヘッダー -->
  <header class="header">
+   <a href="StampServlet"><img src="${pageContext.request.contextPath}/images/logo(kari).png" width="80" height="80"></a>
    <div class="left">
       <h1>できたねスタンプ</h1>
       <p>児童のがんばりを記録しよう</p>
