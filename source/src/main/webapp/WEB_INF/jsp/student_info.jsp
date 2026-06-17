@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/student_info.css">
 <title>児童情報 | できたねスタンプ</title>
 </head>
 <body>
@@ -37,58 +38,63 @@
 
 <!-- 児童のスタンプ獲得数画面開始 -->
  <main>
-  <!-- 日付の表示(js) -->
-  <p id="today"></p>
-  
+  <!-- 日付の表示 -->
+   <div class="calendar">
+      <img src="${pageContext.request.contextPath}/images/calendar.png" width="50" height="50"><p id="today"></p>
+   </div>
+   <!-- ★↓選択した児童の名前（プルダウン？）↓ -->
   <h2>〇〇くんのスタンプ獲得数</h2>
-
-  <div>
+  
+  <!-- ★検索した児童のスタンプ保持数表示させる-->
+  <div class="stamps"> 
+   <div class="stamp1">
      <img src="" >
         <p>
         <strong>積極的な発言</strong><br>
-        <span>個</span> 
+        <span>仮３個</span> 
         </p> 
    </div> 
 
-   <div>
+   <div class="stamp2">
      <img src="" >
         <p>
         <strong>挑戦</strong><br>
-        <span>個</span> 
+        <span>仮１個</span> 
         </p> 
    </div> 
 
-   <div>
+   <div class="stamp3">
     <img src="" >
         <p>
         <strong>達成</strong><br>
-        <span>個</span> 
+        <span>仮１個</span> 
         </p> 
    </div> 
 
-   <div>
+   <div class="stamp4">
      <img src="" >
         <p>
         <strong>協力</strong><br>
-        <span>個</span> 
+        <span>仮２個</span> 
         </p> 
    </div> 
 
-   <div>
+   <div class="stamp5">
      <img src="" >
         <p>
         <strong>出席</strong><br>
-        <span>個</span> 
-        </p> 
+        <span>仮２１日</span> 
+        </p>
    </div> 
 
-   <div>
+   <div class="stamp6">
      <img src="" >
         <p>
         <strong>その他</strong><br>
-        <span>個</span> 
+        <span>仮０個</span> 
         </p> 
    </div> 
+  </div> 
 <!-- 児童のスタンプ獲得数画面終了 -->
 
 
@@ -106,7 +112,7 @@
 <!-- フッター終了 -->
 
 <!-- javascript開始 -->
-<script src="/webapp/js/student_info.js"></script>
+<script src="${pageContext.request.contextPath}/js/student_info.js"></script>
 <!-- javascript終了 -->
 
 </body>
