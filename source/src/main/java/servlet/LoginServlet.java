@@ -16,8 +16,6 @@ import dao.UsersDao;
 import dto.Students;
 import dto.Teachers;
 import dto.Users;
-
-
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
@@ -25,7 +23,7 @@ public class LoginServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// ログインページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB_INF/jsp/login.jsp");
 		dispatcher.forward(request, response);
 	}
 	
@@ -36,7 +34,7 @@ public class LoginServlet extends HttpServlet{
 		String loginId = request.getParameter("login_id");
 		String loginPass = request.getParameter("login_pass");
 		String loginType = request.getParameter("user_type");
-		// ログイン処理を行う
+		//ログイン処理を行う
 		Users user = new Users();
 		user = new UsersDao().login(loginId, loginPass);
 		if (user != null) { // 一致する人いる
@@ -74,7 +72,7 @@ public class LoginServlet extends HttpServlet{
 			//request.setAttribute("result", new Result("ログイン失敗！", "IDまたはPWに間違いがあります。", "/webappAns/LoginServlet"));
 
 			// 結果ページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB_INF/jsp/login.jsp");
 			dispatcher.forward(request, response);
 		}
 	}
