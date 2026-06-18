@@ -18,7 +18,7 @@ private static final long serialVersionUID = 1L;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// スタンプページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB_INF/jsp/stamp.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/stamp.jsp");
 		dispatcher.forward(request, response);
 	}
 	
