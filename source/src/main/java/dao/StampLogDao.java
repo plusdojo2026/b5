@@ -99,4 +99,41 @@ public class StampLogDao {
 			}
 		}
 	}
+	
+	public void addStampLog(int student_id, int stamp_id, String comment) {
+		Connection conn = null;
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/B5?"
+					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
+					"root", "password");
+			
+			// SQL文を準備する
+			String sql = "INSERT INTO STAMP_LOG(student_id, stamp_id, text)"
+						+"VALUES(?,?,?)";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			
+			//引数のIDを上記のINSERT文の?に代入
+			pStmt.setString(1, String.valueOf(student_id));
+			pStmt.setString(2, String.valueOf(stamp_id));
+			pStmt.setString(3, comment);
+			// INSERT文を実行
+			pStmt.executeQuery();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
 }
