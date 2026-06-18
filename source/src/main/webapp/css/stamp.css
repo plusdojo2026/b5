@@ -1,1 +1,44 @@
-@charset "UTF-8";
+html {
+    background-color: #F8FAFE;
+}
+
+/* テーブル */
+.seat_table{
+    margin: auto;
+    border-spacing: 60px 35px;
+}
+
+/* 名前（座席） */
+.seat_btn{
+    width: 120px;
+    height: 80px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* 教卓 */
+.teacher_desk{
+    width: 350px;
+    height: 80px;
+    background-color: #d8a27d;
+    text-align: center;
+    line-height: 60px;
+    font-size: 50px;
+    border-radius: 5px;
+    margin: 30px auto;
+}
+/* OKボタン */
+.ok_btn{
+    position: absolute;
+    right: 400px;
+    bottom: 100px;
+    width: 100px;
+    height: 60px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* 選択された児童の座席 */
+.selected{
+	background-color: limegreen;
+}
