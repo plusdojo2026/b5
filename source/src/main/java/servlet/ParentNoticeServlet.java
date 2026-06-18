@@ -37,14 +37,12 @@ private static final long serialVersionUID = 1L;
 		String company = request.getParameter("company");
 		
 		//取得したいデータ（リアクションID）
-		String reactionName = request.getParameter("reaction_name");
-		String[] selectedStudents = request.getParameterValues("student");//student_idを取得したい
+		String reactionId = request.getParameter("reaction_id");
 		
 		StampLogDao stampLogDao = new StampLogDao();
 		
-		for(String s:selectedStudents) {
-			stampLogDao.addStampLog(Integer.parseInt(s),Integer.parseInt(stampId));
-		}
+		stampLogDao.addReaction(Integer.parseInt(reactionId));
+
 	}
 	
 }
