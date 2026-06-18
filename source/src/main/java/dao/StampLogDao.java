@@ -136,4 +136,40 @@ public class StampLogDao {
 			}
 		}
 	}
+	
+	public void addReaction(int reaction_id) {
+		Connection conn = null;
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/B5?"
+					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
+					"root", "password");
+			
+			// SQL文を準備する
+			String sql = "INSERT INTO STAMP_LOG(reaction_id)"
+						+"VALUES(?)";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			
+			//引数のIDを上記のSELECT文の?に代入
+			pStmt.setString(1, String.valueOf(reaction_id));
+
+			// INSERT文を実行
+			pStmt.executeQuery();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
 }
