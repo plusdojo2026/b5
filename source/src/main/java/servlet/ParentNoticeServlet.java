@@ -23,6 +23,7 @@ private static final long serialVersionUID = 1L;
 		
 		//児童に登録されているstamp_logの内容を取得する
 		
+		
 		//stamp_idからstampの画像を取得
 		
 		//リアクション画像を取得(reactionsテーブルから)
@@ -33,16 +34,13 @@ private static final long serialVersionUID = 1L;
 			throws ServletException, IOException {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String postcode = request.getParameter("postcode");
-		String company = request.getParameter("company");
 		
-		//取得したいデータ（リアクションID）
-		String reactionId = request.getParameter("reaction_id");
-		
+		//取得したいデータ（reactionテーブルのid）
+		String reactionId = request.getParameter("id");
 		StampLogDao stampLogDao = new StampLogDao();
-		
 		stampLogDao.addReaction(Integer.parseInt(reactionId));
 
+		//画面更新
+		response.sendRedirect("/b5/ParentNoticeServlet");
 	}
-	
 }
