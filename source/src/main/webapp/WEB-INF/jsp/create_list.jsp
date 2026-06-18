@@ -62,7 +62,7 @@
 					<ul>
 						<li>きゅうしょくセット
 							<button onclick="deleteItem(this)">
-    						<img src="images/trash.png" width="20" height="20">
+    						<img src="images/gomibako.png" width="20" height="20">
 							</button>
 						</li>
 						<li>えのぐセット
