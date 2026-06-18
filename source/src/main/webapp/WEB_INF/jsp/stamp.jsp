@@ -1,63 +1,63 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+ pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>座席一覧|できたねスタンプ</title>
-
+<link rel="stylesheet" type="text/css"
+      href="${pageContext.request.contextPath}/css/stamp.css">
 </head>
 <body>
-	<div class="seat-area">
+	<div class="seat_area">
 
-    <table class="seat-table">
+   <table class="seat_table">
 
-         <tr>
-            <td class="seat">伊藤</td>
-            <td class="seat">佐々木</td>
-            <td class="seat">田中</td>
-            <td class="seat">浜田</td>
-            <td class="seat">宮本</td>
-            <td class="seat">山崎</td>
-        </tr>
+    <tr>
+        <td><input type="button" value="伊藤" class="seat_btn"></td>
+        <td><input type="button" value="佐々木" class="seat_btn"></td>
+        <td><input type="button" value="田中" class="seat_btn" ></td>
+        <td><input type="button" value="浜田" class="seat_btn" ></td>
+        <td><input type="button" value="宮本" class="seat_btn" ></td>
+        <td><input type="button" value="山崎" class="seat_btn" ></td>
+    </tr>
 
-        <tr>
-            <td class="seat">井上</td>
-            <td class="seat">斎藤</td>
-            <td class="seat">高橋</td>
-            <td class="seat">畑野</td>
-            <td class="seat">三浦</td>
-            <td class="seat">山本</td>
-        </tr>
+    <tr>
+        <td><input type="button" value="井上" class="seat_btn" ></td>
+        <td><input type="button" value="斎藤" class="seat_btn" ></td>
+        <td><input type="button" value="高橋" class="seat_btn" ></td>
+        <td><input type="button" value="畑野" class="seat_btn" ></td>
+        <td><input type="button" value="三浦" class="seat_btn" ></td>
+        <td><input type="button" value="山本" class="seat_btn" ></td>
+    </tr>
 
-        <tr>
-            <td class="seat">石井</td>
-            <td class="seat">小林</td>
-            <td class="seat">鈴木</td>
-            <td class="seat">橋本</td>
-            <td class="seat">松本</td>
-            <td class="seat">山田</td>
-        </tr>
+    <tr>
+        <td><input type="button" value="石井" class="seat_btn" ></td>
+        <td><input type="button" value="小林" class="seat_btn" ></td>
+        <td><input type="button" value="鈴木" class="seat_btn" ></td>
+        <td><input type="button" value="橋本" class="seat_btn" ></td>
+        <td><input type="button" value="松本" class="seat_btn" ></td>
+        <td><input type="button" value="山田" class="seat_btn" ></td>
+    </tr>
 
-        <tr>
-            <td class="seat">池田</td>
-            <td class="seat">木村</td>
-            <td class="seat">清水</td>
-            <td class="seat">中村</td>
-            <td class="seat">藤本</td>
-            <td class="seat">山口</td>
-        </tr>
-
-        <tr>
-            <td class="seat">阿部</td>
-            <td class="seat">加藤</td>
-            <td class="seat">佐藤</td>
-            <td class="seat">中島</td>
-            <td class="seat">藤田</td>
-            <td class="seat">森田</td>
-        </tr>
-
-        </table>
+    <tr>
+        <td><input type="button" value="池田" class="seat_btn "></td>
+        <td><input type="button" value="木村" class="seat_btn "></td>
+        <td><input type="button" value="清水" class="seat_btn" ></td>
+        <td><input type="button" value="中村" class="seat_btn" ></td>
+        <td><input type="button" value="藤本" class="seat_btn" ></td>
+        <td><input type="button" value="山口" class="seat_btn" ></td>
+    </tr>
+	
+	<tr>
+        <td><input type="button" value="阿部" class="seat_btn" ></td>
+        <td><input type="button" value="加藤" class="seat_btn" ></td>
+        <td><input type="button" value="佐藤" class="seat_btn" ></td>
+        <td><input type="button" value="中島" class="seat_btn" ></td>
+        <td><input type="button" value="藤田" class="seat_btn" ></td>
+        <td><input type="button" value="森田" class="seat_btn" ></td>
+    </tr>
+</table>
 
     </div>
     
@@ -66,5 +66,22 @@
 
         <button class="ok_btn">OK</button>
     </div>
+    
+    <script>
+
+const seats = document.querySelectorAll(".seat_btn");
+
+seats.forEach(seat => {
+
+    seat.addEventListener("click", function(){
+
+        this.classList.toggle("selected");
+
+    });
+
+});
+
+</script>
 </body>
 </html>
+
