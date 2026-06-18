@@ -1,10 +1,20 @@
 package servlet;
 
-public class StudentResultServlet {
+import java.io.IOException;
 
-	public static void main(String[] args) {
-		// TODO 自動生成されたメソッド・スタブ
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
+@WebServlet("/StudentResultServlet")
+public class StudentResultServlet extends HttpServlet{
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// ログインページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/sutudent_result.jsp");
+		dispatcher.forward(request, response);
 	}
-
 }
