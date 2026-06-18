@@ -1,10 +1,22 @@
 package servlet;
-//岩本//
-public class CreateListServlet {
 
-	public static void main(String[] args) {
-		// TODO 自動生成されたメソッド・スタブ
+import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/CreateListServlet")
+public class CreateListServlet extends HttpServlet{
+	private static final long serialVersionUID = 1L;
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// しゅくだい、もちものリスト作成画面にフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/create_list.jsp");
+		dispatcher.forward(request, response);
 	}
-
 }
