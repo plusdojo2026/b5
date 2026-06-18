@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.StampLogDao;
 
@@ -21,10 +22,12 @@ private static final long serialVersionUID = 1L;
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/parent_notice.jsp");
 		dispatcher.forward(request, response);
 		
-		//児童に登録されているstamp_logの内容を取得する
 		
-		
-		//stamp_idからstampの画像を取得
+		//セッションスコープのstudent_idを参照し、児童に登録されているstamp_logの内容を取得する
+		HttpSession session = request.getSession();
+		session.getAttribute("student_id");
+			response.sendRedirect("/webapp/LoginServlet");
+			return;
 		
 		//リアクション画像を取得(reactionsテーブルから)
 		
