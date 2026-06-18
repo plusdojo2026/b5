@@ -1,3 +1,4 @@
+//更新//
 function updateList() {
 
     const result = confirm("児童、保護者の画面に反映されます。\n更新してよろしいですか？");
@@ -15,7 +16,7 @@ function updateList() {
         alert("リストを更新しました！");
     }
 }
-
+//日付と曜日//
 window.onload = function() {
 
     const now = new Date();
@@ -29,15 +30,14 @@ window.onload = function() {
     document.getElementById("today").innerHTML =
         month + "月" + day + "日（" + dayOfWeek + "）";
 };
-
+//もちもの追加//
 function addItem() {
 
     const input = document.getElementById("itemText");
 
     const text = input.value;
-
-    if(text === ""){
-        alert("もちものを入力してください");
+    
+     if(text.trim() === ""){
         return;
     }
 
@@ -45,21 +45,23 @@ function addItem() {
 
     const li = document.createElement("li");
 
-    li.innerHTML = text + " <button>🚮</button>";
-
+    li.innerHTML =
+    text +
+    ' <button onclick="deleteItem(this)">🚮</button>';
+    
     ul.appendChild(li);
 
     input.value = "";
 }
 
+//しゅくだい追加//
 function addHw() {
 
     const input = document.getElementById("hwText");
 
     const text = input.value;
-
-    if(text === ""){
-        alert("しゅくだいを入力してください");
+    
+      if(text.trim() === ""){
         return;
     }
 
@@ -67,9 +69,17 @@ function addHw() {
 
     const li = document.createElement("li");
 
-    li.innerHTML = text + " <button>🚮</button>";
-
+    li.innerHTML =
+    text +
+    ' <button onclick="deleteItem(this)">🚮</button>';
+    
     ul.appendChild(li);
 
     input.value = "";
+}
+//削除ボタン（ゴミ箱）//
+function deleteItem(button) {
+
+    button.parentElement.remove();
+
 }

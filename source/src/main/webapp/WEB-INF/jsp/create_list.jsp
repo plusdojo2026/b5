@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--岩本 --%>
 <!DOCTYPE html>
 <html>
@@ -15,18 +16,17 @@
 <body>
 	<!------------------------------------------------------------ヘッダー ---------------------------------------------------------->
 	<header class="header">
-		   <a href="StampServlet"><img
-			src="${pageContext.request.contextPath}/images/logo(kari).png"
-			width="80" height="80"></a>    
-		
+		   <a href="StampServlet">>
+		<img src="${pageContext.request.contextPath}/images/logo(kari).png" width="80"  height="80">   
+		</a>
 		<div class="left">    
 			<h1>できたねスタンプ</h1>
 			<p>児童のがんばりを記録しよう</p>
 		</div>
 		    
 		<nav class="nav">     
-			<ul>          
-				<li><a href="StampServlet">スタンプ一覧</a></li>             
+			<ul>
+					<li><a href="StampServlet">スタンプ一覧</a></li> 
 				<li><a href="CreateListServlet">リスト作成</a></li>             
 				<li><a href="HwCheckServlet">宿題チェック</a></li>         
 			</ul>  
@@ -46,12 +46,9 @@
 		</div>
 	</header>
 	<!--------------------------------------------------- ヘッダーここまで --------------------------------------------------------->
-	
-	
-	
 	<main>
 		<section>
-			<h2 id="today"></h2>
+			<h2 id="today"></h2><!--日付 -->
 			<h3>児童の持ち物と宿題を管理しましょう</h3>
 		</section>
 		<section class="list-area">
@@ -59,20 +56,20 @@
 			<div class="item-list">
 
 				<div class="item-header">
-					<%-------緑 ------%>
 					<h3>もちものリスト</h3>
 				</div>
 				<div class="item-body">
-					<%-------白-------%>
 					<ul>
 						<li>きゅうしょくセット
-							<button>🚮</button>
+							<button onclick="deleteItem(this)">
+    						<img src="images/trash.png" width="20" height="20">
+							</button>
 						</li>
 						<li>えのぐセット
-							<button>🚮</button>
+							<button onclick="deleteItem(this)">🚮</button>
 						</li>
 						<li>すいとう（氷いっぱい）
-							<button>🚮</button>
+							<button onclick="deleteItem(this)">🚮</button>
 						</li>
 					</ul>
 					<div class=item-input>
@@ -81,25 +78,20 @@
 					</div>
 				</div>
 			</div>
-
 			<%--------------------------------しゅくだい -----------------------------%>
 			<div class="hw-list">
 
 				<div class="hw-header">
-					<%--------青--------%>
 					<h3>しゅくだいリスト</h3>
 				</div>
 
 				<div class="hw-body">
-					<%-------白--------%>
 					<ul>
 						<li>かんじドリル
-							<button>🚮</button>
+							<button onclick="deleteItem(this)">🚮</button>
 						</li>
-					</ul>
-					<ul>
 						<li>けいさんドリル
-							<button>🚮</button>
+							<button onclick="deleteItem(this)">🚮</button>
 						</li>
 					</ul>
 					<div class=hw-input>
@@ -109,7 +101,6 @@
 				</div>
 			</div>
 		</section>
-
 		<%--------------------------------リスト更新 -----------------------------%>
 		<section>
 			<div class="update-list">
