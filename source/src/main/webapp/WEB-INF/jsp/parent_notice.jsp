@@ -49,5 +49,9 @@
 				</ul>
 			</div>
 		</footer>
+		
+		<!-- javascript開始 -->
+		<script src="${pageContext.request.contextPath}/js/parent_notice.js"></script>
+		<!-- javascript終了 -->
 	</body>
 </html>
