@@ -16,7 +16,7 @@
 
 <!-- ヘッダー -->
  <header class="header">
-   <a href="StampServlet"><img src="${pageContext.request.contextPath}/images/logo(kari).png" width="80" height="80"></a>
+   <a href="StampServlet"><img src="${pageContext.request.contextPath}/images/logo.png" width="100" height="100"></a>
    <div class="left">
       <h1>できたねスタンプ</h1>
       <p>児童のがんばりを記録しよう</p>
@@ -43,10 +43,21 @@
   <div class="calendar">
      <img src="${pageContext.request.contextPath}/images/calendar.png" width="50" height="50"><p id="today"></p>
   </div>
-  <!-- ★↓選択した児童の名前（プルダウン？）↓ -->
-  <h2>〇〇くんのスタンプ獲得数</h2>
   
-  <!-- ★検索した児童のスタンプ保持数表示させる-->
+<!-- ★↓選択した児童の名前(Servletとかと結びつける)↓ -->
+<h2>児童のスタンプ獲得数を表示</h2>
+	<div class="select-area">
+	<label class="selectbox">
+	    <select id="studentselect">
+	        <option value="" selected disabled>児童を選択</option>
+	        <option>山田太郎</option>
+	        <option>田中花子</option>
+	        <option>佐藤三郎</option>
+	    </select>
+	</label>
+	</div>
+  
+ <!-- ★検索した児童のスタンプ保持数表示させる-->
   <div class="stamps"> 
    <div class="stamp1">
      <img src="${pageContext.request.contextPath}/images/hatugen.png" width="150" height="150" >
@@ -100,7 +111,7 @@
 
 
 <!-- 保護者からのリアクション画面開始 -->
- <h2>保護者からのリアクションを確認できます</h2>
+ <h2>保護者からのリアクションを確認</h2>
 	<div class="reactions">
 	   <dive class="reaction1">
 	    <img src="${pageContext.request.contextPath}/images/reaction1.png" width="100" height="100">
