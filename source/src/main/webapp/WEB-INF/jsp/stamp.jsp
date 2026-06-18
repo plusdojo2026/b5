@@ -9,9 +9,92 @@
       href="${pageContext.request.contextPath}/css/stamp.css">
 </head>
 <body>
+
+<!-- ヘッダー -->
+ <header class="header">
+   <a href="StampServlet"><img src="${pageContext.request.contextPath}/images/logo.png" width="100" height="100"></a>
+   <div class="left">
+      <h1>できたねスタンプ</h1>
+      <p>児童のがんばりを記録しよう</p>
+   </div>
+    <nav class="nav">
+        <ul>
+            <li><a href="StampServlet">スタンプ一覧</a></li>
+            <li><a href="CreateListServlet">リスト作成</a></li>
+            <li><a href="HwCheckServlet">宿題チェック</a></li>
+        </ul>
+    </nav>
+   <div class="right">
+      <a href="LoginServlet" class="login"><span class="login-icon"><img src="${pageContext.request.contextPath}/images/login.png" width="25" height="25"></span>ログイン</a>
+      <a href="" class="logout"><span class="logout-icon"><img src="${pageContext.request.contextPath}/images/logout.png" width="30" height="30"></span>ログアウト</a>
+      <a href="StudentInfoServlet"><span class="reaction"><img src="${pageContext.request.contextPath}/images/reaction.png" width="45" height="45"></span></a>
+   </div>
+ </header>
+<!-- ヘッダーここまで -->
+
+<!-- 出席ボタン -->
+<input type="button" value="出席" id="attendBtn">
+
+<!-- 日付の表示 -->
+  <div class="calendar">
+     <img src="${pageContext.request.contextPath}/images/calendar.png" width="50" height="50"><p id="today"></p>
+  </div>
+
+<div class="stamps">
+   <div class="stamp1">
+     <img src="${pageContext.request.contextPath}/images/hatugen.png" width="150" height="150" >
+        <p>
+        <strong>積極的な発言</strong><br>
+        <span>仮３個</span>
+        </p>
+   </div>
+
+   <div class="stamp2">
+     <img src="${pageContext.request.contextPath}/images/challenge.png" width="150" height="150" >
+        <p>
+        <strong>挑戦</strong><br>
+        <span>仮１個</span>
+        </p>
+   </div>
+
+   <div class="stamp3">
+    <img src="${pageContext.request.contextPath}/images/goal.png" width="150" height="150">
+        <p>
+        <strong>達成</strong><br>
+        <span>仮１個</span>
+        </p>
+   </div>
+
+   <div class="stamp4">
+     <img src="${pageContext.request.contextPath}/images/kyouryoku.png" width="150" height="150">
+        <p>
+        <strong>協力</strong><br>
+        <span>仮２個</span>
+        </p>
+   </div>
+
+   <div class="stamp5">
+     <img src="${pageContext.request.contextPath}/images/syusseki.png" width="150" height="150" >
+        <p>
+        <strong>出席</strong><br>
+        <span>仮２１日</span>
+        </p>
+   </div>
+
+   <div class="stamp6">
+     <img src="${pageContext.request.contextPath}/images/sonota.png" width="150" height="150" >
+        <p>
+        <strong>その他</strong><br>
+        <span>仮０個</span>
+        </p>
+   </div>
+  </div>
+<!-- 児童のスタンプ獲得数画面終了 -->
+
+<!-- 児童の座席表 -->
 	<div class="seat_area">
 
-   <table class="seat_table">
+   <table id="seat_map" class="seat_table">
 
     <tr>
         <td><input type="button" value="伊藤" class="seat_btn"></td>
@@ -64,11 +147,30 @@
     <div class="bottom_area">
         <div class="teacher_desk">教卓</div>
 
-        <button class="ok_btn">OK</button>
+        <button id="ok_btn">OK</button>
     </div>
     
     <script>
 
+    /* 児童の座席選択 */
+    window.onload = function(){
+
+       const attendBtn = document.getElementById("attendBtn");
+       const seat_map = document.getElementById("seat_map");
+       const okBtn = document.getElementById("okBtn");
+
+       // 出席ボタン
+       attendBtn.onclick = function(){
+           seat_map.style.display = "block";
+       };
+
+       // OKボタン
+       okBtn.onclick = function(){
+           seat_map.style.display = "none";
+       };
+
+   };
+    
 const seats = document.querySelectorAll(".seat_btn");
 
 seats.forEach(seat => {
