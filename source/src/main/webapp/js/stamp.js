@@ -21,9 +21,9 @@ document.getElementById('today').textContent =
     const seat_map = document.getElementById("seat_map");
     const okBtn = document.getElementById("okBtn");
 
-    // 出席ボタン
-    attendBtn.onclick = function(){
-        seat_map.style.display = "block";
+	// 出席ボタン
+    attendanceBtn.onclick = function(){
+        seatArea.style.display = "block";
     };
 
     // OKボタン
