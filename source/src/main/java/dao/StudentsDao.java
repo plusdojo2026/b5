@@ -55,7 +55,7 @@ public class StudentsDao {
 			return student;
 		}
 		
-		public List<Students> getClassMenber(int grade,int class_number) {
+		public List<Students> getClassMember(int grade,int class_number) {
 			Connection conn = null;
 			List<Students> st = new ArrayList<Students>();
 			try {
