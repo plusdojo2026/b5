@@ -26,10 +26,24 @@ private static final long serialVersionUID = 1L;
 	
 	    //教師のIDから学年とクラスが一緒の児童を全て引っ張って来る(DAOを編集)
 	
-	
-		//児童を選択する
+	    //仮のメモ↓↓↓
+		//教師が児童を選択
+
+		//student_id を取得
+
+		//StampLogDaoでその児童のスタンプ履歴を取得
+		      
+		//各スタンプ履歴のreaction_idを確認
+
+		//reaction_id がある（NULLでない）ものについて、ReactionsDaoでリアクション情報を取得
+		  
+		//reaction_id に対応する parent_id（保護者）を特定
+
+		//「〇〇さんがリアクションしました」という通知情報を作る
+
+		//JSPに渡す
 		
-		
+		//0619↓↓↓
 		//選択した児童のスタンプ履歴を表示する
 	    // リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
