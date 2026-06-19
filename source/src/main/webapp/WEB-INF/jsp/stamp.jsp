@@ -91,6 +91,8 @@
 </main>
 <!-- 児童のスタンプ獲得数画面終了 -->
 
+<input type="button" value="出席" id="attendBtn">
+
 <!-- 児童の座席表 -->
 	<div class="seat_area">
 

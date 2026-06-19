@@ -25,9 +25,9 @@ public class JSPtestServlet extends HttpServlet{
 			student.setName("須藤");
 			st.add(student);
 		}
-		request.setAttribute("StudentsData",st);	
+		request.setAttribute("StudentsData",st);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/StudentSeat.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/student_seat.jsp");
 		dispatcher.forward(request, response);
 	}
 }
