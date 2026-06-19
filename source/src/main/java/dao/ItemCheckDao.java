@@ -23,21 +23,23 @@ public class ItemCheckDao {
 					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
 					"root", "password");
 			
-			String sql = "INSERT INTO ITEM_CHECK (student_id, date, item_id, is_cheked) "
-					   + "SELECT ?, ?, item_id, FALSE FROM ITEM_LISTS "
-					   + "WHERE date = ? AND grade = ? AND class_number = ? "
-					   + "AND item_id NOT IN ("
-					   + "SELECT item_id FROM ITEM_CHECK WHERE student_id = ? AND date = ?"
+			String sql = "INSERT INTO ITEM_CHECK (student_id, date, item_id, is_checked) "
+					   + "SELECT ?, ?, il.item_id, FALSE "
+					   + "FROM ITEM_LISTS il "
+					   + "JOIN STUDENTS s ON il.grade = s.grade AND il.class_number = s.class_number "
+					   + "WHERE s.id = ? AND il.date = ? "
+					   + "AND il.item_id NOT IN ("
+					   + "	SELECT item_id FROM ITEM_CHECK WHERE student_id = ? AND date = ?"
 					   + ")";
 			
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setInt(1, student_id);
 			pStmt.setString(2, date);
-			pStmt.setString(3, date);
-			pStmt.setInt(4, grade);
-			pStmt.setInt(5, class_number);
-			pStmt.setInt(6, student_id);
-			pStmt.setString(7, date);
+			pStmt.setInt(3, student_id);
+			pStmt.setString(4, date);
+			pStmt.setInt(5, student_id);
+			pStmt.setString(6, date);
+			
 
 			pStmt.executeUpdate();
 
