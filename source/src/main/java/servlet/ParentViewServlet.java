@@ -20,6 +20,7 @@ private static final long serialVersionUID = 1L;
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/parent_view.jsp");
 		dispatcher.forward(request, response);
 		
-		
+		//児童が所属するクラスの持ち物/宿題リストを取得する
+		//ItemListsDao,HwListsDaoに、student_idからそのクラスの持ち物,宿題リストを取得できるメソッドが必要
 	}
 }
