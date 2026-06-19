@@ -1,41 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
  pageEncoding="UTF-8"%>
+ 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>座席一覧|できたねスタンプ</title>
-<link rel="stylesheet" type="text/css"
-      href="${pageContext.request.contextPath}/css/stamp.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/stamp.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/student_info.css">      
 </head>
 <body>
 
 <!-- ヘッダー -->
- <header class="header">
-   <a href="StampServlet"><img src="${pageContext.request.contextPath}/images/logo.png" width="100" height="100"></a>
-   <div class="left">
-      <h1>できたねスタンプ</h1>
-      <p>児童のがんばりを記録しよう</p>
-   </div>
-    <nav class="nav">
-        <ul>
-            <li><a href="StampServlet">スタンプ一覧</a></li>
-            <li><a href="CreateListServlet">リスト作成</a></li>
-            <li><a href="HwCheckServlet">宿題チェック</a></li>
-        </ul>
-    </nav>
-   <div class="right">
-      <a href="LoginServlet" class="login"><span class="login-icon"><img src="${pageContext.request.contextPath}/images/login.png" width="25" height="25"></span>ログイン</a>
-      <a href="" class="logout"><span class="logout-icon"><img src="${pageContext.request.contextPath}/images/logout.png" width="30" height="30"></span>ログアウト</a>
-      <a href="StudentInfoServlet"><span class="reaction"><img src="${pageContext.request.contextPath}/images/reaction.png" width="45" height="45"></span></a>
-   </div>
- </header>
+ <header class="header">
+   <a href="StampServlet"><img src="${pageContext.request.contextPath}/images/logo.png" width="100" height="100"></a>
+   <div class="left">
+      <h1>できたねスタンプ</h1>
+      <p>児童のがんばりを記録しよう</p>
+   </div>
+    <nav class="nav">
+        <ul>
+            <li><a href="StampServlet">スタンプ一覧</a></li>
+            <li><a href="CreateListServlet">リスト作成</a></li>
+            <li><a href="HwCheckServlet">宿題チェック</a></li>
+        </ul>    
+    </nav>
+   <div class="right">
+      <a href="LoginServlet" class="login"><span class="login-icon"><img src="${pageContext.request.contextPath}/images/login.png" width="25" height="25"></span>ログイン</a> 
+      <a href="" class="logout"><span class="logout-icon"><img src="${pageContext.request.contextPath}/images/logout.png" width="30" height="30"></span>ログアウト</a> 
+      <a href="StudentInfoServlet"><span class="reaction"><img src="${pageContext.request.contextPath}/images/reaction.png" width="45" height="45"></span></a> 
+   </div>
+ </header>
 <!-- ヘッダーここまで -->
 
-<!-- 出席ボタン -->
-<input type="button" value="出席" id="attendBtn">
-
 <!-- 日付の表示 -->
+<main>
   <div class="calendar">
      <img src="${pageContext.request.contextPath}/images/calendar.png" width="50" height="50"><p id="today"></p>
   </div>
@@ -89,6 +88,7 @@
         </p>
    </div>
   </div>
+</main>
 <!-- 児童のスタンプ獲得数画面終了 -->
 
 <!-- 児童の座席表 -->
@@ -143,15 +143,29 @@
 </table>
 
     </div>
-    
-    <div class="bottom_area">
+    <!-- 教卓 -->
         <div class="teacher_desk">教卓</div>
-
+        
+	<!-- OKボタン -->
+	<div class="okArea">
         <button id="ok_btn">OK</button>
     </div>
     
     <script>
 
+    'use strict';
+
+  //日付の表示(js)
+
+  const now = new Date();
+
+  const month = now.getMonth() + 1;
+  const day = now.getDate();
+  const weekdays = ["日", "月", "火", "水", "木", "金", "土"];
+
+  document.getElementById('today').textContent =
+      `${month}月${day}日(${weekdays[now.getDay()]})`;
+    
     /* 児童の座席選択 */
     window.onload = function(){
 

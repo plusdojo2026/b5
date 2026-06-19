@@ -69,7 +69,6 @@ public class LoginServlet extends HttpServlet{
 			
 		} else { // ログイン失敗
 			
-
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 			dispatcher.forward(request, response);
 		}

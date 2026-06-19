@@ -26,6 +26,7 @@ private static final long serialVersionUID = 1L;
 			throws ServletException, IOException {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
+		
 		//取得したいデータ（スタンプの種類、誰に付与するか）
 		String stampId = request.getParameter("stamp_id");
 		String[] selectedStudents = request.getParameterValues("student");//student_idを取得したい
@@ -34,7 +35,19 @@ private static final long serialVersionUID = 1L;
 		
 		for(String s:selectedStudents) {
 			stampLogDao.addStampLog(Integer.parseInt(s),Integer.parseInt(stampId));
+		
+		
+		//児童データからgrade,class,numberを取得
+		
+		//StampLogにstamp_id,student_idを格納、（テキストも）
+		
+		//stamp_idのセッションを破棄
+		
+		
+			
+			
 		}
 	}
-	
 }
+
+//
