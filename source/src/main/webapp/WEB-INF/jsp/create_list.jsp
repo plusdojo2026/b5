@@ -26,9 +26,9 @@
 		    
 		<nav class="nav">     
 			<ul>
-					<li><a href="StampServlet">スタンプ一覧</a></li> 
-				<li><a href="CreateListServlet">リスト作成</a></li>             
-				<li><a href="HwCheckServlet">宿題チェック</a></li>         
+				<li><a href="StampServlet">スタンプ一覧</a></li> 
+				<li><a href="CreateListServlet">リスト作成</a></li>
+				<li><a href="HwCheckServlet">宿題チェック</a></li>
 			</ul>  
 		</nav>
 		   
@@ -66,10 +66,14 @@
 							</button>
 						</li>
 						<li>えのぐセット
-							<button onclick="deleteItem(this)">🚮</button>
+							<button onclick="deleteItem(this)">
+    						<img src="images/gomibako.png" width="20" height="20">
+							</button>
 						</li>
 						<li>すいとう（氷いっぱい）
-							<button onclick="deleteItem(this)">🚮</button>
+							<button onclick="deleteItem(this)">
+    						<img src="images/gomibako.png" width="20" height="20">
+							</button>
 						</li>
 					</ul>
 					<div class=item-input>
@@ -88,10 +92,14 @@
 				<div class="hw-body">
 					<ul>
 						<li>かんじドリル
-							<button onclick="deleteItem(this)">🚮</button>
+							<button onclick="deleteItem(this)">
+    						<img src="images/gomibako.png" width="20" height="20">
+							</button>
 						</li>
 						<li>けいさんドリル
-							<button onclick="deleteItem(this)">🚮</button>
+							<button onclick="deleteItem(this)">
+    						<img src="images/gomibako.png" width="20" height="20">
+							</button>
 						</li>
 					</ul>
 					<div class=hw-input>
