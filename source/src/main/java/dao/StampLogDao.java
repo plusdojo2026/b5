@@ -100,7 +100,7 @@ public class StampLogDao {
 		}
 	}
 	
-	public void addStampLog(int student_id, int stamp_id, String comment) {
+	public void addStampLog(int student_id, int stamp_id, String text) {
 		Connection conn = null;
 		try {
 			// JDBCドライバを読み込む
@@ -119,7 +119,7 @@ public class StampLogDao {
 			//引数のIDを上記のINSERT文の?に代入
 			pStmt.setString(1, String.valueOf(student_id));
 			pStmt.setString(2, String.valueOf(stamp_id));
-			pStmt.setString(3, comment);
+			pStmt.setString(3, text);
 			// INSERT文を実行
 			pStmt.executeQuery();
 			
