@@ -8,8 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.StampLogDao;
+import dto.Teachers;
 
 @WebServlet("/StampServlet")
 public class StampServlet extends HttpServlet{
@@ -17,6 +19,11 @@ private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		//セッションからログイン中の教師データを取得する
+		HttpSession session = request.getSession();
+		Teachers teacher = (Teachers) session.getAttribute("teacherData");
+		
 		// スタンプページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/stamp.jsp");
 		dispatcher.forward(request, response);
@@ -36,13 +43,18 @@ private static final long serialVersionUID = 1L;
 		for(String s:selectedStudents) {
 			stampLogDao.addStampLog(Integer.parseInt(s),Integer.parseInt(stampId));
 		
+		//セッションからログイン中の教師データを取得する
+		HttpSession session = request.getSession();
+		Teachers teacher = (Teachers) session.getAttribute("teacherData");
 		
-		//児童データからgrade,class,numberを取得
+		//セッションスコープにstamp_idを格納
 		
-		//StampLogにstamp_id,student_idを格納、（テキストも）
 		
-		//stamp_idのセッションを破棄
+		//StampLogテーブルにstamp_id,student_idを格納、（テキストも）
 		
+		
+		//セッションスコープからstamp_idの情報を破棄
+		session.removeAttribute("stamp_id");
 		
 			
 			
