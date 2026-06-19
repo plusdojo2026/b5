@@ -19,11 +19,8 @@ import dto.Students;
 public class StudentHomeServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// 児童のホームにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/student_home.jsp");
-		dispatcher.forward(request, response);
 		
-		// 1. セッションからログイン中の児童データを取得する
+		//セッションからログイン中の児童データを取得する
 		HttpSession session = request.getSession();
 		Students student = (Students) session.getAttribute("studentData");
 		
@@ -31,7 +28,17 @@ public class StudentHomeServlet extends HttpServlet{
 		ItemCheckDao icDao = new ItemCheckDao();
 		icDao.addItemLists(student.getId(), getServletInfo());
 		List<ItemCheck> studentItems = icDao.getCheckList(student.getId(), getServletInfo());
+		//JSPに渡すためにリクエストスコープに格納
+		request.setAttribute("itemList", studentItems);
+		
 		//クラスのスタンプ数を集計、それに応じて花に使う画像を取得、表示
-				
+		//スタンプ数を集計するために、student_idからクラスの全員のスタンプログを取得できるメソッドが必要
+		//そのログのリストでfor文を回して、その他以外のスタンプ数を集計する
+		//その数に応じて画像を変更する
+		
+		
+		// 児童のホームにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/student_home.jsp");
+		dispatcher.forward(request, response);
 	}
 }
