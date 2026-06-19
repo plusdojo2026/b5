@@ -41,4 +41,13 @@ public class StudentHomeServlet extends HttpServlet{
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/student_home.jsp");
 		dispatcher.forward(request, response);
 	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// リクエストパラメータを取得する
+		request.setCharacterEncoding("UTF-8");
+		
+		/*選んだ持ち物のチェックボックスを更新するために、
+		student_idとitem_lists_idを引数として、ItemCheckのis_checkedをtrueにするメソッドが必要*/
+	}
 }
