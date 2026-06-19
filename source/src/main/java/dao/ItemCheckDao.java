@@ -105,35 +105,8 @@ public class ItemCheckDao {
 		return checkList;
 	}
 
-	//チェックボックスが押されたら更新
-	public void updateCheckStatus(int id, boolean is_checked) {
-		Connection conn = null;
-		try {
-			// JDBCドライバを読み込む
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/B5?"
-					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
-					"root", "password");
-			
-			String sql = "UPDATE ITEM_CHECK SET is_checked = ? WHERE id = ?";
-			
-			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setBoolean(1, is_checked);
-			pStmt.setInt(2, id);
-
-			pStmt.executeUpdate();
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			if (conn != null) { 
-				try { 
-					conn.close();
-				} catch (SQLException e) { 
-					e.printStackTrace(); 
-				}
-			}
-		}
+	//チェックボックスが押されたら更新(StudentHomeServletで呼び出す)
+	public void updateCheckBox(int student_id, int item_lists_id) {
+		
 	}
 }

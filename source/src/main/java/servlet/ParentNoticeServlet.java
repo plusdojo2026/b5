@@ -22,15 +22,12 @@ private static final long serialVersionUID = 1L;
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/parent_notice.jsp");
 		dispatcher.forward(request, response);
 		
-		
 		//セッションスコープのstudent_idを参照し、児童に登録されているstamp_logの内容を取得する
 		HttpSession session = request.getSession();
 		session.getAttribute("student_id");
-			response.sendRedirect("/webapp/LoginServlet");
-			return;
+		session.getAttribute("stamp_id");
 		
-		//リアクション画像を取得(reactionsテーブルから)
-		
+		//
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -42,8 +39,18 @@ private static final long serialVersionUID = 1L;
 		String reactionId = request.getParameter("id");
 		StampLogDao stampLogDao = new StampLogDao();
 		stampLogDao.addReaction(Integer.parseInt(reactionId));
-
-		//画面更新
-		response.sendRedirect("/b5/ParentNoticeServlet");
+		
+		//リアクションボタンを押すと保護者の通知画面に遷移する
+		if (request.getParameter("button").equals("reaction")) {
+			response.sendRedirect("/b5/PrentNoticeServlet");
+		}
+		//ベルマークを押して保護者の通知画面に遷移する
+		else if (request.getParameter("button").equals("notice")) {
+			response.sendRedirect("/b5/PrentNoticeServlet");
+		}
+		//リストマークを押して保護者のリスト確認画面に遷移する
+		else if(request.getParameter("button").equals("lists")) {
+			response.sendRedirect("/b5/ParentViewServlet");
+		}
 	}
 }
