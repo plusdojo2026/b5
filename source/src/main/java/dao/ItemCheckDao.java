@@ -13,7 +13,7 @@ import dto.ItemCheck;
 public class ItemCheckDao {
 	
 	//ItemListsからの情報をコピーして児童ごとに格納する（というより最新のリストへの更新の方が正しいかも？）
-	public void addItemLists(int student_id, int grade, int class_number, String date) {
+	public void addItemLists(int student_id, String date) {
 		Connection conn = null;
 		try {
 			// JDBCドライバを読み込む
@@ -70,7 +70,7 @@ public class ItemCheckDao {
 					"root", "password");
 			
 			//itemsからitem_name,itemListsからそのほか情報をコピー
-			String sql = "SELECT ic.id, ic.student_id, ic.date, ic.item_id, ic.is_cheked, i.item_name "
+			String sql = "SELECT ic.id, ic.student_id, ic.date, ic.item_id, ic.is_checked, i.item_name "
 					   + "FROM ITEM_CHECK ic "
 					   + "JOIN ITEMS i ON ic.item_id = i.id "
 					   + "WHERE ic.student_id = ? AND ic.date = ?";
