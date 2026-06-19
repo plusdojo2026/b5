@@ -44,10 +44,21 @@ public class StudentHomeServlet extends HttpServlet{
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		//セッションからログイン中の児童データを取得する
+		HttpSession session = request.getSession();
+		Students student = (Students) session.getAttribute("studentData");
+		
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
+		String[] item_lists_id = request.getParameterValues("item_lists_id");
 		
 		/*選んだ持ち物のチェックボックスを更新するために、
-		student_idとitem_lists_idを引数として、ItemCheckのis_checkedをtrueにするメソッドが必要*/
+		student_idとitem_lists_idを引数として、ItemCheckのis_checkedをtrueにするメソッド(updateCheckBox(int student_id, int item_lists_id))が必要*/
+		ItemCheckDao icDao = new ItemCheckDao();
+		for(String i:item_lists_id) {
+			icDao.updateCheckBox(student.getId(),Integer.parseInt(i));
+		}
+		
 	}
 }
