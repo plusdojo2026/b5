@@ -39,56 +39,39 @@
   <div class="calendar">
      <img src="${pageContext.request.contextPath}/images/calendar.png" width="50" height="50"><p id="today"></p>
   </div>
+<form method="POST" action="StampServlet">
+	<div class="stamps">
+		<button type="submit" name="stamp_id" value="1" class="stamp_btn">
+			<img src="${pageContext.request.contextPath}/images/hatugen.png" width="150" height="150">
+			<p><strong>積極的な発言</strong></p>
+		</button>
 
-<div class="stamps">
-   <div class="stamp1">
-     <img src="${pageContext.request.contextPath}/images/hatugen.png" width="150" height="150" >
-        <p>
-        <strong>積極的な発言</strong><br>
-        <span>仮３個</span>
-        </p>
-   </div>
+		<button type="submit" name="stamp_id" value="2" class="stamp_btn">
+			<img src="${pageContext.request.contextPath}/images/challenge.png" width="150" height="150">
+			<p><strong>挑戦</strong></p>
+		</button>
 
-   <div class="stamp2">
-     <img src="${pageContext.request.contextPath}/images/challenge.png" width="150" height="150" >
-        <p>
-        <strong>挑戦</strong><br>
-        <span>仮１個</span>
-        </p>
-   </div>
+		<button type="submit" name="stamp_id" value="3" class="stamp_btn">
+			<img src="${pageContext.request.contextPath}/images/goal.png" width="150" height="150">
+			<p><strong>達成</strong></p>
+		</button>
 
-   <div class="stamp3">
-    <img src="${pageContext.request.contextPath}/images/goal.png" width="150" height="150">
-        <p>
-        <strong>達成</strong><br>
-        <span>仮１個</span>
-        </p>
-   </div>
+		<button type="submit" name="stamp_id" value="4" class="stamp_btn">
+			<img src="${pageContext.request.contextPath}/images/kyouryoku.png" width="150" height="150">
+			<p><strong>協力</strong></p>
+		</button>
 
-   <div class="stamp4">
-     <img src="${pageContext.request.contextPath}/images/kyouryoku.png" width="150" height="150">
-        <p>
-        <strong>協力</strong><br>
-        <span>仮２個</span>
-        </p>
-   </div>
-
-   <div class="stamp5">
-     <img src="${pageContext.request.contextPath}/images/syusseki.png" width="150" height="150" >
-        <p>
-        <strong>出席</strong><br>
-        <span>仮２１日</span>
-        </p>
-   </div>
-
-   <div class="stamp6">
-     <img src="${pageContext.request.contextPath}/images/sonota.png" width="150" height="150" >
-        <p>
-        <strong>その他</strong><br>
-        <span>仮０個</span>
-        </p>
-   </div>
-  </div>
+		<button type="submit" name="stamp_id" value="5" class="stamp_btn">
+			<img src="${pageContext.request.contextPath}/images/syusseki.png" width="150" height="150">
+			<p><strong>出席</strong></p>
+		</button>
+		
+		<button type="submit" name="stamp_id" value="6" class="stamp_btn">
+			<img src="${pageContext.request.contextPath}/images/sonota.png" width="150" height="150">
+			<p><strong>その他</strong></p>
+		</button>
+	</div>
+</form>
 </main>
 <!-- 児童のスタンプ獲得数画面終了 -->
 
