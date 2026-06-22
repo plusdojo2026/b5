@@ -1,37 +1,101 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html class="student_result">
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/student_result.css">
 <title>がんばり｜できたねスタンプ</title>
 </head>
 <body>
+
+<!-- ヘッダー -->   
 <header class="student_header">
 	
 	<div class="sun">
-		<img src="" alt="太陽の画像" class="sun_img">
+		<img src="${pageContext.request.contextPath}/images/sun.png" width="150" height="150" alt="太陽の画像" class="sun_img">
 	</div>
 	
-	<div class="date">
-		<img src="" alt="雲の画像" class="cloud_img">
-		<p class="date_text">6がつ11にち<br>もくようび</p>
+	<div class="cloud">
+		<img src="${pageContext.request.contextPath}/images/cloud.png" width="220" height="170" alt="雲の画像" class="cloud_img">
 	</div>
-		<div class="result">
+	
+    <div class="result">
 		<a href="student_result.jsp" class="sutudent_result">
-			<img src="" alt="雲の画像" class="cloud_img">
-			<span class="result_text">もとのがめんにもどれるよ</span>
+			<img src="${pageContext.request.contextPath}/images/cloud2.png" width="250" height="200" alt="雲の画像" class="cloud_img">
 		</a>
 	</div>
 </header>
-<main class="student_main">
+<!-- ヘッダーここまで -->
 
+<!-- メイン -->
+<main class="student_main">
+ <!-- 日付の表示とタイトル -->
+  <div class="calendar">
+     <img src="images/calendar2.png" width="50" height="50"><p id="today"></p>
+  </div>
+
+  <h1 id="today2"></h1>
+
+  <!-- ★児童のスタンプ獲得履歴 -->
+  <div class="stamps"> 
+   <div class="stamp1">
+     <img src="images/hatugen.png" width="150" height="150" >
+        <p>
+        <strong>はつげん</strong>
+        </p> 
+   </div> 
+
+   <div class="stamp2">
+     <img src="images/challenge.png" width="150" height="150" >
+        <p>
+        <strong>チャレンジ</strong>
+        </p> 
+   </div> 
+
+   <div class="stamp3">
+    <img src="images/goal.png" width="150" height="150">
+        <p>
+        <strong>ゴール</strong>
+        </p> 
+   </div> 
+
+   <div class="stamp4">
+     <img src="images/kyouryoku.png" width="150" height="150">
+        <p>
+        <strong>きょうりょく</strong> 
+        </p> 
+   </div> 
+
+   <div class="stamp5">
+     <img src="images/syusseki.png" width="150" height="150" >
+        <p>
+        <strong>しゅっせき</strong> 
+        </p>
+   </div> 
+
+   <div class="stamp6">
+     <img src="images/sonota.png" width="150" height="150" >
+        <p>
+        <strong>その他</strong>
+        </p> 
+   </div> 
+  </div> 
 </main>
+<!-- メインここまで -->
+
+<!-- フッター -->
 <footer class="student_footer">
 <div class="flower">
-	<img src="" alt="花のイラスト" class="flower_img">
+	<img src="images/sunflower.png" width="350" height="350" alt="花のイラスト" class="flower_img">
 </div>
-<img src="" alt="土のイラスト" class="ground_img">
+<img src="images/tuchi.png" width="1500" height="110" alt="土のイラスト" class="ground_img">
 </footer>
+<!-- フッターここまで -->
+
+<!-- javascript開始 -->
+<script src="${pageContext.request.contextPath}/js/student_result.js"></script>
+<!-- javascript終了 -->
+
 </body>
 </html>
