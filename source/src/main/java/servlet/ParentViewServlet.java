@@ -23,4 +23,8 @@ private static final long serialVersionUID = 1L;
 		//児童が所属するクラスの持ち物/宿題リストを取得する
 		//ItemListsDao,HwListsDaoに、student_idからそのクラスの持ち物,宿題リストを取得できるメソッドが必要
 	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+	}
 }
+

@@ -38,15 +38,16 @@ private static final long serialVersionUID = 1L;
 		//取得したいデータ（reactionテーブルのid）
 		String reactionId = request.getParameter("id");
 		StampLogDao stampLogDao = new StampLogDao();
-		stampLogDao.addReaction(Integer.parseInt(reactionId));
+		
 		
 		//リアクションボタンを押すと保護者の通知画面に遷移する
 		if (request.getParameter("button").equals("reaction")) {
-			response.sendRedirect("/b5/PrentNoticeServlet");
+			stampLogDao.addReaction(Integer.parseInt(reactionId));
+			response.sendRedirect("/b5/ParentNoticeServlet");
 		}
 		//ベルマークを押して保護者の通知画面に遷移する
 		else if (request.getParameter("button").equals("notice")) {
-			response.sendRedirect("/b5/PrentNoticeServlet");
+			response.sendRedirect("/b5/ParentNoticeServlet");
 		}
 		//リストマークを押して保護者のリスト確認画面に遷移する
 		else if(request.getParameter("button").equals("lists")) {

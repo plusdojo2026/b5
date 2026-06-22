@@ -52,16 +52,16 @@
 <footer>
 	<form action="ParentNoticeServlet" method="POST">
 	    <div class = "footer-icon">
-	        <ul class = "footer-nav">
-	        	<label>
-	        	<input type="button" name="button" value="notice">
-	            <li><a href="/java/ParentNoticeServlet"><img src= "${pageContext.request.contextPath}/images/p_notice2.png" width="30" height="30" alt = "通知画面"></a></li>
-	            </label>
-	            <label>
-	            <input type="button" name="button" value="lists">
-	            <li><a href="/java/ParentViewServlet"><img src= "${pageContext.request.contextPath}/images/p_list1.png" width="30" height="30" alt = "リスト画面"></a></li>
-				</label>
-	        </ul>
+	            <button type="submit" name="button" value="notice">
+		            <img src= "${pageContext.request.contextPath}/images/p_notice2.png" width="30" height="30" alt = "通知画面">
+	            </button>
+		</div>
+	</form>
+	<form action="ParentViewServlet" method="POST">
+		<div class = "footer-icon">
+	            <button type="submit" name="button" value="lists">
+		            <img src= "${pageContext.request.contextPath}/images/p_list1.png" width="30" height="30" alt = "リスト画面">
+	            </button>
 	    </div>
 	</form>
 </footer>
