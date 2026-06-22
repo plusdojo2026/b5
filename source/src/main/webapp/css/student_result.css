@@ -16,15 +16,19 @@
 
 .sun {
    margin-top: 20px;
-   margin-left: 50px;
+   margin-left: 70px;
 }
 
 .cloud{
-    margin: 10px 10px 10px 400px;
+    margin: 10px 10px 10px 250px;
 }
 
 .result {
-    margin-left: 150px;
+    margin-left: 300px;
+}
+
+.result:hover {
+  transform: scale(1.1);
 }
 
 /* 日付の表示とタイトル */
@@ -44,11 +48,11 @@ h1 {
     text-align: center;
 }
 .stamps {
-    display: grid;
-    margin: 0 40px 80px 40px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    display: flex;
+    justify-content: center;
     text-align: center; 
-    font-size: 20px;
+    font-size: 18px;
+    width: 100%;
 }
 
 .stamp1,.stamp2,.stamp3,.stamp4,.stamp5,.stamp6 {
@@ -58,7 +62,17 @@ h1 {
     background-color: white;
     border-radius: 16px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 3; 
 }
+
+.stamp3 {
+	margin-right: 200px;
+}
+
+.stamp4 {
+    margin-left: 200px;
+}
+
 /* フッター */
 footer {
     position: fixed;
@@ -69,14 +83,16 @@ footer {
 
 .flower {
     position: absolute;
-    bottom: 28px; /* 土の上に乗るように調整 */
+    bottom: 10px; /* 土の上に乗るように調整 */
     left: 50px;
     z-index: 1;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 2; /* 土より前 */
 }
 
 .ground_img {
     width: 100%;
     display: block;
+    z-index: 1;
 }
