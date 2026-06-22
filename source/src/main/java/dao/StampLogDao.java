@@ -210,4 +210,45 @@ public class StampLogDao {
 		}
 		return count;
 	}
+	
+	public int getClassStampCount(int grade, int class_number, int month) {
+		int count = 0;
+		Connection conn = null;
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/B5?"
+					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
+					"root", "password");
+			
+			// SQL文を準備する
+			String sql = "SELECT COUNT(*) FROM STAMP_LOG sl "
+					   + "JOIN STUDENTS s ON sl.student_id = s.id "
+					   + "WHERE s.grade = ? AND s.class_number = ? "
+					   + "AND MONTH(sl.created_at) = ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			
+			//引数のIDを上記のSELECT文の?に代入
+			pStmt.setInt(1, grade);
+			pStmt.setInt(2, class_number);
+			pStmt.setInt(3, month);
+			// INSERT文を実行
+			pStmt.executeQuery();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return count;
+	}
 }
