@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/* 座席エリア */
+.seat_area{
+    display: grid;
+    grid-template-columns: repeat(6, 140px);
+    gap: 20px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+/* 生徒1人分 */
+.seat_card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 140px;
+    height: 90px;
+
+    background: white;
+    border: 2px solid #92D050;
+    border-radius: 10px;
+    cursor: pointer;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* チェックボックス */
+.seat_card input{
+    margin-bottom: 10px;
+}
+
+/* OKボタン */
+.okArea{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.ok_btn{
+    width: 120px;
+    height: 50px;
+    font-size: 20px;
+}

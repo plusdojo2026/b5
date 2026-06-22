@@ -35,7 +35,7 @@ private static final long serialVersionUID = 1L;
 		
 		//取得したいデータ（スタンプの種類）
 		String stampId = request.getParameter("stamp_id");
-		if(stampId.equals("5")){
+		if(stampId.equals("6")){
 			String text = request.getParameter("text");
 			//セッションスコープにstamp_idとtextを格納
 			HttpSession session = request.getSession();
@@ -47,6 +47,7 @@ private static final long serialVersionUID = 1L;
 			HttpSession session = request.getSession();
 			session.setAttribute("stamp_id",stampId);
 		}
-
+		
+		response.sendRedirect("/b5/StudentSeatServlet");
 	}
 }
