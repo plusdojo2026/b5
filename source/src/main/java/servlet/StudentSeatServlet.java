@@ -61,22 +61,25 @@ private static final long serialVersionUID = 1L;
 		request.setCharacterEncoding("UTF-8");
 		
 		//取得したいデータ（スタンプの種類,選択した児童のリスト）
-		int stamp_id = (int) session.getAttribute("stamp_id");
+		String stamp_id = (String) session.getAttribute("stamp_id");
 		String[] selectedStudents = request.getParameterValues("student");//student_idを取得したい
 		
 		StampLogDao stampLogDao = new StampLogDao();
 		//その他を選んだ時の処理（テキストも挿入する）
-		if(stamp_id== 5) {
+		if(stamp_id.equals("5")) {
 			String text = (String) session.getAttribute("text");
 			for(String s:selectedStudents) {
-				stampLogDao.addStampLog(Integer.parseInt(s),stamp_id,text);
+				stampLogDao.addStampLog(Integer.parseInt(s),Integer.getInteger(stamp_id),text);
 			}
+			session.removeAttribute("text");
+			session.removeAttribute("stamp_id");
 		}
 		//その対外を選んだ時の処理（スタンプIDとStudentIDを挿入）
 		else {
 			for(String s:selectedStudents) {
-				stampLogDao.addStampLog(Integer.parseInt(s),stamp_id);
+				stampLogDao.addStampLog(Integer.parseInt(s),Integer.getInteger(stamp_id));
 			}
+			session.removeAttribute("stamp_id");
 		}
 
 	}
