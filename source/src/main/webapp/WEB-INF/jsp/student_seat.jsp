@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<form method="POST" action="StampServlet">
+<form method="POST" action="StudentSeatServlet">
 <c:forEach var="s" items="${StudentsData}">
 	<input type="checkbox" name="student" value="${s.id}">
 	<label for="name">${s.name}</label>

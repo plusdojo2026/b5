@@ -63,7 +63,7 @@ private static final long serialVersionUID = 1L;
 		//取得したいデータ（スタンプの種類,選択した児童のリスト）
 		String stamp_id = (String) session.getAttribute("stamp_id");
 		String[] selectedStudents = request.getParameterValues("student");//student_idを取得したい
-		
+		stamp_id = "1";
 		StampLogDao stampLogDao = new StampLogDao();
 		//その他を選んだ時の処理（テキストも挿入する）
 		if(stamp_id.equals("5")) {
@@ -77,9 +77,8 @@ private static final long serialVersionUID = 1L;
 		//その対外を選んだ時の処理（スタンプIDとStudentIDを挿入）
 		else {
 			for(String s:selectedStudents) {
-				stampLogDao.addStampLog(Integer.parseInt(s),Integer.getInteger(stamp_id));
-			}
-			session.removeAttribute("stamp_id");
+				stampLogDao.addStampLog(Integer.parseInt(s),Integer.parseInt(stamp_id));		}
+				session.removeAttribute("stamp_id");
 		}
 
 	}
