@@ -40,44 +40,44 @@
   <!-- ★児童のスタンプ獲得履歴 -->
   <div class="stamps"> 
    <div class="stamp1">
-     <img src="images/hatugen.png" width="150" height="150" >
+     <img src="images/hatugen.png" width="100" height="100" >
         <p>
         <strong>はつげん</strong>
         </p> 
    </div> 
 
    <div class="stamp2">
-     <img src="images/challenge.png" width="150" height="150" >
+     <img src="images/challenge.png" width="100" height="100" >
         <p>
         <strong>チャレンジ</strong>
         </p> 
    </div> 
 
    <div class="stamp3">
-    <img src="images/goal.png" width="150" height="150">
+    <img src="images/goal.png" width="100" height="100">
         <p>
         <strong>ゴール</strong>
         </p> 
    </div> 
 
    <div class="stamp4">
-     <img src="images/kyouryoku.png" width="150" height="150">
+     <img src="images/kyouryoku.png" width="100" height="100">
         <p>
         <strong>きょうりょく</strong> 
         </p> 
    </div> 
 
    <div class="stamp5">
-     <img src="images/syusseki.png" width="150" height="150" >
+     <img src="images/syusseki.png" width="100" height="100" >
         <p>
         <strong>しゅっせき</strong> 
         </p>
    </div> 
 
    <div class="stamp6">
-     <img src="images/sonota.png" width="150" height="150" >
+     <img src="images/sonota.png" width="100" height="100" >
         <p>
-        <strong>その他</strong>
+        <strong>そのた</strong>
         </p> 
    </div> 
   </div> 
@@ -89,7 +89,7 @@
 <div class="flower">
 	<img src="images/sunflower.png" width="350" height="350" alt="花のイラスト" class="flower_img">
 </div>
-<img src="images/tuchi.png" width="1500" height="110" alt="土のイラスト" class="ground_img">
+<img src="images/tuchi.png" width="1500" height="150" alt="土のイラスト" class="ground_img">
 </footer>
 <!-- フッターここまで -->
 
