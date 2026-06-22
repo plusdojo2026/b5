@@ -36,7 +36,7 @@ public class StudentResultServlet extends HttpServlet{
 		StampLogDao logDao = new StampLogDao();
 		int[] stampCount = new int[5];
 		
-		for(int i = 0; i< stampCount.length; i++){
+		for(int i = 1; i <= stampCount.length; i++){
 			stampCount[i] = logDao.getStampCount(student_id, i, month);
 		}
 		//スタンプ数をリクエストスコープに格納

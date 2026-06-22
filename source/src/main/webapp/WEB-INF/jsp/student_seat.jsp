@@ -10,6 +10,7 @@
 <body>
 <input type="button" value="出席" id="attendBtn">
 
+
 <!-- 児童の座席表 -->
 	<div class="seat_area">
 
@@ -69,7 +70,8 @@
 	<div class="okArea">
         <button id="ok_btn">OK</button>
     </div>
-<form method="POST" action="StampServlet">
+<form method="POST" action="StudentSeatServlet">
+
 <c:forEach var="s" items="${StudentsData}">
 	<input type="checkbox" name="student" value="${s.id}">
 	<label for="name">${s.name}</label>

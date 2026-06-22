@@ -29,7 +29,7 @@ public class StampLogDao {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			
 			//引数のIDを上記のSELECT文の?に代入
-			pStmt.setString(1, String.valueOf(student_id));
+			pStmt.setInt(1, student_id);
 
 			// SELECT文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
@@ -80,11 +80,11 @@ public class StampLogDao {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			
 			//引数のIDを上記のSELECT文の?に代入
-			pStmt.setString(1, String.valueOf(student_id));
-			pStmt.setString(2, String.valueOf(stamp_id));
+			pStmt.setInt(1, student_id);
+			pStmt.setInt(2, stamp_id);
 
 			// INSERT文を実行
-			pStmt.executeQuery();
+			pStmt.executeUpdate();
 			
 		}catch (Exception e) {
 			e.printStackTrace();
@@ -121,7 +121,7 @@ public class StampLogDao {
 			pStmt.setString(2, String.valueOf(stamp_id));
 			pStmt.setString(3, text);
 			// INSERT文を実行
-			pStmt.executeQuery();
+			pStmt.executeUpdate();
 			
 		}catch (Exception e) {
 			e.printStackTrace();
@@ -157,7 +157,7 @@ public class StampLogDao {
 			pStmt.setString(1, String.valueOf(reaction_id));
 
 			// INSERT文を実行
-			pStmt.executeQuery();
+			pStmt.executeUpdate();
 			
 		}catch (Exception e) {
 			e.printStackTrace();
