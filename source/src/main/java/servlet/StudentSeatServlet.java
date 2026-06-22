@@ -72,7 +72,7 @@ private static final long serialVersionUID = 1L;
 		if(stamp_id.equals("6")) {
 			String text = (String) session.getAttribute("text");
 			for(String s:selectedStudents) {
-				stampLogDao.addStampLog(Integer.parseInt(s),Integer.getInteger(stamp_id),text);
+				stampLogDao.addStampLog(Integer.parseInt(s),Integer.parseInt(stamp_id),text);
 			}
 			session.removeAttribute("text");
 			session.removeAttribute("stamp_id");

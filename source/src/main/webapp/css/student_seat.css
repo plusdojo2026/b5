@@ -1,58 +1,59 @@
 @charset "UTF-8";
+
 /* 座席エリア */
-.seat_area{
-    display: grid;
-    grid-template-columns: repeat(6, 140px);
-    gap: 20px;
-    justify-content: center;
-    margin-top: 50px;
+.seat_area {
+	display: grid;
+	grid-template-columns: repeat(6, 140px);
+	gap: 20px;
+	justify-content: center;
+	margin-top: 50px;
 }
 
-/* 生徒1人分 */
-.seat_card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.seat_card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 
-    width: 140px;
-    height: 90px;
-
-    background: white;
-    border: 2px solid #92D050;
-    border-radius: 10px;
-    cursor: pointer;
-
-    font-size: 20px;
-    font-weight: bold;
+	width: 140px;
+	height: 90px;
+	cursor: pointer;
 }
 
-.seat_btn{
-    width:120px;
-    height:80px;
+/* ボタンの見た目（seat_btn） */
+.seat_btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-    border:2px solid #92D050;
-    border-radius:10px;
-    background:white;
+	width: 120px;
+	height: 80px;
 
-    font-size:20px;
-    font-weight:bold;
-    cursor:pointer;
+	border: 2px solid #92D050;
+	border-radius: 10px;
+	background: white;
+
+	font-size: 20px;
+	font-weight: bold;
+	color: #333;
+	transition: background 0.2s, color 0.2s;
 }
 
-.seat_btn.selected{
-    background:#92D050;
-    color:white;
+/* チェックボックスがONになった時のデザイン */
+input[type="checkbox"]:checked + .seat_btn {
+	background: #92D050;
+	color: white;
 }
 
 /* OKボタン */
-.okArea{
-    text-align: center;
-    margin-top: 40px;
+.okArea {
+	text-align: center;
+	margin-top: 40px;
 }
 
-.ok_btn{
-    width: 120px;
-    height: 50px;
-    font-size: 20px;
+.ok_btn {
+	width: 120px;
+	height: 50px;
+	font-size: 20px;
+	cursor: pointer;
 }

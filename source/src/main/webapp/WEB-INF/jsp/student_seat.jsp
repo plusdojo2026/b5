@@ -26,25 +26,12 @@ pageEncoding="UTF-8"%>
      生徒一覧をカード形式で表示する
 =================================================== -->
 <div class="seat_area">
-
-    <!--
-        StudentsDataの中身を1件ずつ取り出す
-        var="s"
-        → 取り出した生徒1人分をsとして扱う
-        例)s.id   → 生徒ID
-       		 s.name → 生徒名
-    -->
-    
-    
-<!-- 生徒1人分の座席カード -->
-	<c:forEach var="s" items="${StudentsData}">
-    	<button type="button"
-            class="seat_btn"
-            data-id="${s.id}">
-        ${s.name}
-    	</button>
-	</c:forEach>
-    
+    <c:forEach var="s" items="${StudentsData}">
+    	<label class="seat_card">
+    		<input type="checkbox" name="student" value="${s.id}" style="display: none;">
+			<span class="seat_btn">${s.name}</span>
+		</label>
+    </c:forEach>
 </div>
 
 <!-- ==================================================
@@ -59,6 +46,6 @@ pageEncoding="UTF-8"%>
 
 
 </form>
-<script src="<%=request.getContextPath()%>/js/student_seat.js?v=1"></script>
+
 </body>
 </html>
