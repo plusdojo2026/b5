@@ -8,8 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>教師のリスト作成｜できたねスタンプ</title>
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/create_list.css?v=9999">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/create_list.css">
 <script src="<%=request.getContextPath()%>/js/create_list.js?v=1"></script>
 </head>
 
