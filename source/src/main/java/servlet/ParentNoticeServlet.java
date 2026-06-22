@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.StampLogDao;
+import dto.StampLog;
+import dto.Students;
 
 @WebServlet("/ParentNoticeServlet")
 public class ParentNoticeServlet extends HttpServlet{
@@ -23,11 +26,14 @@ private static final long serialVersionUID = 1L;
 		dispatcher.forward(request, response);
 		
 		//セッションスコープのstudent_idを参照し、児童に登録されているstamp_logの内容を取得する
+		//ログインしている児童データを取得
 		HttpSession session = request.getSession();
-		session.getAttribute("student_id");
-		session.getAttribute("stamp_id");
+		Students student = (Students) session.getAttribute("studentData");
 		
-		//
+		//必要な変数を取得
+		int student_id = student.getId();
+		StampLogDao logDao = new StampLogDao();
+		List<StampLog> stLog = logDao.getStampLogByStudentID(student_id);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -38,7 +44,6 @@ private static final long serialVersionUID = 1L;
 		//取得したいデータ（reactionテーブルのid）
 		String reactionId = request.getParameter("id");
 		StampLogDao stampLogDao = new StampLogDao();
-		
 		
 		//リアクションボタンを押すと保護者の通知画面に遷移する
 		if (request.getParameter("button").equals("reaction")) {
