@@ -6,8 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>座席一覧|できたねスタンプ</title>
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/stamp.css?v=9999">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/stamp.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/student_info.css">      
+ <script src="<%=request.getContextPath()%>/js/stamp.js?v=1"></script>
 </head>
 <body>
 
@@ -91,6 +93,8 @@
 </main>
 <!-- 児童のスタンプ獲得数画面終了 -->
 
+<input type="button" value="出席" id="attendBtn">
+
 <!-- 児童の座席表 -->
 	<div class="seat_area">
 
@@ -150,54 +154,6 @@
 	<div class="okArea">
         <button id="ok_btn">OK</button>
     </div>
-    
-    <script>
-
-    'use strict';
-
-  //日付の表示(js)
-
-  const now = new Date();
-
-  const month = now.getMonth() + 1;
-  const day = now.getDate();
-  const weekdays = ["日", "月", "火", "水", "木", "金", "土"];
-
-  document.getElementById('today').textContent =
-      `${month}月${day}日(${weekdays[now.getDay()]})`;
-    
-    /* 児童の座席選択 */
-    window.onload = function(){
-
-       const attendBtn = document.getElementById("attendBtn");
-       const seat_map = document.getElementById("seat_map");
-       const okBtn = document.getElementById("okBtn");
-
-       // 出席ボタン
-       attendBtn.onclick = function(){
-           seat_map.style.display = "block";
-       };
-
-       // OKボタン
-       okBtn.onclick = function(){
-           seat_map.style.display = "none";
-       };
-
-   };
-    
-const seats = document.querySelectorAll(".seat_btn");
-
-seats.forEach(seat => {
-
-    seat.addEventListener("click", function(){
-
-        this.classList.toggle("selected");
-
-    });
-
-});
-
-</script>
 </body>
 </html>
 

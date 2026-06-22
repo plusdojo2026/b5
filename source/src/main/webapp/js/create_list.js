@@ -1,3 +1,8 @@
+/**
+ * 
+ */
+ 'use strict';
+ 
 //更新//
 function updateList() {
 

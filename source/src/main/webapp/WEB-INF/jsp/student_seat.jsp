@@ -11,7 +11,7 @@
 
 <form method="POST" action="StampServlet">
 <c:forEach var="s" items="${StudentsData}">
-	<input type="checkbox" value="${s.id}">
+	<input type="checkbox" name="student" value="${s.id}">
 	<label for="name">${s.name}</label>
 </c:forEach>
 <input type="submit" value="OK">

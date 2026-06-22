@@ -66,7 +66,7 @@ public class StudentsDao {
 						+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
 						"root", "password");
 				// SELECT文を準備する
-				String sql = "SELECT * FROM students WHERE grade=?,class_number";
+				String sql = "SELECT * FROM students WHERE grade=? AND class_number=?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 				//引数のuserIDを上記のSELECT文の?に代入
 				pStmt.setInt(1, grade);
@@ -75,7 +75,7 @@ public class StudentsDao {
 				// SELECT文を実行し、結果表を取得する
 				ResultSet rs = pStmt.executeQuery();
 				// IDが一致するユーザーがいればオブジェクトに詰める（rs.next() == true → 一致するものがあったということ）
-				if(rs.next()) {
+				while(rs.next()) {
 					Students  student = new Students();
 					student.setId(rs.getInt("id"));
 					student.setUser_id(rs.getInt("user_id"));
