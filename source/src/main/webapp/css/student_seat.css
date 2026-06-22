@@ -27,9 +27,22 @@
     font-weight: bold;
 }
 
-/* チェックボックス */
-.seat_card input{
-    margin-bottom: 10px;
+.seat_btn{
+    width:120px;
+    height:80px;
+
+    border:2px solid #92D050;
+    border-radius:10px;
+    background:white;
+
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.seat_btn.selected{
+    background:#92D050;
+    color:white;
 }
 
 /* OKボタン */
