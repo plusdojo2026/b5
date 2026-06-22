@@ -3,27 +3,27 @@
  */
  'use strict';
  
- //日付の表示(js)
+ window.onload = function() {
+//日付と曜日//
+    const now = new Date();
 
-const now = new Date();
+    const week = ["日","月","火","水","木","金","土"];
 
-const month = now.getMonth() + 1;
-const day = now.getDate();
-const weekdays = ["日", "月", "火", "水", "木", "金", "土"];
+    const month = now.getMonth() + 1;
+    const day = now.getDate();
+    const dayOfWeek = week[now.getDay()];
 
-document.getElementById('today').textContent =
-    `${month}月${day}日(${weekdays[now.getDay()]})`;
+    document.getElementById("today").innerHTML =
+        month + "月" + day + "日（" + dayOfWeek + "）";
  
  /* 児童の座席選択 */
- window.onload = function(){
-
     const attendBtn = document.getElementById("attendBtn");
     const seat_map = document.getElementById("seat_map");
-    const okBtn = document.getElementById("okBtn");
+    const okBtn = document.getElementById("ok_btn");
 
 	// 出席ボタン
-    attendanceBtn.onclick = function(){
-        seatArea.style.display = "block";
+    attendBtn.onclick = function(){
+        seat_map.style.display = "block";
     };
 
     // OKボタン

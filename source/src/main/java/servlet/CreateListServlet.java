@@ -49,8 +49,9 @@ public class CreateListServlet extends HttpServlet{
 		}
 	}
 }
-/*
 
+
+/*
 ① 教師がヘッダーの「リスト作成」をクリックする
                 ↓ doGet
 ② create_list.jsp（リスト作成画面）を表示する
@@ -72,5 +73,4 @@ public class CreateListServlet extends HttpServlet{
 （未実装）
                 ↓
 ⑩ MySQLに保存される
-              
 */
