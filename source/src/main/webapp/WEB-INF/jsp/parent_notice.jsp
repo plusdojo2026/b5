@@ -31,39 +31,38 @@
         <div class = "list">
             <img src= "${pageContext.request.contextPath}/images/hatugen.png" width="80" height="80">(仮)積極的な発言<br>
         </div>
-        <img src="${pageContext.request.contextPath}/images/reaction1.png" width="30" height="30">
+        
         <div class = "list">
             <img src= "${pageContext.request.contextPath}/images/challenge.png" width="80" height="80">(仮)挑戦<br>
         </div>
     </div>
 
+	<form>
+	<input type="image" class="reaction" alt="リアクションボタン" name="button" value="reaction" src="${pageContext.request.contextPath}/images/reaction3.png" width="30" height="30"/>
+	<input type="image" alt="リアクションボタン" name="button" value="reaction" src="${pageContext.request.contextPath}/images/reaction4.png" width="30" height="30"/>
+	</form>
+	
     <p>持ち物リストが更新されました！</p>
 
-<!-- 保護者のリアクション画面開始 --> 
-<form>
-<input type="image" alt="リアクションボタン" name="button" value="reaction" src="${pageContext.request.contextPath}/images/reaction1.png" />
-<input type="image" alt="リアクションボタン" name="button" value="reaction" src="${pageContext.request.contextPath}/images/reaction2.png" />
-<input type="image" alt="リアクションボタン" name="button" value="reaction" src="${pageContext.request.contextPath}/images/reaction3.png" />
-<input type="image" alt="リアクションボタン" name="button" value="reaction" src="${pageContext.request.contextPath}/images/reaction4.png" />
-</form>
+<!-- 保護者のリアクション画面終了 --> 
+
 </main>
         
 <!-- フッター開始 -->	
 <footer>
-	<form action="ParentNoticeServlet" method="POST">
-	    <div class = "footer-icon">
-	            <button type="submit" name="button" value="notice">
-		            <img src= "${pageContext.request.contextPath}/images/p_notice2.png" width="30" height="30" alt = "通知画面">
-	            </button>
-		</div>
+ <div class = "footer-icon">
+	<form action="ParentNoticeServlet" method="POST">  
+        <button type="submit" name="button" value="notice">
+         <img src= "${pageContext.request.contextPath}/images/p_notice2.png" width="30" height="30" alt = "通知画面">
+        </button>
+		
 	</form>
 	<form action="ParentViewServlet" method="POST">
-		<div class = "footer-icon">
-	            <button type="submit" name="button" value="lists">
-		            <img src= "${pageContext.request.contextPath}/images/p_list1.png" width="30" height="30" alt = "リスト画面">
-	            </button>
-	    </div>
+		<button type="submit" name="button" value="lists">
+		        <img src= "${pageContext.request.contextPath}/images/p_list1.png" width="30" height="30" alt = "リスト画面">
+	    </button>
 	</form>
+	</div>
 </footer>
 <!-- フッター終了 -->
  

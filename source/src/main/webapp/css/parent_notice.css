@@ -81,9 +81,16 @@ main {
     align-items: center;
 }
 
-.footer-nav {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+/*フッター*/
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    
+}
+
+.footer-icon {
     text-align: center; 
     font-size: 20px;
     border: 2px solid #CAD3DD;
@@ -91,16 +98,19 @@ main {
     padding: 10px 0px 10px 0px ;
     list-style: none;
     background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
-li:first-child {
+
+form:first-child {
     border-right: 1px solid #CAD3DD;
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+button {
+    border: none;       
+    background: none;  
+    padding: 0;         
 }
+
 }
