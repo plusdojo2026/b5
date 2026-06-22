@@ -36,7 +36,7 @@ private static final long serialVersionUID = 1L;
 		List<Students> st = sDao.getClassMember(grade,class_number);
 		//児童一覧をリクエストスコープに格納
 		request.setAttribute("StudentsData",st);
-		// スタンプページにフォワードする
+		// Student_seatページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/student_seat.jsp");
 		dispatcher.forward(request, response);
 		
