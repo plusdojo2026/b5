@@ -9,7 +9,7 @@ pageEncoding="UTF-8"%>
 <meta charset="UTF-8">
 <title>座席表｜できたねスタンプ</title>
 <link rel="stylesheet"
-    href="<%=request.getContextPath()%>/css/student_seat.css?v=9999">
+    href="<%=request.getContextPath()%>/css/student_seat.css?v=123456">
 </head>
 
 <body>

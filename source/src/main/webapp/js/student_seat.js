@@ -1,6 +1,6 @@
 'use strict';
 
-/*座席ボタンクリック*/
+/*座席ボタンクリックすると緑になる*/
 const seats = document.querySelectorAll(".seat_btn");
 
 seats.forEach(seat => {
