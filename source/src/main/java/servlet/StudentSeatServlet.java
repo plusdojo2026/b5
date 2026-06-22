@@ -12,8 +12,8 @@ import javax.servlet.http.HttpSession;
 
 import dto.Teachers;
 
-@WebServlet("/StampServlet")
-public class StampServlet extends HttpServlet{
+@WebServlet("/StudentSeatServlet")
+public class StudentSeatServlet extends HttpServlet{
 private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -22,6 +22,9 @@ private static final long serialVersionUID = 1L;
 		//セッションからログイン中の教師データを取得する
 		HttpSession session = request.getSession();
 		Teachers teacher = (Teachers) session.getAttribute("teacherData");
+		
+		//
+		
 		
 		// スタンプページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/stamp.jsp");
