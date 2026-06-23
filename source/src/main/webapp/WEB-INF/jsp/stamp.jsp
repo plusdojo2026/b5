@@ -41,27 +41,27 @@
   </div>
 <form method="POST" action="StampServlet">
 	<div class="stamps">
-		<button type="submit" name="stamp_id" value="1" class="stamp_btn">
+		<button type="submit" name="stamp_id" value="2" class="stamp_btn">
 			<img src="${pageContext.request.contextPath}/images/hatugen.png" width="150" height="150">
 			<p><strong>積極的な発言</strong></p>
 		</button>
 
-		<button type="submit" name="stamp_id" value="2" class="stamp_btn">
+		<button type="submit" name="stamp_id" value="3" class="stamp_btn">
 			<img src="${pageContext.request.contextPath}/images/challenge.png" width="150" height="150">
 			<p><strong>挑戦</strong></p>
 		</button>
 
-		<button type="submit" name="stamp_id" value="3" class="stamp_btn">
+		<button type="submit" name="stamp_id" value="4" class="stamp_btn">
 			<img src="${pageContext.request.contextPath}/images/goal.png" width="150" height="150">
 			<p><strong>達成</strong></p>
 		</button>
 
-		<button type="submit" name="stamp_id" value="4" class="stamp_btn">
+		<button type="submit" name="stamp_id" value="5" class="stamp_btn">
 			<img src="${pageContext.request.contextPath}/images/kyouryoku.png" width="150" height="150">
 			<p><strong>協力</strong></p>
 		</button>
 
-		<button type="submit" name="stamp_id" value="5" class="stamp_btn">
+		<button type="submit" name="stamp_id" value="0" class="stamp_btn">
 			<img src="${pageContext.request.contextPath}/images/syusseki.png" width="150" height="150">
 			<p><strong>出席</strong></p>
 		</button>

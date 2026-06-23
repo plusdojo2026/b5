@@ -193,8 +193,12 @@ public class StampLogDao {
 			pStmt.setInt(1, student_id);
 			pStmt.setInt(2, stamp_id);
 			pStmt.setInt(3, month);
-			// INSERT文を実行
-			pStmt.executeQuery();
+			// SELECT文を実行
+			ResultSet rs = pStmt.executeQuery();
+			
+			if (rs.next()) {
+				count = rs.getInt(1);
+			}
 			
 		}catch (Exception e) {
 			e.printStackTrace();
@@ -234,9 +238,12 @@ public class StampLogDao {
 			pStmt.setInt(1, grade);
 			pStmt.setInt(2, class_number);
 			pStmt.setInt(3, month);
-			// INSERT文を実行
-			pStmt.executeQuery();
+			// SELECT文を実行
+			ResultSet rs = pStmt.executeQuery();
 			
+			if (rs.next()) {
+				count = rs.getInt(1);
+			}
 		}catch (Exception e) {
 			e.printStackTrace();
 		} finally {

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html class="student_result">
 <head>
@@ -40,35 +41,35 @@
   <!-- ★児童のスタンプ獲得履歴 -->
   <div class="stamps"> 
    <div class="stamp1">
-     <img src="images/hatugen.png" width="100" height="100" >
+     <img src="images/hatugen.png" width="${100 + (stampCounts[1] * 10)}" height="${100 + (stampCounts[1] * 10)}" >
         <p>
         <strong>はつげん</strong>
         </p> 
    </div> 
 
    <div class="stamp2">
-     <img src="images/challenge.png" width="100" height="100" >
+     <img src="images/challenge.png" width="${100 + (stampCounts[2] * 10)}" height="${100 + (stampCounts[2] * 10)}">
         <p>
         <strong>チャレンジ</strong>
         </p> 
    </div> 
 
    <div class="stamp3">
-    <img src="images/goal.png" width="100" height="100">
+    <img src="images/goal.png" width="${100 + (stampCounts[3] * 10)}" height="${100 + (stampCounts[3] * 10)}">
         <p>
         <strong>ゴール</strong>
         </p> 
    </div> 
 
    <div class="stamp4">
-     <img src="images/kyouryoku.png" width="100" height="100">
+     <img src="images/kyouryoku.png" width="${100 + (stampCounts[4] * 10)}" height="${100 + (stampCounts[4] * 10)}">
         <p>
         <strong>きょうりょく</strong> 
         </p> 
    </div> 
 
    <div class="stamp5">
-     <img src="images/syusseki.png" width="100" height="100" >
+     <img src="images/syusseki.png" width="${100 + (stampCounts[0] * 10)}" height="${100 + (stampCounts[0] * 10)}" >
         <p>
         <strong>しゅっせき</strong> 
         </p>
