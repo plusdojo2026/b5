@@ -4,15 +4,7 @@ html {
 p {
 	text-align: center;
 }
-/* 日付の表示(CSS) */
-.calendar {
-   	display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    font-size: 30px;
-    margin-top: 30px;
-}
+
 .lists {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -23,37 +15,77 @@ p {
     width: 100%;
     box-sizing: border-box;
 }
-footer {
-	background-color: #ffffff;
-	border: 2px solid #CAD3DD;
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
 
-.footer-nav {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    list-style: none;
-}
 
 /* モバイル対応 */
 @media(max-width: 767px){
-	.lists {
-		display: grid;
-		grid-template-columns: 1fr;
-		list-style: none;
-		gap: 20px;
-	}
+	body {
+    color: #4D586D;
+}
 
-    .footer-nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    main {
-        padding: 0 4%;
-    }
+.header {
+  color: #CAD3DD;
+  background-color: white;
+  text-align: center;
+  border: 2px solid #CAD3DD;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0px 10px 0px ;
+  box-sizing: border-box;
+} 
+
+.name {
+    color: #4D586D;
+}
+
+main {
+    padding-top: 60px;
+}
+
+.update-date{
+  color: #4D586D;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #CAD3DD;
+  border-radius: 16px;
+  margin: 0px 50px 0px 50px;
+  padding: 0px 20px 0px 20px;
+  text-align: center;
+}
+
+/*フッター*/
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    
+}
+
+.footer-icon {
+    text-align: center; 
+    font-size: 20px;
+    border: 2px solid #CAD3DD;
+    margin-bottom: 0;
+    padding: 10px 0px 10px 0px ;
+    list-style: none;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+form:first-child {
+    border-right: 1px solid #CAD3DD;
+}
+
+button {
+    border: none;       
+    background: none;  
+    padding: 0;         
+}
+
 }

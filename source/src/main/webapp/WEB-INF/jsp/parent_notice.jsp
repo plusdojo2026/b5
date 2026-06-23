@@ -32,14 +32,23 @@
             <img src= "${pageContext.request.contextPath}/images/hatugen.png" width="80" height="80">(仮)積極的な発言<br>
         </div>
         
+    <form class="reaction-form">
+	<input type="image" alt="リアクションボタン" name="button" value="reaction" src="${pageContext.request.contextPath}/images/good.png" width="30" height="30"/>
+	<input type="image" alt="リアクションボタン" name="button" value="reaction" src="${pageContext.request.contextPath}/images/pien.png" width="30" height="30"/>
+	<input type="image" alt="リアクションボタン" name="button" value="reaction" src="${pageContext.request.contextPath}/images/bikkuri.png" width="30" height="30"/>
+	<input type="image" alt="リアクションボタン" name="button" value="reaction" src="${pageContext.request.contextPath}/images/nikkori.png" width="30" height="30"/>
+	</form>   
+        
         <div class = "list">
             <img src= "${pageContext.request.contextPath}/images/challenge.png" width="80" height="80">(仮)挑戦<br>
         </div>
     </div>
 
-	<form>
-	<input type="image" class="reaction" alt="リアクションボタン" name="button" value="reaction" src="${pageContext.request.contextPath}/images/reaction3.png" width="30" height="30"/>
-	<input type="image" alt="リアクションボタン" name="button" value="reaction" src="${pageContext.request.contextPath}/images/reaction4.png" width="30" height="30"/>
+	<form class="reaction-form">
+	<input type="image" alt="リアクションボタン" name="button" value="reaction" src="${pageContext.request.contextPath}/images/good.png" width="30" height="30"/>
+	<input type="image" alt="リアクションボタン" name="button" value="reaction" src="${pageContext.request.contextPath}/images/pien.png" width="30" height="30"/>
+	<input type="image" alt="リアクションボタン" name="button" value="reaction" src="${pageContext.request.contextPath}/images/bikkuri.png" width="30" height="30"/>
+	<input type="image" alt="リアクションボタン" name="button" value="reaction" src="${pageContext.request.contextPath}/images/nikkori.png" width="30" height="30"/>
 	</form>
 	
     <p>持ち物リストが更新されました！</p>
