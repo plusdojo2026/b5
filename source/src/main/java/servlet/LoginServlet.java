@@ -52,7 +52,7 @@ public class LoginServlet extends HttpServlet{
 				Students student = new Students();
 				student = new StudentsDao().getStudentByUserID(user.getId());
 				session.setAttribute("studentData", student);
-				response.sendRedirect("/b5/StudentHomeServlet");
+				response.sendRedirect("/b5/StudentResultServlet");
 			}
 			//保護者タブを選んで児童なら保護者画面にログイン
 			else if(user.getType() == 1 && Integer.valueOf(loginType) == 2) {
