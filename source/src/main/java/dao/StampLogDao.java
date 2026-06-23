@@ -48,6 +48,7 @@ public class StampLogDao {
 				log.setText(rs.getString("text"));
 				log.setReaction_id(rs.getInt("reaction_id"));
 				log.setIsRead(rs.getBoolean("is_read"));
+				log.setCreated_at(rs.getString("created_at"));
 				
 				stamplog.add(log);
 			}
@@ -152,7 +153,7 @@ public class StampLogDao {
 		}
 	}
 	
-	public void addReaction(int reaction_id) {
+	public void addReaction(int log_id,int reaction_id) {
 		Connection conn = null;
 		try {
 			// JDBCドライバを読み込む
@@ -169,12 +170,12 @@ public class StampLogDao {
 //					,"b5","3YyniFH6fpR5WMeB");
 			
 			// SQL文を準備する
-			String sql = "INSERT INTO STAMP_LOG(reaction_id)"
-						+"VALUES(?)";
+			String sql = "UPDATE STAMP_LOG SET reaction_id = ? WHERE id = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			
 			//引数のIDを上記のSELECT文の?に代入
-			pStmt.setString(1, String.valueOf(reaction_id));
+			pStmt.setInt(1, reaction_id);
+			pStmt.setInt(2, log_id);
 
 			// INSERT文を実行
 			pStmt.executeUpdate();

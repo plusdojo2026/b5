@@ -88,6 +88,16 @@ main {
     margin-top: 10px;
 }
 
+/* リアクション済みアイコンを暗くする */
+.reacted-icon {
+	filter: brightness(0.6);
+}
+
+/* 押せないボタンのマウスカーソル設定 */
+button:disabled {
+	cursor: not-allowed;
+}
+
 /*フッター*/
 footer {
     position: fixed;

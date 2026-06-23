@@ -21,9 +21,6 @@ private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// 保護者の通知画面にフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/parent_notice.jsp");
-		dispatcher.forward(request, response);
 		
 		//セッションスコープのstudent_idを参照し、児童に登録されているstamp_logの内容を取得する
 		//ログインしている児童データを取得
@@ -35,9 +32,13 @@ private static final long serialVersionUID = 1L;
 		StampLogDao logDao = new StampLogDao();
 		List<StampLog> stLog = logDao.getStampLogByStudentID(student_id);
 		for(StampLog s:stLog) {
-			System.out.println(s.getStamp_id());
+			s.setCreated_at(s.getDisplayDate());
 		}
 		request.setAttribute("stLog",stLog);
+		
+		// 保護者の通知画面にフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/parent_notice.jsp");
+		dispatcher.forward(request, response);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -45,21 +46,25 @@ private static final long serialVersionUID = 1L;
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		
-		//取得したいデータ（reactionテーブルのid）
-		String reactionId = request.getParameter("id");
+		// logのIDと押されたリアクションのIDを取得
+		String logIdStr = request.getParameter("id");
+		String reactionIdStr = request.getParameter("reaction_id");
+		
+		String buttonAction = request.getParameter("button");
 		StampLogDao stampLogDao = new StampLogDao();
 		
-		//リアクションボタンを押すと保護者の通知画面に遷移する
-		if (request.getParameter("button").equals("reaction")) {
-			stampLogDao.addReaction(Integer.parseInt(reactionId));
+		if (reactionIdStr != null) {
+			int logId = Integer.parseInt(logIdStr);
+			int reactionId = Integer.parseInt(reactionIdStr);
+			stampLogDao.addReaction(logId, reactionId);
 			response.sendRedirect("/b5/ParentNoticeServlet");
 		}
-		//ベルマークを押して保護者の通知画面に遷移する
-		else if (request.getParameter("button").equals("notice")) {
+		// ベルマークを押して保護者の通知画面に遷移する
+		else if ("notice".equals(buttonAction)) {
 			response.sendRedirect("/b5/ParentNoticeServlet");
 		}
-		//リストマークを押して保護者のリスト確認画面に遷移する
-		else if(request.getParameter("button").equals("lists")) {
+		// リストマークを押して保護者のリスト確認画面に遷移する
+		else if ("lists".equals(buttonAction)) {
 			response.sendRedirect("/b5/ParentViewServlet");
 		}
 	}

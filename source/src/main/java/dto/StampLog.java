@@ -62,6 +62,14 @@ public class StampLog implements Serializable{
 		this.updated_at = updated_at;
 	}
 	
+	public String getDisplayDate() {
+		if (this.created_at != null && this.created_at.length() >= 10) {
+			// 先頭から10文字（"2026-06-23"など）だけを抽出
+			return this.created_at.substring(0, 10);
+		}
+		return this.created_at;
+	}
+	
 	//コンストラクタ
 	public StampLog(int id, int student_id, int stamp_id, String text, int reaction_id, boolean is_read, String created_at,
 			String updated_at) {
