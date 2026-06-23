@@ -80,7 +80,7 @@
 			</div>
 		</button>
 
-		<button type="submit" name="stamp_id" value="0" class="stamp_btn">
+		<button type="submit" name="stamp_id" value="1" class="stamp_btn">
 			<img src="${pageContext.request.contextPath}/images/syusseki.png" width="150" height="150">
 			<h3><strong>出席</strong></h3>
 			<div class="detail">

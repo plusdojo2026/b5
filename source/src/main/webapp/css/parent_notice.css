@@ -41,6 +41,7 @@ body {
   width: 100%;
   padding: 10px 0px 10px 0px ;
   box-sizing: border-box;
+  z-index: 999;
 } 
 
 .name {
@@ -80,6 +81,11 @@ main {
     align-items: center;
 }
 
+/* リアクション済みアイコンを暗くする */
+.reacted-icon {
+	filter: brightness(0.6);
+}
+
 /* リアクション */
 .reaction-form {
     display: flex;
@@ -88,10 +94,6 @@ main {
     margin-top: 10px;
 }
 
-/* リアクション済みアイコンを暗くする */
-.reacted-icon {
-	filter: brightness(0.6);
-}
 
 /* 押せないボタンのマウスカーソル設定 */
 button:disabled {
@@ -104,7 +106,7 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    
+    z-index: 999;
 }
 
 .footer-icon {

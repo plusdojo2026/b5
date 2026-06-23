@@ -34,23 +34,23 @@
 		</c:if>
 		<div class="list">
 			<c:choose>
-				<c:when test="${log.stamp_id == 1}">
+				<c:when test="${log.stamp_id == 2}">
 					<img src="${pageContext.request.contextPath}/images/hatugen.png" width="80" height="80">積極的な発言をしました！<br>
 				</c:when>
-				<c:when test="${log.stamp_id == 2}">
+				<c:when test="${log.stamp_id == 3}">
 					<img src="${pageContext.request.contextPath}/images/challenge.png" width="80" height="80">挑戦しました！<br>
 				</c:when>
-				<c:when test="${log.stamp_id == 3}">
+				<c:when test="${log.stamp_id == 4}">
 					<img src="${pageContext.request.contextPath}/images/goal.png" width="80" height="80">達成しました！<br>
 				</c:when>
-				<c:when test="${log.stamp_id == 4}">
+				<c:when test="${log.stamp_id == 5}">
 					<img src="${pageContext.request.contextPath}/images/kyouryoku.png" width="80" height="80">協力しました！<br>
 				</c:when>
-				<c:when test="${log.stamp_id == 5}">
+				<c:when test="${log.stamp_id == 1}">
 					<img src="${pageContext.request.contextPath}/images/syusseki.png" width="80" height="80">元気に出席しました！<br>
 				</c:when>
 				<c:when test="${log.stamp_id == 6}">
-					<img src="${pageContext.request.contextPath}/images/sonota.png" width="80" height="80">その他<br>
+					<img src="${pageContext.request.contextPath}/images/sonota.png" width="80" height="80">~その他~<br>
 					<c:out value="${log.text}" />
 				</c:when>
 			</c:choose>
@@ -79,24 +79,22 @@
 				<%-- 既にリアクションされている場合 --%>
 				<c:otherwise>
 					<button type="button" class="reaction-btn" disabled>
-						<img src="${pageContext.request.contextPath}/images/good.png" width="30" height="30" alt="good" class="reacted-icon"/>
+						<img src="${pageContext.request.contextPath}/images/good.png" width="30" height="30" alt="good" class="${log.reaction_id == 1 ? 'reacted-icon' : ''}"/>
 					</button>
 					<button type="button" class="reaction-btn" disabled>
-						<img src="${pageContext.request.contextPath}/images/pien.png" width="30" height="30" alt="pien" class="reacted-icon"/>
+						<img src="${pageContext.request.contextPath}/images/pien.png" width="30" height="30" alt="pien" class="${log.reaction_id == 2 ? 'reacted-icon' : ''}"/>
 					</button>
 					<button type="button" class="reaction-btn" disabled>
-						<img src="${pageContext.request.contextPath}/images/bikkuri.png" width="30" height="30" alt="bikkuri" class="reacted-icon"/>
+						<img src="${pageContext.request.contextPath}/images/bikkuri.png" width="30" height="30" alt="bikkuri" class="${log.reaction_id == 3 ? 'reacted-icon' : ''}"/>
 					</button>
 					<button type="button" class="reaction-btn" disabled>
-						<img src="${pageContext.request.contextPath}/images/nikkori.png" width="30" height="30" alt="nikkori" class="reacted-icon"/>
+						<img src="${pageContext.request.contextPath}/images/nikkori.png" width="30" height="30" alt="nikkori" class="${log.reaction_id == 4 ? 'reacted-icon' : ''}"/>
 					</button>
 				</c:otherwise>
 			</c:choose>
 		</form>	
 	</c:forEach>
 </div>
-	
-    <p>持ち物リストが更新されました！</p>
 
 <!-- 保護者のリアクション画面終了 --> 
 
