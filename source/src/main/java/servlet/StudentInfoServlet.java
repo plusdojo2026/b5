@@ -30,8 +30,7 @@ private static final long serialVersionUID = 1L;
 		StudentsDao studentDao = new StudentsDao();
 		
 		//児童一覧を取得
-		List<Students> studentList =
-		    studentDao.getClassMember(
+		List<Students> studentList = studentDao.getClassMember(
 		        teacher.getGrade(),  //ログイン中の教師の学年を取得
 		        teacher.getClass_number()); //ログイン中の教師のクラスを取得
 
