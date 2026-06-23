@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
     
     
 <!DOCTYPE html>
@@ -47,15 +47,19 @@
 <!-- ★↓選択した児童の名前(Servletとかと結びつける)↓ -->
 <h2>児童のスタンプ獲得数を表示</h2>
 	<div class="select-area">
-	<label class="selectbox">
-	    <select id="studentselect">
-	        <option value="" selected disabled>児童を選択</option>
-	        <option>山田太郎</option>
-	        <option>田中花子</option>
-	        <option>佐藤三郎</option>
-	    </select>
-	</label>
-	</div>
+    <label class="selectbox">
+        <select id="studentselect" name="student_id">
+            <option value="" selected disabled>児童を選択</option>
+
+            <c:forEach var="student" items="${studentList}">
+                <option value="${student.id}">
+                    ${student.name}
+                </option>
+            </c:forEach>
+
+        </select>
+    </label>
+</div>
   
  <!-- ★検索した児童のスタンプ保持数表示させる-->
   <div class="stamps"> 
