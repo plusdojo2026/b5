@@ -24,6 +24,11 @@ public class StampLogDao {
 					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
 					"root", "password");
 			
+			//本番環境
+//			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?useSSL=false"
+//					+ "&allowPublicKeyRetrieval=true&serverTimezone=Asia/Tokyo&connectTimeout=30000"
+//					,"b5","3YyniFH6fpR5WMeB");
+			
 			// SELECT文を準備する
 			String sql = "SELECT * FROM STAMP_LOG WHERE student_id=? ORDER BY created_at DESC";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
@@ -74,6 +79,11 @@ public class StampLogDao {
 					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
 					"root", "password");
 			
+			//本番環境
+//			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?useSSL=false"
+//					+ "&allowPublicKeyRetrieval=true&serverTimezone=Asia/Tokyo&connectTimeout=30000"
+//					,"b5","3YyniFH6fpR5WMeB");
+			
 			// SQL文を準備する
 			String sql = "INSERT INTO STAMP_LOG(student_id, stamp_id)"
 						+"VALUES(?,?)";
@@ -110,6 +120,11 @@ public class StampLogDao {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?"
 					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
 					"root", "password");
+			
+			//本番環境
+//			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?useSSL=false"
+//					+ "&allowPublicKeyRetrieval=true&serverTimezone=Asia/Tokyo&connectTimeout=30000"
+//					,"b5","3YyniFH6fpR5WMeB");
 			
 			// SQL文を準備する
 			String sql = "INSERT INTO STAMP_LOG(student_id, stamp_id, text)"
@@ -148,6 +163,11 @@ public class StampLogDao {
 					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
 					"root", "password");
 			
+			//本番環境
+//			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?useSSL=false"
+//					+ "&allowPublicKeyRetrieval=true&serverTimezone=Asia/Tokyo&connectTimeout=30000"
+//					,"b5","3YyniFH6fpR5WMeB");
+			
 			// SQL文を準備する
 			String sql = "INSERT INTO STAMP_LOG(reaction_id)"
 						+"VALUES(?)";
@@ -184,6 +204,11 @@ public class StampLogDao {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?"
 					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
 					"root", "password");
+			
+			//本番環境
+//			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?useSSL=false"
+//					+ "&allowPublicKeyRetrieval=true&serverTimezone=Asia/Tokyo&connectTimeout=30000"
+//					,"b5","3YyniFH6fpR5WMeB");
 			
 			// SQL文を準備する
 			String sql = "SELECT COUNT(*) FROM STAMP_LOG WHERE student_id = ? AND stamp_id = ? AND MONTH(created_at) = ?";
@@ -226,6 +251,11 @@ public class StampLogDao {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?"
 					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
 					"root", "password");
+			
+			//本番環境
+//			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?useSSL=false"
+//					+ "&allowPublicKeyRetrieval=true&serverTimezone=Asia/Tokyo&connectTimeout=30000"
+//					,"b5","3YyniFH6fpR5WMeB");
 			
 			// SQL文を準備する
 			String sql = "SELECT COUNT(*) FROM STAMP_LOG sl "

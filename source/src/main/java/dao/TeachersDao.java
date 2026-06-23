@@ -16,10 +16,17 @@ public class TeachersDao {
 		try {
 			// JDBCドライバを読み込む
 			Class.forName("com.mysql.cj.jdbc.Driver");
+			
 			// データベースに接続する
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?"
 					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
 					"root", "password");
+			
+			//本番環境
+//			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?useSSL=false"
+//					+ "&allowPublicKeyRetrieval=true&serverTimezone=Asia/Tokyo&connectTimeout=30000"
+//					,"b5","3YyniFH6fpR5WMeB");
+			
 			// SELECT文を準備する
 			String sql = "SELECT * FROM TEACHERS WHERE user_id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);

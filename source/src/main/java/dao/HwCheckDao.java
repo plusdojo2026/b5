@@ -22,6 +22,11 @@ public class HwCheckDao {
 						+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
 						"root", "password");
 				
+				//本番環境
+//				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?useSSL=false"
+//						+ "&allowPublicKeyRetrieval=true&serverTimezone=Asia/Tokyo&connectTimeout=30000"
+//						,"b5","3YyniFH6fpR5WMeB");
+				
 				String sql = "INSERT INTO HW_CHECK (student_id, date, homework_id, is_cheked, hw_range) "
 						   + "SELECT ?, ?, homework_id, FALSE FROM HW_LISTS "
 						   + "WHERE date = ? AND grade = ? AND class_number = ? "
@@ -65,6 +70,11 @@ public class HwCheckDao {
 				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?"
 						+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
 						"root", "password");
+				
+				//本番環境
+//				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?useSSL=false"
+//						+ "&allowPublicKeyRetrieval=true&serverTimezone=Asia/Tokyo&connectTimeout=30000"
+//						,"b5","3YyniFH6fpR5WMeB");
 				
 				//itemsからitem_name,itemListsからそのほか情報をコピー
 				String sql = "SELECT hc.id, hc.student_id, hc.date, hc.homework_id, hc hw_range, hc.is_cheked, h.hw_name "
@@ -112,6 +122,11 @@ public class HwCheckDao {
 				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?"
 						+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
 						"root", "password");
+				
+				//本番環境
+//				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?useSSL=false"
+//						+ "&allowPublicKeyRetrieval=true&serverTimezone=Asia/Tokyo&connectTimeout=30000"
+//						,"b5","3YyniFH6fpR5WMeB");
 				
 				String sql = "UPDATE HW_CHECK SET is_checked = ? WHERE id = ?";
 				

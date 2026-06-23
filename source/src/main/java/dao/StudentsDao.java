@@ -22,8 +22,14 @@ public class StudentsDao {
 				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?"
 						+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
 						"root", "password");
+				
+				//本番環境
+//				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?useSSL=false"
+//						+ "&allowPublicKeyRetrieval=true&serverTimezone=Asia/Tokyo&connectTimeout=30000"
+//						,"b5","3YyniFH6fpR5WMeB");
+				
 				// SELECT文を準備する
-				String sql = "SELECT * FROM students WHERE user_id=?";
+				String sql = "SELECT * FROM STUDENTS WHERE user_id=?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 				//引数のuserIDを上記のSELECT文の?に代入
 				pStmt.setString(1, String.valueOf(userId));
@@ -61,12 +67,19 @@ public class StudentsDao {
 			try {
 				// JDBCドライバを読み込む
 				Class.forName("com.mysql.cj.jdbc.Driver");
+				
 				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?"
-						+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
-						"root", "password");
+//				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?"
+//						+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
+//						"root", "password");
+				
+				//本番環境
+				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?useSSL=false"
+						+ "&allowPublicKeyRetrieval=true&serverTimezone=Asia/Tokyo&connectTimeout=30000"
+						,"b5","3YyniFH6fpR5WMeB");
+				
 				// SELECT文を準備する
-				String sql = "SELECT * FROM students WHERE grade=? AND class_number=?";
+				String sql = "SELECT * FROM STUDENTS WHERE grade=? AND class_number=?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 				//引数のuserIDを上記のSELECT文の?に代入
 				pStmt.setInt(1, grade);

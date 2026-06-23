@@ -23,6 +23,11 @@ public class ItemCheckDao {
 					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
 					"root", "password");
 			
+			//本番環境
+//			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?useSSL=false"
+//					+ "&allowPublicKeyRetrieval=true&serverTimezone=Asia/Tokyo&connectTimeout=30000"
+//					,"b5","3YyniFH6fpR5WMeB");
+			
 			String sql = "INSERT INTO ITEM_CHECK (student_id, date, item_id, is_checked) "
 					   + "SELECT ?, ?, il.item_id, FALSE "
 					   + "FROM ITEM_LISTS il "
@@ -68,6 +73,11 @@ public class ItemCheckDao {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?"
 					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
 					"root", "password");
+			
+			//本番環境
+//			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?useSSL=false"
+//					+ "&allowPublicKeyRetrieval=true&serverTimezone=Asia/Tokyo&connectTimeout=30000"
+//					,"b5","3YyniFH6fpR5WMeB");
 			
 			//itemsからitem_name,itemListsからそのほか情報をコピー
 			String sql = "SELECT ic.id, ic.student_id, ic.date, ic.item_id, ic.is_checked, i.item_name "

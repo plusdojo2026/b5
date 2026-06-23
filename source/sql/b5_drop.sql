@@ -1,1 +1,0 @@
-DROP TABLE users,teachers,students,parents,items,item_lists,item_check,hw,hw_lists,hw_check,stamps,reactions,stamp_log;
