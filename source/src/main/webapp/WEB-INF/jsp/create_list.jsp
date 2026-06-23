@@ -8,42 +8,34 @@
 <head>
 <meta charset="UTF-8">
 <title>教師のリスト作成｜できたねスタンプ</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/create_list.css">
 <script src="<%=request.getContextPath()%>/js/create_list.js?v=1"></script>
 </head>
 
 <body>
-	<!------------------------------------------------------------ヘッダー ---------------------------------------------------------->
-	<header class="header">
-		   <a href="StampServlet">
-		<img src="${pageContext.request.contextPath}/images/logo.png" width="100" height="100"></a>
+	<!-- ヘッダー -->
+ <header class="header">
+   <a href="StampServlet"><img src="${pageContext.request.contextPath}/images/logo.png" width="100" height="100"></a>
    <div class="left">
-			<h1>できたねスタンプ</h1>
-			<p>児童のがんばりを記録しよう</p>
-		</div>
-		    
-		<nav class="nav">     
-			<ul>
-				<li><a href="StampServlet">スタンプ一覧</a></li> 
-				<li><a href="CreateListServlet">リスト作成</a></li>
-				<li><a href="HwCheckServlet">宿題チェック</a></li>
-			</ul>  
-		</nav>
-		   
-		<div class="right">
-			      <a href="LoginServlet" class="login"><span
-				class="login-icon"><img
-					src="${pageContext.request.contextPath}/images/login.png"
-					width="25" height="25"></span>ログイン</a>       <a href="" class="logout"><span
-				class="logout-icon"><img
-					src="${pageContext.request.contextPath}/images/logout.png"
-					width="30" height="30"></span>ログアウト</a>       <a
-				href="StudentInfoServlet"><span class="reaction"><img
-					src="${pageContext.request.contextPath}/images/reaction.png"
-					width="45" height="45"></span></a>    
-		</div>
-	</header>
-	<!--------------------------------------------------- ヘッダーここまで --------------------------------------------------------->
+      <h1>できたねスタンプ</h1>
+      <p>児童のがんばりを記録しよう</p>
+   </div>
+    <nav class="nav">
+        <ul>
+            <li><a href="StampServlet">スタンプ一覧</a></li>
+            <li><a href="CreateListServlet">リスト作成</a></li>
+            <li><a href="HwCheckServlet">宿題チェック</a></li>
+        </ul>    
+    </nav>
+   <div class="right">
+      <a href="LoginServlet" class="login"><span class="login-icon"><img src="${pageContext.request.contextPath}/images/login.png" width="25" height="25"></span>ログイン</a> 
+      <a href="" class="logout"><span class="logout-icon"><img src="${pageContext.request.contextPath}/images/logout.png" width="30" height="30"></span>ログアウト</a> 
+      <a href="StudentInfoServlet"><span class="reaction"><img src="${pageContext.request.contextPath}/images/reaction.png" width="45" height="45"></span></a> 
+   </div>
+ </header>
+<!-- ヘッダーここまで -->
+	
 	<main>
 		<section>
 			<h2 id="today"></h2><!--日付 -->

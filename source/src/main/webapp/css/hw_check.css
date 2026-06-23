@@ -1,4 +1,93 @@
-@charset "UTF-8"
+@charset "UTF-8";
+body{
+    background:red !important;
+}
+body{
+	background:red !important;
+}
+.hw-check-main{
+    display:flex;
+    justify-content:center;
+    gap:80px;
 
+    margin-top:120px;
+}
 
-/*岩本*/
+.hw-list-area{
+    width:600px;
+    min-height:600px;
+
+    background:#ff0080;
+
+    border-radius:25px;
+}
+
+.student-check-area{
+    width:700px;
+    min-height:600px;
+
+    background:#f3faed;
+
+    border-radius:25px;
+}
+
+.hw-title{
+    padding:40px;
+}
+
+.date-select{
+    padding:20px 40px;
+}
+
+.hw-list-box{
+    padding:20px 40px;
+}
+
+.hw-item{
+    list-style:none;
+
+    padding:20px;
+
+    border-bottom:1px solid #ddd;
+
+    cursor:pointer;
+}
+
+.student-box{
+    margin:30px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+}
+
+.student-list{
+    margin-top:20px;
+}
+
+.student-item{
+    display:block;
+
+    padding:10px 0;
+}
+
+.complete-btn{
+    display:block;
+
+    margin:30px auto;
+
+    width:150px;
+    height:50px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#ff80ff;
+
+    color:white;
+
+    font-size:20px;
+}
