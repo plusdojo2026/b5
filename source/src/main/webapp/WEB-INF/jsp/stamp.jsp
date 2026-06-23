@@ -108,6 +108,10 @@
 </footer>
 <!-- フッター終了 -->
 
+<!-- javascript開始 -->
+<script src="${pageContext.request.contextPath}/js/student_info.js"></script>
+<!-- javascript終了 -->
+
 </body>
 </html>
 
