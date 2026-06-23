@@ -5,10 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/stamp.css">
 <title>座席一覧|できたねスタンプ</title>
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/stamp.css?v=9999">
- <script src="<%=request.getContextPath()%>/js/stamp.js?v=1"></script>
 </head>
 <body>
 
@@ -39,44 +38,75 @@
   <div class="calendar">
      <img src="${pageContext.request.contextPath}/images/calendar.png" width="50" height="50"><p id="today"></p>
   </div>
+
+<!-- スタンプ付与 -->
+<h2>該当のスタンプをクリックしてください</h2>
+
 <form method="POST" action="StampServlet">
 	<div class="stamps">
 		<button type="submit" name="stamp_id" value="2" class="stamp_btn">
 			<img src="${pageContext.request.contextPath}/images/hatugen.png" width="150" height="150">
-			<p><strong>積極的な発言</strong></p>
+			<h3><strong>積極的な発言</strong></h3>
+			<div class="detail">
+			<p>自分の考えを<br>発表できたときに</p>
+			<img src="${pageContext.request.contextPath}/images/right.png" width="30" height="30" >
+			</div>
 		</button>
 
 		<button type="submit" name="stamp_id" value="3" class="stamp_btn">
 			<img src="${pageContext.request.contextPath}/images/challenge.png" width="150" height="150">
-			<p><strong>挑戦</strong></p>
+			<h3><strong>挑戦</strong></h3>
+			<div class="detail">
+			<p>新しいことに<br>挑戦したときに</p>
+			<img src="${pageContext.request.contextPath}/images/right.png" width="30" height="30" >
+			</div>
 		</button>
 
 		<button type="submit" name="stamp_id" value="4" class="stamp_btn">
 			<img src="${pageContext.request.contextPath}/images/goal.png" width="150" height="150">
-			<p><strong>達成</strong></p>
+			<h3><strong>達成</strong></h3>
+			<div class="detail">
+			<p>目標達成したとき<br>がんばったときに</p>
+			<img src="${pageContext.request.contextPath}/images/right.png" width="30" height="30" >
+			</div>
 		</button>
 
 		<button type="submit" name="stamp_id" value="5" class="stamp_btn">
 			<img src="${pageContext.request.contextPath}/images/kyouryoku.png" width="150" height="150">
-			<p><strong>協力</strong></p>
+			<h3><strong>協力</strong></h3>
+			<div class="detail">
+			<p>友達と協力して<br>解決できたときに</p>
+			<img src="${pageContext.request.contextPath}/images/right.png" width="30" height="30" >
+			</div>
 		</button>
 
 		<button type="submit" name="stamp_id" value="0" class="stamp_btn">
 			<img src="${pageContext.request.contextPath}/images/syusseki.png" width="150" height="150">
-			<p><strong>出席</strong></p>
+			<h3><strong>出席</strong></h3>
+			<div class="detail">
+			<p>元気に授業に<br>出席したとき</p>
+			<img src="${pageContext.request.contextPath}/images/right.png" width="30" height="30" >
+			</div>
 		</button>
 		
 		<button type="submit" name="stamp_id" value="6" class="stamp_btn">
 			<img src="${pageContext.request.contextPath}/images/sonota.png" width="150" height="150">
-			<p><strong>その他</strong></p>
+			<h3><strong>その他</strong></h3>
+			<div class="detail">
+			<p>テキストで<br>伝えたいときに</p>
+			<img src="${pageContext.request.contextPath}/images/right.png" width="30" height="30" >
+			</div>
 		</button>
 	</div>
 </form>
 </main>
 <!-- 児童のスタンプ獲得数画面終了 -->
 
-<input type="button" value="出席" id="attendBtn">
-
+<!-- フッター開始 -->
+<footer>
+  <p class="copyright">&copy; パンの耳</p>
+</footer>
+<!-- フッター終了 -->
 
 </body>
 </html>

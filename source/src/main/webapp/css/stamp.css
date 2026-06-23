@@ -2,37 +2,6 @@ body {
 	background-color: #FDFBF6;
 }
 
-/*****************ヘッダー*****************/
-.header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 10px 30px;
-	background: #FEF8E8;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-	border: 3px solid #FBE7D2;
-}
-.left {
-	margin-right: auto;
-	margin-left: 10px;
-}
-.nav ul {
-	display: flex;
-	list-style: none;
-	gap: 30px;
-	padding: 0;
-	margin: 0;
-}
-.nav a {
-	text-decoration: none;
-	color: black;
-}
-.right {
-	display: flex;
-	align-items: center;
-	gap: 15px;
-}
-
 /* 日付の表示とタイトル */
 .calendar {
 	display: flex;
@@ -43,7 +12,18 @@ body {
 	margin-top: 30px;
 }
 
+h2 {
+  text-align: center;
+  margin-top: 10px;
+}
+
 /* スタンプ一覧 */
+h3 {
+	font-size: 23px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
 .stamps{
 	display: grid;
 	grid-template-columns: repeat(3, 250px);
@@ -52,7 +32,7 @@ body {
 	margin-top: 30px;
 }
 
-.stamp1,.stamp2,.stamp3,.stamp4,.stamp5,.stamp6 {
+.stamp_btn {
 	padding: 0.5em 1em;
 	margin: 1rem 1rem 1rem 1rem;
 	border: 2px solid #92D050;
@@ -60,6 +40,20 @@ body {
 	border-radius: 16px;
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
+
+p {
+	font-size: 15px;
+	text-align: left;
+}
+
+.detail {
+	display: flex;
+	justify-content: space-between;
+	margin-left: 13px;
+	align-items: center;
+}
+
+
 
 /* テーブル */
 .seat_table{
