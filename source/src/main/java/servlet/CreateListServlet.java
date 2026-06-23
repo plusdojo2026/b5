@@ -30,14 +30,15 @@ public class CreateListServlet extends HttpServlet{
 		//作ったリストをデータベースに登録する
 		//do Postは、更新ボタンが押されたときに呼び出される。
 		
-		// リクエストパラメータを取得する
+		
 		request.setCharacterEncoding("UTF-8");
+		// リクエストパラメータを取得する
 		//文字化け防止
 		//取得したいデータ（教師がリスト作成画面で作ったリスト）
+		
 		String[] item_ids = request.getParameterValues("item_id");
-		// 画面で作成した持ち物リストのitem_idを複数取得する// 更新ボタンが押されたとき、画面上の持ち物ID一覧を受け取る
-		
-		
+		// 画面で作成した持ち物リストのitem_idを複数取得する
+		// 更新ボタンが押されたとき、画面上の持ち物ID一覧を受け取る
 		//クラス、学年、item_id、日付を引数として作成した持ち物リストをItemListsに登録するメソッドが必要
 		
 		ItemListsDao itemListsDao = new ItemListsDao();
