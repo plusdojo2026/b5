@@ -34,6 +34,10 @@ private static final long serialVersionUID = 1L;
 		int student_id = student.getId();
 		StampLogDao logDao = new StampLogDao();
 		List<StampLog> stLog = logDao.getStampLogByStudentID(student_id);
+		for(StampLog s:stLog) {
+			System.out.println(s.getStamp_id());
+		}
+		request.setAttribute("stLog",stLog);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

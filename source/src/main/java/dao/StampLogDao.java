@@ -25,7 +25,7 @@ public class StampLogDao {
 					"root", "password");
 			
 			// SELECT文を準備する
-			String sql = "SELECT * FROM STAMP_LOG WHERE student_id=?";
+			String sql = "SELECT * FROM STAMP_LOG WHERE student_id=? ORDER BY created_at DESC";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			
 			//引数のIDを上記のSELECT文の?に代入
