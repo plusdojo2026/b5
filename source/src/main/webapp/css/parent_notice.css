@@ -29,6 +29,7 @@ p {
 @media(max-width: 767px){
 body {
     color: #4D586D;
+    font-family: 'Hiragino Sans';
 }
 .header {
   color: #CAD3DD;
