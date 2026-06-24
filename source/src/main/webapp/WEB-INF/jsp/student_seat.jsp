@@ -28,7 +28,7 @@ pageEncoding="UTF-8"%>
 <div class="seat_area">
     <c:forEach var="s" items="${StudentsData}">
     	<label class="seat_card">
-    		<input type="checkbox" name="student" value="${s.id}" style="display: none;">
+    		<input type="checkbox" name="student" value="${s.id}" style="display: none;" <c:if test="${stamp_id == '1'}">checked</c:if>>
 			<span class="seat_btn">${s.name}</span>
 		</label>
     </c:forEach>
