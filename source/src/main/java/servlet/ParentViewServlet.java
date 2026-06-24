@@ -24,17 +24,17 @@ private static final long serialVersionUID = 1L;
 			throws ServletException, IOException {
 		
 		//ログインしている児童データを取得
-				HttpSession session = request.getSession();
-				Students student = (Students) session.getAttribute("studentData");
+		HttpSession session = request.getSession();
+		Students student = (Students) session.getAttribute("studentData");
 		
 		//必要な変数を取得
-				int student_id = student.getId();
-				StampLogDao logDao = new StampLogDao();
-				List<StampLog> stLog = logDao.getStampLogByStudentID(student_id);
-				for(StampLog s:stLog) {
-					s.setCreated_at(s.getDisplayDate());
-				}
-				request.setAttribute("stLog",stLog);
+		int student_id = student.getId();
+		StampLogDao logDao = new StampLogDao();
+		List<StampLog> stLog = logDao.getStampLogByStudentID(student_id);
+		for(StampLog s:stLog) {
+			s.setCreated_at(s.getDisplayDate());
+		}
+		request.setAttribute("stLog",stLog);
 		
 		// 保護者のリスト画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/parent_view.jsp");
