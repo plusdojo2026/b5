@@ -92,6 +92,7 @@
 	<img src="images/sunflower.png" width="350" height="350" alt="花のイラスト" class="flower_img">
 </div>
 <img src="images/tuchi.png" width="1500" height="150" alt="土のイラスト" class="ground_img">
+
 </footer>
 <!-- フッターここまで -->
 

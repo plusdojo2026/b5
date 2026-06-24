@@ -89,3 +89,9 @@ html {
   font-size: 14px;
   padding: 0 12px 0 12px;
 }
+
+/* フッター */
+.copyright {
+	color: #D9805F;
+	text-align: right;
+}
