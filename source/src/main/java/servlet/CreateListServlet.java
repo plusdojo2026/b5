@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,8 +9,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.ItemListsDao;
+import dto.ItemLists;
+import dto.Teachers;
 
 @WebServlet("/CreateListServlet")
 public class CreateListServlet extends HttpServlet{
@@ -18,18 +22,32 @@ public class CreateListServlet extends HttpServlet{
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		HttpSession session = request.getSession();
+		Teachers teacher = (Teachers) session.getAttribute("teacherData");
+		int grade = teacher.getGrade();
+		int class_number = teacher.getClass_number();
+		//現在作成済みのリストを取得する必要がある
+		//日付について要検討(いったん日付無し)
+		ItemListsDao ilDao = new ItemListsDao();
+		List<ItemLists> itemList = ilDao.getItemList(grade, class_number);
+		
+		request.setAttribute("itemList",itemList);
+		
 		// しゅくだい、もちものリスト作成画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/create_list.jsp");
-		// create_list.jspを表示するための案内係(RequestDispatcher)を作る
 		dispatcher.forward(request, response);
-		// create_list.jspへ処理を引き継いで実際に画面を表示する
+
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		//作ったリストをデータベースに登録する
 		//do Postは、更新ボタンが押されたときに呼び出される。
-		
+		HttpSession session = request.getSession();
+		Teachers teacher = (Teachers) session.getAttribute("teacherData");
+		int grade = teacher.getGrade();
+		int class_number = teacher.getClass_number();
 		
 		request.setCharacterEncoding("UTF-8");
 		// リクエストパラメータを取得する
@@ -39,14 +57,15 @@ public class CreateListServlet extends HttpServlet{
 		String[] item_ids = request.getParameterValues("item_id");
 		// 画面で作成した持ち物リストのitem_idを複数取得する
 		// 更新ボタンが押されたとき、画面上の持ち物ID一覧を受け取る
-		//クラス、学年、item_id、日付を引数として作成した持ち物リストをItemListsに登録するメソッドが必要
-		
-		ItemListsDao itemListsDao = new ItemListsDao();
-		// item_listsテーブルを操作するDAOを使えるようにする
-
+		//クラス、学年、item_id、を引数として作成した持ち物リストをItemListsに登録するメソッドが必要
+		//→AddItemList(int class_number,int grade,int item_id)
+		ItemListsDao ilDao = new ItemListsDao();
+		//いったんItemListsテーブルの中身を削除する
+		ilDao.clearAllItemList();
+		// item_listsテーブルを操作するDAOを使えるようにす
 		for(String s:item_ids) {
 		//もちものの数だけ、この処理を1件ずつ繰り返す。
-			
+			ilDao.addItemList(class_number, grade, Integer.parseInt(s));
 		}
 	}
 }

@@ -46,19 +46,20 @@
   
 <!-- ★↓選択した児童の名前(Servletとかと結びつける)↓ -->
 <h2>児童のスタンプ獲得数を表示</h2>
-	<div class="select-area">
-    <label class="selectbox">
-        <select id="studentselect" name="student_id">
-            <option value="" selected disabled>児童を選択</option>
-
-            <c:forEach var="student" items="${studentList}">
-                <option value="${student.id}">
-                    ${student.name}
-                </option>
-            </c:forEach>
-
-        </select>
-    </label>
+<div class="select-area">
+	<form action="StudentInfoServlet" method="GET">
+		<label class="selectbox">
+			<select id="studentselect" name="student_id" onchange="this.form.submit()">
+				<option value="" disabled <c:if test="${empty selectedStudentId}">selected</c:if>>児童を選択</option>
+				
+				<c:forEach var="student" items="${studentList}">
+					<option value="${student.id}" <c:if test="${student.id == selectedStudentId}">selected</c:if>>
+						${student.name}
+					</option>
+				</c:forEach>
+			</select>
+		</label>
+	</form>
 </div>
   
  <!-- ★検索した児童のスタンプ保持数表示させる-->
@@ -67,7 +68,7 @@
      <img src="${pageContext.request.contextPath}/images/hatugen.png" width="150" height="150" >
         <p>
         <strong>積極的な発言</strong><br>
-        <span>仮３個</span> 
+        <span>${stampCounts != null ? stampCounts[1] : 0}個</span> 
         </p> 
    </div> 
 
@@ -75,7 +76,7 @@
      <img src="${pageContext.request.contextPath}/images/challenge.png" width="150" height="150" >
         <p>
         <strong>挑戦</strong><br>
-        <span>仮１個</span> 
+        <span>${stampCounts != null ? stampCounts[2] : 0}個</span>
         </p> 
    </div> 
 
@@ -83,7 +84,7 @@
     <img src="${pageContext.request.contextPath}/images/goal.png" width="150" height="150">
         <p>
         <strong>達成</strong><br>
-        <span>仮１個</span> 
+        <span>${stampCounts != null ? stampCounts[3] : 0}個</span>
         </p> 
    </div> 
 
@@ -91,7 +92,7 @@
      <img src="${pageContext.request.contextPath}/images/kyouryoku.png" width="150" height="150">
         <p>
         <strong>協力</strong><br>
-        <span>仮２個</span> 
+        <span>${stampCounts != null ? stampCounts[4] : 0}個</span>
         </p> 
    </div> 
 
@@ -99,7 +100,7 @@
      <img src="${pageContext.request.contextPath}/images/syusseki.png" width="150" height="150" >
         <p>
         <strong>出席</strong><br>
-        <span>仮２１日</span> 
+        <span>${stampCounts != null ? stampCounts[0] : 0}日</span>
         </p>
    </div> 
 
@@ -107,7 +108,7 @@
      <img src="${pageContext.request.contextPath}/images/sonota.png" width="150" height="150" >
         <p>
         <strong>その他</strong><br>
-        <span>仮０個</span> 
+        <span>${stampCounts != null ? stampCounts[5] : 0}個</span>
         </p> 
    </div> 
   </div> 
