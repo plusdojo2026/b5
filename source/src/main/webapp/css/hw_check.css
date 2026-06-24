@@ -1,91 +1,149 @@
 @charset "UTF-8";
-body {
-	background-color: #FDFBF6;
+
+body{
+	background:#FDFBF6;
+	font-family:"Yu Gothic","Meiryo",sans-serif;
+	margin:0;
 }
 
+/* 全体 */
 .hw-check-main{
-    display:flex;
-    justify-content:center;
-    gap:80px;
-
-    margin-top:120px;
+	display:flex;
+	justify-content:center;
+	gap:60px;
+	margin-top:80px;
 }
 
+/* 宿題一覧 */
 .hw-list-area{
-    width:600px;
-    min-height:600px;
+	width:600px;
+	min-height:650px;
 
-     background:#ff0080;
+	background:#DFF6F8;
 
-    border-radius:25px;
+	border-radius:30px;
+
+	box-shadow:0 8px 20px rgba(0,0,0,0.15);
 }
 
+/* 生徒一覧 */
 .student-check-area{
-    width:700px;
-    min-height:600px;
+	width:700px;
+	min-height:650px;
 
-    background:#f3faed;
+	background:#E2E7FF;
 
-    border-radius:25px;
+	border-radius:30px;
+
+	box-shadow:0 8px 20px rgba(0,0,0,0.15);
 }
 
+/* タイトル */
 .hw-title{
-    padding:40px;
+	text-align:center;
+
+	font-size:20px;
+	font-weight:bold;
+
+	padding:30px;
+
+	color:#333;
 }
 
+/* 日付 */
 .date-select{
-    padding:20px 40px;
+	padding:0 40px 20px 40px;
+
+	font-size:20px;
 }
 
+/* 宿題リスト */
 .hw-list-box{
-    padding:20px 40px;
+	padding:20px 40px;
 }
 
 .hw-item{
-    list-style:none;
+	list-style:none;
 
-    padding:20px;
+	padding:18px 20px;
+	margin-bottom:10px;
 
-    border-bottom:1px solid #ddd;
+	background:white;
 
-    cursor:pointer;
+	border-radius:15px;
+
+	font-size:20px;
+	font-weight:bold;
+
+	box-shadow:0 3px 8px rgba(0,0,0,0.1);
+
+	cursor:pointer;
+
+	transition:0.2s;
 }
 
+.hw-item:hover{
+	transform:translateY(-2px);
+
+	background:#FFFDEB;
+}
+
+/* 生徒一覧ボックス */
 .student-box{
-    margin:30px;
+	margin:30px;
 
-    background:white;
+	background:white;
 
-    border-radius:20px;
+	border-radius:20px;
 
-    padding:30px;
+	padding:30px;
+
+	box-shadow:0 4px 12px rgba(0,0,0,0.12);
 }
 
 .student-list{
-    margin-top:20px;
+	margin-top:20px;
 }
 
+/* 生徒名 */
 .student-item{
-    display:block;
+	display:block;
 
-    padding:10px 0;
+	padding:12px 0;
+
+	font-size:24px;
+	font-weight:bold;
 }
 
+/* 完了ボタン */
 .complete-btn{
-    display:block;
+	display:block;
 
-    margin:30px auto;
+	margin:40px auto;
 
-    width:150px;
-    height:50px;
+	width:220px;
+	height:60px;
 
-    border:none;
+	border:none;
 
-    border-radius:10px;
+	border-radius:15px;
 
-    background:#ffccff;
+	background:#FFD966;
 
-    color:white;
+	color:#333;
 
-    font-size:20px;
+	font-size:24px;
+	font-weight:bold;
+
+	cursor:pointer;
+
+	box-shadow:0 4px 10px rgba(0,0,0,0.15);
+
+	transition:0.2s;
+}
+
+.complete-btn:hover{
+	transform:translateY(-2px);
+
+	background:#FFC000;
 }

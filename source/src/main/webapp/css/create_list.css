@@ -27,14 +27,14 @@ main {
 	position: static;
 	top: 150px;
 	width: 550px;
-	background: #9deea2;
+	background: white;
 	padding: 0;
 	min-height: 360px;
 	border-radius: 50px;
 	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 .item-header {
-	background: #ff0080;		/**もちものリストの上の色**/
+	background: #cff3d0;		/**もちものリストの上の色**/
 	padding: 10px;
 }
 .item-body {
