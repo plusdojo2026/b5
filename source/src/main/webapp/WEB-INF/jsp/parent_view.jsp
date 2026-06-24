@@ -16,7 +16,7 @@
 
 <!-- ヘッダー -->
 <header class="header">
-    <div class="name">山田太郎くん</div>
+    <div class="name">"${studentData.name}"さん</div>
 </header>
 
 <!-- メイン -->
