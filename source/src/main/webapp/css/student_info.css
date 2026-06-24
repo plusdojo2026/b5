@@ -71,7 +71,14 @@ h2 {
     background-color: white;
     border-radius: 16px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}    
+} 
+
+.stamplog {
+	display: block;
+	margin-top: 20px;
+	font-size: 40px;
+	color: #67BE77;
+}  
     
 /* 保護者のリアクション */
 .reactions {

@@ -45,7 +45,7 @@
   </div>
   
 <!-- ★↓選択した児童の名前(Servletとかと結びつける)↓ -->
-<h2>児童のスタンプ獲得数を表示</h2>
+<h2>選択した児童のスタンプ獲得数を表示します</h2>
 <div class="select-area">
 	<form action="StudentInfoServlet" method="GET">
 		<label class="selectbox">
@@ -68,7 +68,7 @@
      <img src="${pageContext.request.contextPath}/images/hatugen.png" width="150" height="150" >
         <p>
         <strong>積極的な発言</strong><br>
-        <span>${stampCounts != null ? stampCounts[1] : 0}個</span> 
+        <span class="stamplog">${stampCounts != null ? stampCounts[1] : 0}個</span> 
         </p> 
    </div> 
 
@@ -76,7 +76,7 @@
      <img src="${pageContext.request.contextPath}/images/challenge.png" width="150" height="150" >
         <p>
         <strong>挑戦</strong><br>
-        <span>${stampCounts != null ? stampCounts[2] : 0}個</span>
+        <span class="stamplog">${stampCounts != null ? stampCounts[2] : 0}個</span>
         </p> 
    </div> 
 
@@ -84,7 +84,7 @@
     <img src="${pageContext.request.contextPath}/images/goal.png" width="150" height="150">
         <p>
         <strong>達成</strong><br>
-        <span>${stampCounts != null ? stampCounts[3] : 0}個</span>
+        <span class="stamplog">${stampCounts != null ? stampCounts[3] : 0}個</span>
         </p> 
    </div> 
 
@@ -92,7 +92,7 @@
      <img src="${pageContext.request.contextPath}/images/kyouryoku.png" width="150" height="150">
         <p>
         <strong>協力</strong><br>
-        <span>${stampCounts != null ? stampCounts[4] : 0}個</span>
+        <span class="stamplog">${stampCounts != null ? stampCounts[4] : 0}個</span>
         </p> 
    </div> 
 
@@ -100,7 +100,7 @@
      <img src="${pageContext.request.contextPath}/images/syusseki.png" width="150" height="150" >
         <p>
         <strong>出席</strong><br>
-        <span>${stampCounts != null ? stampCounts[0] : 0}日</span>
+        <span class="stamplog">${stampCounts != null ? stampCounts[0] : 0}日</span>
         </p>
    </div> 
 
@@ -108,7 +108,7 @@
      <img src="${pageContext.request.contextPath}/images/sonota.png" width="150" height="150" >
         <p>
         <strong>その他</strong><br>
-        <span>${stampCounts != null ? stampCounts[5] : 0}個</span>
+        <span class="stamplog">${stampCounts != null ? stampCounts[5] : 0}個</span>
         </p> 
    </div> 
   </div> 
@@ -116,10 +116,10 @@
 
 
 <!-- 保護者からのリアクション画面開始 -->
- <h2>保護者からのリアクションを確認</h2>
+ <h2>保護者からのリアクションを確認できます</h2>
 	<div class="reactions">
 	   <dive class="reaction1">
-	    <img src="${pageContext.request.contextPath}/images/reaction1.png" width="100" height="100">
+	    <img src="${pageContext.request.contextPath}/images/nikkori.png" width="100" height="100">
 	        <p class="tuuchi">
 	        <strong>（仮）６月１２日の積極的な発言スタンプにリアクションしました</strong><br>
 	        <span class="date"><img src="${pageContext.request.contextPath}/images/clock.png" width="20" height="20">（仮）6月14日14：30</span> 
