@@ -109,7 +109,7 @@
         </button>
 		
 	</form>
-	<form action="ParentViewServlet" method="POST">
+	<form action="ParentNoticeServlet" method="POST">
 		<button type="submit" name="button" value="lists">
 		        <img src= "${pageContext.request.contextPath}/images/p_list1.png" width="30" height="30" alt = "リスト画面">
 	    </button>
