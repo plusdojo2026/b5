@@ -68,6 +68,25 @@ private static final long serialVersionUID = 1L;
 		String[] selectedStudents = request.getParameterValues("student");//student_idを取得したい
 		//stamp_id = "1";
 		StampLogDao stampLogDao = new StampLogDao();
+		
+		if(selectedStudents == null || selectedStudents.length == 0) {
+			request.setAttribute("errorMessage", "児童を選んでください。");
+			int grade = teacher.getGrade();
+			int class_number = teacher.getClass_number();
+			
+			System.out.println(grade);
+			System.out.println(class_number);
+			//クラスと学年からクラスの児童一覧を取得
+			StudentsDao sDao = new StudentsDao();
+			List<Students> st = sDao.getClassMember(grade,class_number);
+			//児童一覧をリクエストスコープに格納
+			request.setAttribute("StudentsData",st);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/student_seat.jsp");
+			dispatcher.forward(request, response);
+			
+			return;
+		}
+		
 		//その他を選んだ時の処理（テキストも挿入する）
 		if(stamp_id.equals("6")) {
 			String text = (String) session.getAttribute("text");

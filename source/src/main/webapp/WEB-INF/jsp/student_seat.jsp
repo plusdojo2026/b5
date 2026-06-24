@@ -13,8 +13,11 @@ pageEncoding="UTF-8"%>
 </head>
 
 <body>
-<input type="button" value="出席" id="attendBtn">
-
+<c:if test="${not empty errorMessage}">
+	<p class="error-msg" style="color: red; font-weight: bold; text-align: center;">
+		${errorMessage}
+	</p>
+</c:if>
 <!-- ======================================================
      座席表フォーム
      OKボタンを押したときに選択した児童情報を、StudentSeatServletへ送信する
