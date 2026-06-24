@@ -30,20 +30,51 @@
 <!-- もちもの -->
 <div class = "lists">
 	<div class = "list">
+	    <div class = "title">
+	    <img src="images/p_belongings.png" width="40" height="40">
 		<h3>もちもの</h3>
+		</div>
 		<ul>
-			<li>きゅうしょくセット</li>
-			<li>えのぐセット</li>
-			<li>すいとう（氷いっぱい）</li>
+			<li>
+			<label>
+                <input type="checkbox">
+                きゅうしょくセット
+            </label>
+			</li>
+			<li>
+			<label>
+                <input type="checkbox">
+                えのぐセット
+            </label>
+			</li>
+			<li>
+			<label>
+                <input type="checkbox">
+                すいとう（氷いっぱい）
+            </label>
+			</li>
 		</ul>
 	</div>
 
 <!-- しゅくだい -->
 	<div class = "list">
+	    <div class = "title">
+	    <img src="images/p_homework.png" width="40" height="40">
 		<h3>しゅくだい</h3>
+		</div>
 		<ul>
-			<li>かんじドリル</li>
-			<li>けいさんドリル</li>
+			<li>
+			<label>
+                <input type="checkbox">
+                かんじドリル
+            </label>
+			</li>
+			<li>
+			<label>
+                <input type="checkbox">
+                けいさんドリル
+            </label>
+			</li>
 		</ul>
 	</div>
 </div>	

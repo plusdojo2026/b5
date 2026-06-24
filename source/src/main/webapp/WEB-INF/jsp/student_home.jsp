@@ -20,9 +20,9 @@
 		<p class="date_text">6がつ11にち<br>もくようび</p>
 	</div>
 		<div class="result">
-		<a href="student_result.jsp" class="sutudent_result">
-			<img src="${pageContext.request.contextPath}/images/cloud.png" alt="雲の画像" class="cloud_img">
-			<span class="result_text">がんばりをみてみよう</span>
+		<a href="${pageContext.request.contextPath}/StudentResultServlet" class="sutudent_result">
+			<img src="${pageContext.request.contextPath}/images/cloud3.png" alt="雲の画像" class="cloud_img">
+			<span class="result_text"></span>
 		</a>
 	</div>
 </header>
@@ -34,15 +34,15 @@
 	<ul>
 		<li>
 			きゅうしょくセット
-			<button>🚮</button>
+			
 		</li>			
 		<li>
 			えのぐセット
-			<button>🚮</button>
+			
 		</li>			
 		<li>
 			すいとう（氷いっぱい）
-			<button>🚮</button>
+			
 		</li>
 	</ul>
 </div>
@@ -52,13 +52,13 @@
 	<ul>
 		<li>
 			かんじドリル
-			<button>🚮</button>
+			
 		</li>
 	</ul>
 	<ul>
 		<li>
 			けいさんドリル
-			<button>🚮</button>
+			
 		</li>
 	</ul>
 </div>		
