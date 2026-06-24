@@ -21,10 +21,11 @@
 		<img src="${pageContext.request.contextPath}/images/cloud.png" width="220" height="170" alt="雲の画像" class="cloud_img">
 	</div>
 	
-    <div class="result">
-		<a href="student_result.jsp" class="sutudent_result">
+     <div class="result">
+		<a href="${pageContext.request.contextPath}/StudentHomeServlet" class="sutudent_result">
 			<img src="${pageContext.request.contextPath}/images/cloud2.png" width="250" height="200" alt="雲の画像" class="cloud_img">
 		</a>
+		
 	</div>
 </header>
 <!-- ヘッダーここまで -->
