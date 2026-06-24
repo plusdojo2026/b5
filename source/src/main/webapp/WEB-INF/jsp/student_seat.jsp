@@ -9,7 +9,7 @@ pageEncoding="UTF-8"%>
 <meta charset="UTF-8">
 <title>座席表｜できたねスタンプ</title>
 <link rel="stylesheet"
-    href="<%=request.getContextPath()%>/css/student_seat.css?v=123456">
+    href="<%=request.getContextPath()%>/css/student_seat.css">
 </head>
 
 <body>
@@ -42,9 +42,8 @@ pageEncoding="UTF-8"%>
 =================================================== -->
 <div class="okArea">
     <!-- フォーム送信ボタン -->
-    <input type="submit"
-           value="OK"
-           class="ok_btn">
+    <input type="submit" name="submit" value="キャンセル" class="ok_btn">
+    <input type="submit" name="submit" value="OK" class="ok_btn">
 </div>
 
 

@@ -47,7 +47,10 @@ input[type="checkbox"]:checked + .seat_btn {
 
 /* OKボタン */
 .okArea {
-	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
 	margin-top: 40px;
 }
 
