@@ -46,23 +46,23 @@
 			<div class="item-list">
 
 				<div class="item-header">
-					<h3>もちものリスト</h3>
+					<h3>もちもの</h3>
 				</div>
 				<div class="item-body">
 					<ul>
 						<li>きゅうしょくセット
 							<button onclick="deleteItem(this)">
-    						<img src="images/gomibako.png" width="20" height="20">
+    						<img src="images/gomibako.png" width="15" height="15">
 							</button>
 						</li>
 						<li>えのぐセット
 							<button onclick="deleteItem(this)">
-    						<img src="images/gomibako.png" width="20" height="20">
+    						<img src="images/gomibako.png" width="15" height="15">
 							</button>
 						</li>
 						<li>すいとう（氷いっぱい）
 							<button onclick="deleteItem(this)">
-    						<img src="images/gomibako.png" width="20" height="20">
+    						<img src="images/gomibako.png" width="15" height="15">
 							</button>
 						</li>
 					</ul>
@@ -70,25 +70,34 @@
 						<input type="text" id="itemText" placeholder="もちものを入力">
 						<button onclick="addItem()">追加</button>
 					</div>
+					<div class="item-update">
+    						<p id="lastUpdateItem">
+        						最終更新：--
+    						</p>
+
+    				<button onclick="updateListItem()">
+       						 	🔄 リスト更新
+    				</button>
+				</div>
 				</div>
 			</div>
 			<%--------------------------------しゅくだい -----------------------------%>
 			<div class="hw-list">
 
 				<div class="hw-header">
-					<h3>しゅくだいリスト</h3>
+					<h3>しゅくだい</h3>
 				</div>
 
 				<div class="hw-body">
 					<ul>
 						<li>かんじドリル
 							<button onclick="deleteItem(this)">
-    						<img src="images/gomibako.png" width="20" height="20">
+    						<img src="images/gomibako.png" width="15" height="15">
 							</button>
 						</li>
 						<li>けいさんドリル
 							<button onclick="deleteItem(this)">
-    						<img src="images/gomibako.png" width="20" height="20">
+    						<img src="images/gomibako.png" width="15" height="15">
 							</button>
 						</li>
 					</ul>
@@ -96,19 +105,16 @@
 						<input type="text" id="hwText" placeholder="しゅくだいを入力">
 						<button onclick="addHw()">追加</button>
 					</div>
+					<div class="hw-update">
+    <p id="lastUpdateHw">
+        最終更新：--
+    </p>
+
+    <button onclick="updateListHw()">
+        🔄 リスト更新
+    </button>
+</div>
 				</div>
-			</div>
-		</section>
-		<%--------------------------------リスト更新 -----------------------------%>
-		<section>
-			<div class="update-list">
-				<h3>リスト更新について</h3>
-				<p id="lastUpdate">最終更新日時</p>
-				<p>「リスト更新ボタンを押すと、児童と保護者の画面に最新の内容が反映されます。」</p>
-				<button onclick="updateList()">
-					<%--クリックされたらupdatelist()を実行してね--%>
-					リスト更新
-				</button>
 			</div>
 		</section>
 	</main>

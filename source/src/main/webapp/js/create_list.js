@@ -3,10 +3,12 @@
  */
  'use strict';
  
-//更新//
-function updateList() {
+//もちものリスト更新
+function updateListItem() {
 
-    const result = confirm("児童、保護者の画面に反映されます。\n更新してよろしいですか？");
+    const result = confirm(
+        "もちものリストが児童、保護者の画面に反映されます。\n更新してよろしいですか？"
+    );
 
     if(result){
 
@@ -15,7 +17,27 @@ function updateList() {
         const hour = now.getHours().toString().padStart(2, "0");
         const minute = now.getMinutes().toString().padStart(2, "0");
 
-        document.getElementById("lastUpdate").innerHTML =
+        document.getElementById("lastUpdateItem").innerHTML =
+            "最終更新：" + hour + ":" + minute;
+
+        alert("リストを更新しました！");
+    }
+}
+//しゅくだいリスト更新
+function updateListHw() {
+
+    const result = confirm(
+        "しゅくだいリストが児童、保護者の画面に反映されます。\n更新してよろしいですか？"
+    );
+
+    if(result){
+
+        const now = new Date();
+
+        const hour = now.getHours().toString().padStart(2, "0");
+        const minute = now.getMinutes().toString().padStart(2, "0");
+
+        document.getElementById("lastUpdateHw").innerHTML =
             "最終更新：" + hour + ":" + minute;
 
         alert("リストを更新しました！");

@@ -8,27 +8,27 @@ body {
 }
 main {
 	text-align: center;
-	padding-top: 0px;
-	padding-bottom: 0px;
+	padding-top: 10px;
+	padding-bottom: 30px;
 }
 main {
-	min-height: 570px;
+	min-height: 700px;
 }
 
 .list-area {
 	display: flex;
 	justify-content: center;
 	gap: 80px;
+	margin-top:40px;
 }
 /*****************もちものリスト******************/
 .item-list {
 	overflow: hidden;
 	padding: 0;
 	position: static;
-	top: 150px;
 	width: 550px;
 	background: white;
-	padding: 0;
+	padding: 10;
 	min-height: 360px;
 	border-radius: 50px;
 	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
@@ -36,10 +36,33 @@ main {
 .item-header {
 	background: #cff3d0;		/**もちものリストの上の色**/
 	padding: 10px;
+	font-size: 30px;
+    font-family:  'BIZ UDPGothic', sans-serif;
 }
 .item-body {
 	background: #ffffff;
 	padding: 20px;
+	font-size: 20px;
+    font-family:  'BIZ UDPGothic', sans-serif;
+    line-height:2.0;
+}
+.item-body ul{
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+
+.item-body li{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	padding:12px 5px;
+	border-bottom:1px solid #EAEAEA;
+	font-weight:bold;
+}
+
+.item-body li:last-child{
+	border-bottom:none;
 }
 .item-input {
 	margin-top: 20px;
@@ -49,7 +72,7 @@ main {
 .item-input input {
 	flex: 1;
 	padding: 10px;
-	border: 1px solid #c0c0c0;
+	border: 1px solid #56e770;
 	border-radius: 10px;
 }
 /**************もちものの追加ボタン*********************/
@@ -66,7 +89,6 @@ main {
 	overflow: hidden;
 	padding: 0;
 	position: static;
-	top: 260px;
 	width: 550px;
 	background: white;
 	padding: 0;
@@ -77,9 +99,30 @@ main {
 .hw-header {
 	background: #a4d6f0;
 	padding: 10px;
+	font-size: 30px;
+    font-family:  'BIZ UDPGothic', sans-serif;
 }
 .hw-body {
 	padding: 20px;
+	line-height:2.0;
+}
+.hw-body ul{
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+
+.hw-body li{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	padding:12px 5px;
+	border-bottom:1px solid #EAEAEA;
+	font-weight:bold;
+}
+
+.hw-body li:last-child{
+	border-bottom:none;
 }
 .hw-input {
 	margin-top: 20px;
@@ -89,7 +132,7 @@ main {
 .hw-input input {
 	flex: 1;
 	padding: 10px;
-	border: 1px solid #ccc;
+	border: 1px solid #50dae4;
 	border-radius: 10px;
 }
 /**************しゅくだいの追加ボタン*********************/
@@ -101,12 +144,39 @@ main {
 	border-radius: 10px;
 	cursor: pointer;
 }
-/*****************リスト更新******************************/
-.update-list {
-	width: 1200px;
-	margin: 40px auto;
-	background: white;
-	padding: 10px;
-	border-radius: 10px;
-	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+
+/**************更新ボタン、最終更新日時*********************/
+#lastUpdateItem,
+#lastUpdateHw{
+	color:#E53935;
+	font-weight:bold;
+	font-size:20px;
+}
+
+.item-update button{
+	width:180px;
+	height:55px;
+
+	background:white;
+	color:#28a745;
+
+	border:2px solid #28a745;
+	border-radius:15px;
+
+	font-size:20px;
+	font-weight:bold;
+}
+
+.hw-update button{
+	width:180px;
+	height:55px;
+
+	background:white;
+	color:#0d6efd;
+
+	border:2px solid #0d6efd;
+	border-radius:15px;
+
+	font-size:20px;
+	font-weight:bold;
 }
