@@ -14,7 +14,7 @@
 </head>
 
 <body>
-	<!-- ヘッダー -->
+<!-- ヘッダー -->
  <header class="header">
    <a href="StampServlet"><img src="${pageContext.request.contextPath}/images/logo.png" width="100" height="100"></a>
    <div class="left">
@@ -42,7 +42,8 @@
 			<h3>児童の持ち物と宿題を管理しましょう</h3>
 		</section>
 		<section class="list-area">
-			<%----------------------------------------もちもの ----------------------------%>
+		
+<%--もちもの --%>
 			<div class="item-list">
 
 				<div class="item-header">
@@ -70,18 +71,19 @@
 						<input type="text" id="itemText" placeholder="もちものを入力">
 						<button onclick="addItem()">追加</button>
 					</div>
+<%--もちもの更新 --%>					
 					<div class="item-update">
     						<p id="lastUpdateItem">
         						最終更新：--
     						</p>
-
     				<button onclick="updateListItem()">
        						 	🔄 リスト更新
     				</button>
 				</div>
 				</div>
 			</div>
-			<%--------------------------------しゅくだい -----------------------------%>
+			
+<%--しゅくだい --%>
 			<div class="hw-list">
 
 				<div class="hw-header">
@@ -105,15 +107,15 @@
 						<input type="text" id="hwText" placeholder="しゅくだいを入力">
 						<button onclick="addHw()">追加</button>
 					</div>
+<%--しゅくだい更新 --%>								
 					<div class="hw-update">
-    <p id="lastUpdateHw">
-        最終更新：--
-    </p>
-
-    <button onclick="updateListHw()">
-        🔄 リスト更新
-    </button>
-</div>
+    				<p id="lastUpdateHw">
+        					最終更新：--
+    				</p>
+    				<button onclick="updateListHw()">
+        					🔄 リスト更新
+    				</button>
+					</div>
 				</div>
 			</div>
 		</section>
