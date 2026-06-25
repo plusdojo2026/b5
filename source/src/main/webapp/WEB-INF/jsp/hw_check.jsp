@@ -24,12 +24,11 @@
             <li><a href="StampServlet">スタンプ一覧</a></li>
             <li><a href="CreateListServlet">リスト作成</a></li>
             <li><a href="HwCheckServlet">宿題チェック</a></li>
+            <li><a href="StudentInfoServlet">スタンプ数/リアクション</a></li>
         </ul>    
     </nav>
    <div class="right">
-      <a href="LoginServlet" class="login"><span class="login-icon"><img src="${pageContext.request.contextPath}/images/login.png" width="25" height="25"></span>ログイン</a> 
-      <a href="" class="logout"><span class="logout-icon"><img src="${pageContext.request.contextPath}/images/logout.png" width="30" height="30"></span>ログアウト</a> 
-      <a href="StudentInfoServlet"><span class="reaction"><img src="${pageContext.request.contextPath}/images/reaction.png" width="45" height="45"></span></a> 
+      <a href="LoginServlet" class="logout"><span class="logout-icon"><img src="${pageContext.request.contextPath}/images/logout.png" width="30" height="30"></span>ログアウト</a> 
    </div>
  </header>
 <!-- ヘッダーここまで -->
