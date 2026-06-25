@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import dao.StampLogDao;
 import dao.StudentsDao;
+import dto.StampLog;
 import dto.Students;
 import dto.Teachers;
 
@@ -53,6 +55,17 @@ private static final long serialVersionUID = 1L;
 			for(int i = 1; i <= 6; i++){
 				stampCounts[i-1] = logDao.getStampCount(student_id, i, month);
 			}
+			//ログをすべて取得
+			List<StampLog> stLog = logDao.getStampLogByStudentID(student_id);
+			//避難用のリスト
+			List<StampLog> filteredList = new ArrayList<>();
+			for(StampLog s:stLog) {
+				if(s.getReaction_id() != 0) {
+					s.setCreated_at(s.getDisplayDate());
+					filteredList.add(s);
+				}
+			}
+			request.setAttribute("stLog",filteredList);
 			
 			// 集計した配列をリクエストスコープに格納
 			request.setAttribute("stampCounts", stampCounts);

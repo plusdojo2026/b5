@@ -86,8 +86,8 @@ public class StampLogDao {
 //					,"b5","3YyniFH6fpR5WMeB");
 			
 			// SQL文を準備する
-			String sql = "INSERT INTO STAMP_LOG(student_id, stamp_id)"
-						+"VALUES(?,?)";
+			String sql = "INSERT INTO STAMP_LOG(student_id, stamp_id, reaction_id)"
+						+"VALUES(?,?,0)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			
 			//引数のIDを上記のSELECT文の?に代入
@@ -128,8 +128,8 @@ public class StampLogDao {
 //					,"b5","3YyniFH6fpR5WMeB");
 			
 			// SQL文を準備する
-			String sql = "INSERT INTO STAMP_LOG(student_id, stamp_id, text)"
-						+"VALUES(?,?,?)";
+			String sql = "INSERT INTO STAMP_LOG(student_id, stamp_id, reaction_id, text)"
+						+"VALUES(?,?,0,?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			
 			//引数のIDを上記のINSERT文の?に代入

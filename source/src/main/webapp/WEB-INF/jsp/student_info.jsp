@@ -116,16 +116,46 @@
 
 
 <!-- 保護者からのリアクション画面開始 -->
- <h2>保護者からのリアクションを確認できます</h2>
-	<div class="reactions">
-	   <dive class="reaction1">
-	    <img src="${pageContext.request.contextPath}/images/nikkori.png" width="100" height="100">
-	        <p class="tuuchi">
-	        <strong>（仮）６月１２日の積極的な発言スタンプにリアクションしました</strong><br>
-	        <span class="date"><img src="${pageContext.request.contextPath}/images/clock.png" width="20" height="20">（仮）6月14日14：30</span> 
-	        </p> 
-	   </dive>   
-	</div> 
+<h2>保護者からのリアクションを確認</h2>
+<div class="reactions">
+	<c:forEach var="log" items="${stLog}">
+			<div class="reaction1">
+				<c:choose>
+					<c:when test="${log.reaction_id == 1}">
+						<img src="${pageContext.request.contextPath}/images/good.png" width="100" height="100">
+					</c:when>
+					<c:when test="${log.reaction_id == 2}">
+						<img src="${pageContext.request.contextPath}/images/pien.png" width="100" height="100">
+					</c:when>
+					<c:when test="${log.reaction_id == 3}">
+						<img src="${pageContext.request.contextPath}/images/bikkuri.png" width="100" height="100">
+					</c:when>
+					<c:when test="${log.reaction_id == 4}">
+						<img src="${pageContext.request.contextPath}/images/nikkori.png" width="100" height="100">
+					</c:when>
+				</c:choose>
+				
+				<p class="tuuchi">
+					<strong>
+						${log.created_at}の
+						<c:choose>
+							<c:when test="${log.stamp_id == 1}">「出席」</c:when>
+							<c:when test="${log.stamp_id == 2}">「積極的な発言」</c:when>
+							<c:when test="${log.stamp_id == 3}">「挑戦」</c:when>
+							<c:when test="${log.stamp_id == 4}">「達成」</c:when>
+							<c:when test="${log.stamp_id == 5}">「協力」</c:when>
+							<c:when test="${log.stamp_id == 6}">「その他（<c:out value="${log.text}"/>）」</c:when>
+						</c:choose>
+						スタンプにリアクションしました
+					</strong><br>
+					<span class="date">
+						<img src="${pageContext.request.contextPath}/images/clock.png" width="20" height="20">
+						${log.updated_at}
+					</span> 
+				</p> 
+			</div>   
+	</c:forEach>
+</div>
 </main>
 <!-- 保護者からのリアクション画面終了 -->
 
