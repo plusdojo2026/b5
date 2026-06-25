@@ -83,7 +83,7 @@ footer {
 
 .flower {
     position: absolute;
-    bottom: 10px; /* 土の上に乗るように調整 */
+    bottom: 60px; /* 土の上に乗るように調整 */
     left: 50px;
     z-index: 1;
     left: 50%;
