@@ -96,6 +96,7 @@
 	</c:forEach>
 </div>
 
+ <p class="copyright">&copy; パンの耳</p>
 <!-- 保護者のリアクション画面終了 --> 
 
 </main>

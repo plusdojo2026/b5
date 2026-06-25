@@ -89,7 +89,7 @@
 			</div>
 		</button>
 		
-		<button type="submit" name="stamp_id" value="6" class="stamp_btn">
+		<button type="submit" name="stamp_id" value="6" class="stamp_btn" onclick="return inputText(this);">
 			<img src="${pageContext.request.contextPath}/images/sonota.png" width="150" height="150">
 			<h3><strong>その他</strong></h3>
 			<div class="detail">
@@ -109,7 +109,7 @@
 <!-- フッター終了 -->
 
 <!-- javascript開始 -->
-<script src="${pageContext.request.contextPath}/js/student_info.js"></script>
+<script src="${pageContext.request.contextPath}/js/stamp.js"></script>
 <!-- javascript終了 -->
 
 </body>
