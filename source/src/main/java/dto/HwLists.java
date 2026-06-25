@@ -8,6 +8,7 @@ public class HwLists implements Serializable{
 	private int grade;
 	private int class_number;
 	private int homework_id;
+	private String homework_name;
 	private String created_at;
 	private String updated_at;
 	
@@ -49,6 +50,12 @@ public class HwLists implements Serializable{
 	public void setHomework_id(int homework_id) {
 		this.homework_id = homework_id;
 	}
+	public String getHomework_name() {
+		return homework_name;
+	}
+	public void setHomework_name(String homework_name) {
+		this.homework_name = homework_name;
+	}
 	public String getCreated_at() {
 		return created_at;
 	}
@@ -62,7 +69,7 @@ public class HwLists implements Serializable{
 		this.updated_at = updated_at;
 	}
 	
-	public HwLists(int id, String date, String hw_range, int grade, int class_number, int homework_id, String created_at,
+	public HwLists(int id, String date, String hw_range, int grade, int class_number, int homework_id, String homework_name, String created_at,
 			String updated_at) {
 		super();
 		this.id = id;
@@ -71,6 +78,7 @@ public class HwLists implements Serializable{
 		this.grade = grade;
 		this.class_number = class_number;
 		this.homework_id = homework_id;
+		this.homework_name = homework_name;
 		this.created_at = created_at;
 		this.updated_at = updated_at;
 	}
@@ -82,6 +90,7 @@ public class HwLists implements Serializable{
 		this.grade = 0;
 		this.class_number = 0;
 		this.homework_id = 0;
+		this.homework_name = "";
 		this.created_at = "";
 		this.updated_at = "";
 	}
