@@ -38,8 +38,11 @@ public class StudentResultServlet extends HttpServlet{
 		int[] stampCounts = new int[5];
 		
 		for(int i = 1; i <= stampCounts.length; i++){
-			stampCounts[i-1] = logDao.getStampCount(student_id, i, month);
-			System.out.println(stampCounts[i-1]);
+			int count = logDao.getStampCount(student_id, i, month);
+			if(count>=10) {
+				count = 10;
+			}
+			stampCounts[i-1] = count;
 		}
 		//スタンプ数をリクエストスコープに格納
 		request.setAttribute("stampCounts",stampCounts);
