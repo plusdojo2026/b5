@@ -60,7 +60,7 @@
     <!-- 右側 -->
     <div class="student-check-area">
         <h2 class="selected-hw">
-            6月19日（金）けいさんドリル（P84～98）
+              6月19日（金）けいさんドリル（P84～98）
         </h2>
         <div class="student-box">
             <h3 class="student-title">
