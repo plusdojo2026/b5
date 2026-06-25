@@ -89,10 +89,10 @@
 <!-- フッター -->
 <footer class="student_footer">
 <div class="flower">
-	<img src="images/sunflower.png" width="350" height="350" alt="花のイラスト" class="flower_img">
+	<img src="${pageContext.request.contextPath}/images/flower${flowerLevel}.gif" width="350" height="350" alt="クラスの花（レベル${flowerLevel}）" class="flower_img">
 </div>
-<img src="images/tuchi2.png" width="1500" height="360" alt="土のイラスト" class="ground_img">
 
+<img src="${pageContext.request.contextPath}/images/tuchi2.png" width="1500" height="360" alt="土のイラスト" class="ground_img">
 </footer>
 <!-- フッターここまで -->
 
