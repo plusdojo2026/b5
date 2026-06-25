@@ -1,10 +1,7 @@
 package dto;
-//岩本//
-
 import java.io.Serializable;
 
 public class ItemLists  implements Serializable {
-
 	private int id;
 	private String date;
 	private int grade ;
@@ -61,7 +58,7 @@ public class ItemLists  implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public ItemLists(int id, String date, int grade, int class_number, int item_id, String created_at,
+	public ItemLists(int id, String date, int grade, int class_number, int item_id, String item_name, String created_at,
 			String updated_at) {
 		super();
 		this.id = id;
@@ -69,6 +66,7 @@ public class ItemLists  implements Serializable {
 		this.grade = grade;
 		this.class_number = class_number;
 		this.item_id = item_id;
+		this.item_name = item_name;
 		this.created_at = created_at;
 		this.updated_at = updated_at;
 	}
@@ -79,6 +77,7 @@ public class ItemLists  implements Serializable {
 		this.grade = 0;
 		this.class_number = 0;
 		this.item_id = 0;
+		this.item_name = "";
 		this.created_at = "";
 		this.updated_at = "";
 }
