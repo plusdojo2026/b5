@@ -18,19 +18,19 @@
 		<label class="type_option">
 			<input type="radio" name="user_type" value="0" checked>
 			<img src="${pageContext.request.contextPath}/images/teacher.png" alt="教師のアイコン" class="type">
-			<span class="type_text">教師</span>
+			<span class="type_text">せんせい</span>
 		</label>
 
 		<label class="type_option">
 			<input type="radio" name="user_type" value="1">
 			<img src="${pageContext.request.contextPath}/images/student.png" alt="児童のアイコン" class="type">
-			<span class="type_text">児童</span>
+			<span class="type_text">こども</span>
 		</label>
 
 		<label class="type_option">
 			<input type="radio" name="user_type" value="2">
 			<img src="${pageContext.request.contextPath}/images/parents.png" alt="保護者のアイコン" class="type">
-			<span class="type_text">保護者</span>
+			<span class="type_text">おとうさん<br>おかあさん</span>
 		</label>
 	</div>
 
