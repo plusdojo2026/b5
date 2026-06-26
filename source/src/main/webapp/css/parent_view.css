@@ -6,7 +6,7 @@ p {
 }
 
 /* モバイル対応 */
-@media(max-width: 767px){
+
 	body {
     color: #4D586D;
     font-family: 'Hiragino Sans';
@@ -131,4 +131,3 @@ button {
     padding: 0;         
 }
 
-}
