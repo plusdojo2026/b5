@@ -56,8 +56,7 @@ public class CreateListServlet extends HttpServlet{
 		int class_number = teacher.getClass_number();
 		
 		request.setCharacterEncoding("UTF-8");
-		// リクエストパラメータを取得する
-		//文字化け防止
+
 		//取得したいデータ（教師がリスト作成画面で作ったリスト）
 		String updateType = request.getParameter("update_type");
 		//持ち物更新
