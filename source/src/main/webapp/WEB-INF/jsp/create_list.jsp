@@ -37,12 +37,10 @@
 	
 	<main>
 		<section>
-			<h2 id="today"></h2><!--日付 -->
-			<h3>児童の持ち物と宿題を管理しましょう</h3>
+			<h2 id="today"></h2><h3>児童の持ち物と宿題を管理しましょう</h3>
 		</section>
 		<section class="list-area">
-		
-<%--もちもの --%>
+			<%--もちもの --%>
 			<div class="item-list">
 
 				<div class="item-header">
@@ -50,39 +48,32 @@
 				</div>
 				<div class="item-body">
 					<ul>
-						<li>きゅうしょくセット
-							<button onclick="deleteItem(this)">
-    						<img src="images/gomibako.png" width="15" height="15">
-							</button>
-						</li>
-						<li>えのぐセット
-							<button onclick="deleteItem(this)">
-    						<img src="images/gomibako.png" width="15" height="15">
-							</button>
-						</li>
-						<li>すいとう（氷いっぱい）
-							<button onclick="deleteItem(this)">
-    						<img src="images/gomibako.png" width="15" height="15">
-							</button>
-						</li>
+						<c:forEach var="item" items="${itemList}">
+							<li><c:out value="${item.item_name}" />
+								<button type="button" onclick="deleteItem(this)">
+									<img src="${pageContext.request.contextPath}/images/gomibako.png" width="15" height="15">
+								</button>
+							</li>
+						</c:forEach>
 					</ul>
-					<div class=item-input>
+					
+					<div class="item-input">
 						<input type="text" id="itemText" placeholder="もちものを入力">
-						<button onclick="addItem()">追加</button>
+						<button type="button" onclick="addItem()">追加</button>
 					</div>
-<%--もちもの更新 --%>					
+					
+					<br>
+					
+					<%--もちもの更新 --%>
 					<div class="item-update">
-    						<p id="lastUpdateItem">
-        						最終更新：--
-    						</p>
-    				<button onclick="updateListItem()">
-       						 	🔄 リスト更新
-    				</button>
-				</div>
+						<button type="button" onclick="updateListItem()">
+							🔄 リスト更新
+						</button>
+					</div>
 				</div>
 			</div>
 			
-<%--しゅくだい --%>
+			<%--しゅくだい --%>
 			<div class="hw-list">
 
 				<div class="hw-header">
@@ -91,33 +82,70 @@
 
 				<div class="hw-body">
 					<ul>
-						<li>かんじドリル
-							<button onclick="deleteItem(this)">
-    						<img src="images/gomibako.png" width="15" height="15">
-							</button>
-						</li>
-						<li>けいさんドリル
-							<button onclick="deleteItem(this)">
-    						<img src="images/gomibako.png" width="15" height="15">
-							</button>
-						</li>
+						<c:forEach var="hw" items="${hwList}">
+							<li><c:out value="${hw.homework_name}" />
+								<button type="button" onclick="deleteItem(this)">
+									<img src="${pageContext.request.contextPath}/images/gomibako.png" width="15" height="15">
+								</button>
+							</li>
+						</c:forEach>
 					</ul>
-					<div class=hw-input>
+					
+					<div class="hw-input">
 						<input type="text" id="hwText" placeholder="しゅくだいを入力">
-						<button onclick="addHw()">追加</button>
+						<button type="button" onclick="addHw()">追加</button>
 					</div>
-<%--しゅくだい更新 --%>								
+					
+					<br>
+					
+					<%--しゅくだい更新 --%>
 					<div class="hw-update">
-    				<p id="lastUpdateHw">
-        					最終更新：--
-    				</p>
-    				<button onclick="updateListHw()">
-        					🔄 リスト更新
-    				</button>
+						<button type="button" onclick="updateListHw()">
+							🔄 リスト更新
+						</button>
 					</div>
 				</div>
 			</div>
 		</section>
 	</main>
 </body>
+<script>
+'use strict';
+//もちもの追加//
+function addItem() {
+	const input = document.getElementById("itemText");
+	const text = input.value;
+	
+	if(text.trim() === ""){
+		return;
+	}
+
+	const ul = document.querySelector(".item-body ul");
+	const li = document.createElement("li");
+
+	li.innerHTML = text + ' <button onclick="deleteItem(this)"><img src="${pageContext.request.contextPath}/images/gomibako.png" width="15" height="15"></button>';
+	ul.appendChild(li);
+	
+	input.value = "";
+}
+
+//しゅくだい追加//
+function addHw() {
+	const input = document.getElementById("hwText");
+	const text = input.value;
+	
+	if(text.trim() === ""){
+		return;
+	}
+
+	const ul = document.querySelector(".hw-body ul");
+	const li = document.createElement("li");
+
+	li.innerHTML = text + ' <button onclick="deleteItem(this)"><img src="${pageContext.request.contextPath}/images/gomibako.png" width="15" height="15"></button>';
+	ul.appendChild(li);
+	
+	input.value = "";
+}
+</script>
+
 </html>

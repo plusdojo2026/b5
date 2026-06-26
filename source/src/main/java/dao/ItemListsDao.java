@@ -180,40 +180,44 @@ public class ItemListsDao {
 	}
 	
 	// 持ち物リストの全データを完全に消去する
-		public void clearAllItemList() {
-			Connection conn = null;
-			try {
-				// JDBCドライバを読み込む
-				Class.forName("com.mysql.cj.jdbc.Driver");
-				
-				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?"
-						+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
-						"root", "password");
-				
-				// 本番環境
+	public void clearClassItemList(int grade ,int class_number) {
+		Connection conn = null;
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?"
+					+ "characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B9&rewriteBatchedStatements=true",
+					"root", "password");
+			
+			// 本番環境
 //				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/b5?useSSL=false"
 //						+ "&allowPublicKeyRetrieval=true&serverTimezone=Asia/Tokyo&connectTimeout=30000"
 //						,"b5","3YyniFH6fpR5WMeB");
-				
-				// 全削除用のSQL文を準備する（WHERE句なし）
-				String sql = "DELETE FROM ITEM_LISTS";
-				PreparedStatement pStmt = conn.prepareStatement(sql);
+			
+			// 全削除用のSQL文を準備する（WHERE句なし）
+			String sql = "DELETE FROM ITEM_LISTS WHERE grade=? AND class_number=?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-				// DELETE文を実行する
-				pStmt.executeUpdate();
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				// データベースを切断
-				if (conn != null) {
-					try {
-						conn.close();
-					} catch (SQLException e) {
-						e.printStackTrace();
-					}
+			pStmt.setInt(1, grade);
+			pStmt.setInt(2, class_number);
+			// DELETE文を実行する
+			pStmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
 				}
 			}
 		}
+	}
+	
+	
 }

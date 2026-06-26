@@ -11,10 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.HwDao;
+import dao.HwListsDao;
 import dao.ItemListsDao;
+import dao.ItemsDao;
+import dto.HwLists;
 import dto.ItemLists;
 import dto.Teachers;
-
 @WebServlet("/CreateListServlet")
 public class CreateListServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
@@ -31,8 +34,11 @@ public class CreateListServlet extends HttpServlet{
 		//日付について要検討(いったん日付無し)
 		ItemListsDao ilDao = new ItemListsDao();
 		List<ItemLists> itemList = ilDao.getItemList(grade, class_number);
+		HwListsDao hlDao = new HwListsDao();
+		List<HwLists> hwList = hlDao.getHwList(grade, class_number);
 		
 		request.setAttribute("itemList",itemList);
+		request.setAttribute("hwList",hwList);
 		
 		// しゅくだい、もちものリスト作成画面にフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/create_list.jsp");
@@ -53,44 +59,40 @@ public class CreateListServlet extends HttpServlet{
 		// リクエストパラメータを取得する
 		//文字化け防止
 		//取得したいデータ（教師がリスト作成画面で作ったリスト）
-		
-		String[] item_ids = request.getParameterValues("item_id");
-		// 画面で作成した持ち物リストのitem_idを複数取得する
-		// 更新ボタンが押されたとき、画面上の持ち物ID一覧を受け取る
-		//クラス、学年、item_id、を引数として作成した持ち物リストをItemListsに登録するメソッドが必要
-		//→AddItemList(int class_number,int grade,int item_id)
-		ItemListsDao ilDao = new ItemListsDao();
-		//いったんItemListsテーブルの中身を削除する
-		ilDao.clearAllItemList();
-		// item_listsテーブルを操作するDAOを使えるようにす
-		for(String s:item_ids) {
-		//もちものの数だけ、この処理を1件ずつ繰り返す。
-			ilDao.addItemList(class_number, grade, Integer.parseInt(s));
+		String updateType = request.getParameter("update_type");
+		//持ち物更新
+		if ("item".equals(updateType)) {
+			String[] item_names = request.getParameterValues("item_name");
+			ItemListsDao ilDao = new ItemListsDao();
+			ItemsDao itemsDao = new ItemsDao();
+			
+			ilDao.clearClassItemList(grade, class_number);
+			
+			if (item_names != null) {
+				for (String name : item_names) {
+					int item_id = itemsDao.getOrInsertItem(name);
+					if (item_id != -1) {
+						ilDao.addItemList(class_number, grade, item_id);
+					}
+				}
+			}
+			
+		} else if ("hw".equals(updateType)) {
+			String[] hw_names = request.getParameterValues("hw_name");
+			HwListsDao hlDao = new HwListsDao();
+			HwDao hwDao = new HwDao();
+
+			hlDao.clearClassHwList(grade, class_number);
+			
+			if (hw_names != null) {
+				for (String name : hw_names) {
+					int hw_id = hwDao.getOrInsertHw(name);
+					if (hw_id != -1) {
+						hlDao.addHwList(class_number, grade, hw_id);
+					}
+				}
+			}
 		}
+		response.sendRedirect("/b5/CreateListServlet");
 	}
 }
-
-
-/*
-① 教師がヘッダーの「リスト作成」をクリックする
-                ↓ doGet
-② create_list.jsp（リスト作成画面）を表示する
-                ↓
-③ 教師が持ち物リストを入力する
-（例：絵具セット、水筒）
-                ↓
-④ 更新ボタンを押す
-                ↓ doPost
-⑤ サーブレットがJSPから送られてきたデータを受け取る
-                ↓
-⑥ CreateListServlet.javaが、JSPから送られてきた持ち物のID一覧を受け取り、item_idsという変数に保存する
-                ↓
-⑦ ItemListsDao.javaを準備する→DAOがMySQLを実行する
-                ↓
-⑧ 持ち物の数だけ繰り返し処理を行う
-                ↓
-⑨ item_listsテーブルへ1件ずつ登録する
-（未実装）
-                ↓
-⑩ MySQLに保存される
-*/
