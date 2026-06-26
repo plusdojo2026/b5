@@ -80,13 +80,14 @@
         <strong>しゅっせき</strong> 
         </p>
    </div> 
-
+<!-- 
    <div class="stamp6">
      <img src="images/sonota.png" width="100" height="100" >
         <p>
         <strong>そのた</strong>
         </p> 
-   </div> 
+   </div>
+     --> 
   </div> 
 </main>
 <!-- メインここまで -->
