@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.HwListsDao;
 import dao.ItemListsDao;
 import dao.StampLogDao;
 import dao.StudentsDao;
@@ -29,12 +30,15 @@ public class StudentHomeServlet extends HttpServlet{
 
 		int grade = student.getGrade();
 		int class_number = student.getClass_number();
-		//現在作成済みのリストを取得する必要がある
-		//日付について要検討(いったん日付無し)
+		
+
 		ItemListsDao ilDao = new ItemListsDao();
 		List<ItemLists> itemList = ilDao.getItemList(grade, class_number);
-		
-		request.setAttribute("itemList",itemList);
+		request.setAttribute("itemList", itemList);
+
+		HwListsDao hlDao = new HwListsDao();
+		List<dto.HwLists> hwList = hlDao.getHwList(grade, class_number);
+		request.setAttribute("hwList", hwList);
 		
 		//クラスのスタンプ数を集計、それに応じて花に使う画像を取得、表示
 		//スタンプ数を集計するために、student_idからクラスの全員のスタンプログを取得できるメソッドが必要

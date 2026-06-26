@@ -11,7 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.HwListsDao;
+import dao.ItemListsDao;
 import dao.StampLogDao;
+import dto.ItemLists;
 import dto.StampLog;
 import dto.Students;
 
@@ -26,6 +29,18 @@ private static final long serialVersionUID = 1L;
 		//ログインしている児童データを取得
 		HttpSession session = request.getSession();
 		Students student = (Students) session.getAttribute("studentData");
+		
+		int grade = student.getGrade();
+		int class_number = student.getClass_number();
+		
+
+		ItemListsDao ilDao = new ItemListsDao();
+		List<ItemLists> itemList = ilDao.getItemList(grade, class_number);
+		request.setAttribute("itemList", itemList);
+
+		HwListsDao hlDao = new HwListsDao();
+		List<dto.HwLists> hwList = hlDao.getHwList(grade, class_number);
+		request.setAttribute("hwList", hwList);
 		
 		//必要な変数を取得
 		int student_id = student.getId();

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,53 +28,36 @@
   
   
 <!-- もちもの -->
-<div class = "lists">
-	<div class = "list">
-	    <div class = "title">
-	    <img src="images/p_belongings.png" width="40" height="40">
-		<h3>もちもの</h3>
+<div class="lists">
+	<div class="list">
+		<div class="title">
+			<img src="${pageContext.request.contextPath}/images/p_belongings.png" width="40" height="40">
+			<h3>もちもの</h3>
 		</div>
 		<ul>
-			<li>
-			<label>
-                <input type="checkbox">
-                きゅうしょくセット
-            </label>
-			</li>
-			<li>
-			<label>
-                <input type="checkbox">
-                えのぐセット
-            </label>
-			</li>
-			<li>
-			<label>
-                <input type="checkbox">
-                すいとう（氷いっぱい）
-            </label>
-			</li>
+			<c:forEach var="item" items="${itemList}">
+				<li>
+					<label>
+						<c:out value="${item.item_name}" />
+					</label>
+				</li>
+			</c:forEach>
 		</ul>
 	</div>
 
-<!-- しゅくだい -->
-	<div class = "list">
-	    <div class = "title">
-	    <img src="images/p_homework.png" width="40" height="40">
-		<h3>しゅくだい</h3>
+	<div class="list">
+		<div class="title">
+			<img src="${pageContext.request.contextPath}/images/p_homework.png" width="40" height="40">
+			<h3>しゅくだい</h3>
 		</div>
 		<ul>
-			<li>
-			<label>
-                <input type="checkbox">
-                かんじドリル
-            </label>
-			</li>
-			<li>
-			<label>
-                <input type="checkbox">
-                けいさんドリル
-            </label>
-			</li>
+			<c:forEach var="hw" items="${hwList}">
+				<li>
+					<label>
+						<c:out value="${hw.homework_name}" />
+					</label>
+				</li>
+			</c:forEach>
 		</ul>
 	</div>
 </div>	
