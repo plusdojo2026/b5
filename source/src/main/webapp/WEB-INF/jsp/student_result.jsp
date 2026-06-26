@@ -27,6 +27,11 @@
 		</a>
 		
 	</div>
+	
+	<div>
+		<button type="button" onclick="changeFlowerLevel(-1)">－</button>
+		<button type="button" onclick="changeFlowerLevel(1)" >＋</button>
+	</div>
 </header>
 <!-- ヘッダーここまで -->
 
@@ -101,4 +106,25 @@
 <!-- javascript終了 -->
 
 </body>
+<script>
+
+
+let currentFlowerLevel =${flowerLevel};
+const contextPath = "${pageContext.request.contextPath}";
+
+function changeFlowerLevel(level) {
+	currentFlowerLevel += level;
+	
+	// レベルを1〜8の範囲内に制限
+	if (currentFlowerLevel < 1) currentFlowerLevel = 1;
+	if (currentFlowerLevel > 8) currentFlowerLevel = 8;
+	
+	// 画像のsrc属性を書き換える
+	const flowerImg = document.querySelector('.flower_img');
+	if (flowerImg) {
+		flowerImg.src = contextPath + "/images/flower" + currentFlowerLevel + ".gif";
+		flowerImg.alt = "クラスの花（レベル" + currentFlowerLevel + "）";
+	}
+}
+</script>
 </html>

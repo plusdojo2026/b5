@@ -12,3 +12,5 @@ document.getElementById('today').textContent =
 
 document.getElementById('today2').textContent =
     `${month}がつ`+ "のがんばり";    
+    
+    
