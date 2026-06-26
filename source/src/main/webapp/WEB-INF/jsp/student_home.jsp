@@ -29,7 +29,7 @@
 <main class="student_main">
 <section>
 <%---------------------------もちもの ----------------------------%>
-<div>
+<div class="list1">
 	<h3>もちものリスト</h3>
 	<ul>
 		<li>
@@ -47,7 +47,7 @@
 	</ul>
 </div>
 <%----------------------しゅくだい -----------------------------%>
-<div>
+<div class="list2">
 	<h3>しゅくだいリスト</h3>
 	<ul>
 		<li>
@@ -64,11 +64,17 @@
 </div>		
 </section>
 </main>
+
+<!-- フッター -->
 <footer class="student_footer">
 <div class="flower">
-	<img src="${pageContext.request.contextPath}/images/sunflower.png" alt="花のイラスト" class="flower_img">
+	<img src="${pageContext.request.contextPath}/images/flower${flowerLevel}.gif" width="332" height="332" alt="クラスの花（レベル${flowerLevel}）" class="flower_img">
 </div>
-<img src="${pageContext.request.contextPath}/images/tuchi.png" alt="土のイラスト" class="ground_img">
+
+<img src="${pageContext.request.contextPath}/images/tuchi2.png" width="1500" height="360" alt="土のイラスト" class="ground_img">
 </footer>
+<!-- フッターここまで -->
+
+
 </body>
 </html>
