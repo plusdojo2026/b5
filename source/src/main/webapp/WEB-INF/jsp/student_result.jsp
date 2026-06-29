@@ -27,6 +27,7 @@
 		</a>
 		
 	</div>
+	<a href="LoginServlet" class="logout"><span class="logout-icon"><img src="${pageContext.request.contextPath}/images/s_logout.png" width="100" height="100"></span></a>
 	
 	<div>
 		<button type="button" onclick="changeFlowerLevel(-1)">－</button>

@@ -25,7 +25,8 @@
 			<img src="${pageContext.request.contextPath}/images/cloud3.png" alt="雲の画像" class="cloud_img">
 			<span class="result_text"></span>
 		</a>
-	</div>
+		</div>
+		<a href="LoginServlet" class="logout"><span class="logout-icon"><img src="${pageContext.request.contextPath}/images/s_logout.png" width="100" height="100"></span></a>
 </header>
 <main class="student_main">
 <section>

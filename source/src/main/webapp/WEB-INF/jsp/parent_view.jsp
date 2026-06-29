@@ -17,6 +17,7 @@
 <!-- ヘッダー -->
 <header class="header">
     <div class="name">"${studentData.name}"さん</div>
+    <a href="LoginServlet" class="logout"><span class="logout-icon"><img src="${pageContext.request.contextPath}/images/p_logout2.png" width="30" height="30"></span></a>
 </header>
 
 <!-- メイン -->

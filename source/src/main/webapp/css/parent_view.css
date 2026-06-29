@@ -27,6 +27,15 @@ p {
   z-index: 999;
 } 
 
+.logout {
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	align-items: center;
+}
+
 .name {
     color: #4D586D;
 }
