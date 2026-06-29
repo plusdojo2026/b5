@@ -24,6 +24,7 @@ p {
   width: 100%;
   padding: 10px 0px 10px 0px ;
   box-sizing: border-box;
+  z-index: 999;
 } 
 
 .name {
