@@ -18,7 +18,6 @@
 	
 	<div class="date">
 		<img src="${pageContext.request.contextPath}/images/cloud.png" alt="雲の画像" class="cloud_img">
-		<p class="date_text">6がつ11にち<br>もくようび</p>
 	</div>
 		<div class="result">
 		<a href="${pageContext.request.contextPath}/StudentResultServlet" class="sutudent_result">
@@ -29,7 +28,16 @@
 		<a href="LoginServlet" class="logout"><span class="logout-icon"><img src="${pageContext.request.contextPath}/images/s_logout.png" width="100" height="100"></span></a>
 </header>
 <main class="student_main">
+
+<!-- 日付の表示とタイトル -->
+  <div class="calendar">
+     <img src="images/calendar2.png" width="50" height="50"><p id="today"></p>
+  </div>
+  
+  
 <section>
+
+  
 <%---------------------------もちもの ----------------------------%>
 <div class="list1">
 	<h3>もちものリスト</h3>
@@ -62,6 +70,9 @@
 </footer>
 <!-- フッターここまで -->
 
+<!-- javascript開始 -->
+<script src="${pageContext.request.contextPath}/js/student_home.js"></script>
+<!-- javascript終了 -->
 
 </body>
 </html>

@@ -48,11 +48,25 @@ body{
 	white-space:nowrap;
 }
 
+/* 日付の表示とタイトル */
+.calendar {
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
 /* メイン */
 .student_main{
-	display:flex;
+	 display: flex;
 	justify-content:center;
 	margin-top:30px;
+	position: relative;
 }
 
 /* 持ち物・宿題エリア */
@@ -98,13 +112,13 @@ li{
 }
 
 .list1 {
-	margin-right: 100px;
+	margin-right: 150px;
 	width: 400px;
 }
 
 .list2 {
 	width: 400px;
-	margin-left: 100px;
+	margin-left: 150px;
 }
 
 /* フッター */
